@@ -8,13 +8,10 @@
  
 <html>
 
-	<header>
-		<?php include('header.php'); ?>
-	</header>
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>TEST</h2>
+		<h2>Accueil</h2>
     </head>
 	
 	<nav>
@@ -23,6 +20,10 @@
 	</nav>
 	
     <body>
+	
+	<header>
+		<?php include('header.php'); ?>
+	</header>
 	
         <?php
 	
