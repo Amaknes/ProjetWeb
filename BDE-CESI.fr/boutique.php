@@ -11,7 +11,7 @@
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>TEST</h2>
+		<h2>Boutique</h2>
     </head>
 	
 	<nav>
