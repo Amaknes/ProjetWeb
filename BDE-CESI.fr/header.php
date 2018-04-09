@@ -6,7 +6,6 @@
 		
 		<img src="Ressources/Images/Site_Banner.png">
 		
-		<h1> TEST 2 </h1>
     </header>
  
 </html>
