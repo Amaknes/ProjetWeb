@@ -9,7 +9,7 @@
 		<nav>
 			<?php include('nav.php');?>
 			<br>
-			<?php if(null !== session_id)
+			<?php if(null == session_id())
 			session_start(); 
 			?>
 		</nav>
