@@ -13,6 +13,11 @@
 			
 	$test = $requeteConnexion->fetch();
 	if(count($test) == 1){
+		$_SESSION['Nom'] = $test[1];
+		$_SESSION['Prenom'] = $test[2];
 		echo "<h1>PAS OK</h1>";
-	}else echo "<h1>OK</h1>";
+		echo $_SESSION['nom'];
+		$requeteConnexion->closeCursor();
+	}else echo "<h1>OK</h1>"
+	$requeteConnexion->closeCursor();
 ?>
