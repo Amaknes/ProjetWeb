@@ -7,7 +7,7 @@
  #######################################-->
  
 <html>
-
+<?php session_start(); ?>
 	<header>
 		<?php include('header.php'); ?>
 	</header>
@@ -23,8 +23,8 @@
 	
         <?php
 		if(isset($_SESSION['Nom'])){
-		echo "<h3>Bonjour</h3>" + $_SESSION['Prenom'] + $_SESSION['Nom'];
-		}
+		echo "<h3>Bonjour</h3>".$_SESSION['Prenom']." ".$_SESSION['Nom'];
+		}else echo "Nope"
         ?>
 		
     </body>

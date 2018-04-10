@@ -7,7 +7,7 @@
  #######################################-->
  
 <html>
-
+<?php session_start(); ?>
 	<header>
 		<?php include('header.php'); ?>
 	</header>

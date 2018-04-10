@@ -5,9 +5,6 @@
 		<link rel="stylesheet" href="style.css" />
 		
 		<img src="Ressources/Images/Site_Banner.png">
-			<?php if(null == session_id())
-			session_start(); 
-			?>
 			
 		<nav>
 		

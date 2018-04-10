@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	$Email = $_POST['Email'];
 	$Password = $_POST['Password'];
