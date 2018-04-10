@@ -25,6 +25,7 @@ CREATE TABLE Users(
 CREATE TABLE Products(
         IDProduct   int (11) Auto_increment  NOT NULL ,
         Name        Varchar (50) NOT NULL ,
+        Category    Varchar (50) NOT NULL ,
         Price       Int NOT NULL ,
         Description Varchar (100) ,
         UrlImage    Varchar (50) NOT NULL ,
@@ -67,7 +68,6 @@ CREATE TABLE Events(
 CREATE TABLE Pictures(
         IDPicture int (11) Auto_increment  NOT NULL ,
         UrlImage  Varchar (50) NOT NULL ,
-        Likes     Int NOT NULL ,
         IDEvent   Int NOT NULL ,
         IDUser    Int NOT NULL ,
         PRIMARY KEY (IDPicture )
@@ -109,6 +109,17 @@ CREATE TABLE Participate(
         PRIMARY KEY (IDUser ,IDEvent )
 )ENGINE=InnoDB;
 
+
+#------------------------------------------------------------
+# Table: Like
+#------------------------------------------------------------
+
+CREATE TABLE Like(
+        IDUser    Int NOT NULL ,
+        IDPicture Int NOT NULL ,
+        PRIMARY KEY (IDUser ,IDPicture )
+)ENGINE=InnoDB;
+
 ALTER TABLE Orders ADD CONSTRAINT FK_Orders_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
 ALTER TABLE Events ADD CONSTRAINT FK_Events_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
 ALTER TABLE Pictures ADD CONSTRAINT FK_Pictures_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
@@ -119,3 +130,5 @@ ALTER TABLE Contain ADD CONSTRAINT FK_Contain_IDOrder FOREIGN KEY (IDOrder) REFE
 ALTER TABLE Contain ADD CONSTRAINT FK_Contain_IDProduct FOREIGN KEY (IDProduct) REFERENCES Products(IDProduct);
 ALTER TABLE Participate ADD CONSTRAINT FK_Participate_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
 ALTER TABLE Participate ADD CONSTRAINT FK_Participate_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
+ALTER TABLE Like ADD CONSTRAINT FK_Like_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE Like ADD CONSTRAINT FK_Like_IDPicture FOREIGN KEY (IDPicture) REFERENCES Pictures(IDPicture);

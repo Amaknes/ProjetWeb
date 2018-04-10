@@ -17,10 +17,7 @@
 		<h2>inscription</h2>
     </head>
 	
-	<nav>
-		<?php include('nav.php'); ?>
-		<br>
-	</nav>
+
 	
     <body>
 		

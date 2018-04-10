@@ -6,6 +6,11 @@
 		
 		<img src="Ressources/Images/Site_Banner.png">
 		
+		<nav>
+			<?php include('nav.php'); ?>
+			<br>
+		</nav>
+	
     </header>
  
 </html>
