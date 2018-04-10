@@ -8,23 +8,19 @@
  
 <html>
 
+	<header>
+		<?php include('header.php'); ?>
+	</header>
+	
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
 		<h2>Boutique</h2>
     </head>
-	
-	<nav>
-		<?php include('nav.php'); ?>
-		<br>
-	</nav>
-	
+		
+		
     <body>
-	
-	<header>
-		<?php include('header.php'); ?>
-	</header>
-	
+
         <?php
 	
         ?>
