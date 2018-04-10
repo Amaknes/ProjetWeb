@@ -5,13 +5,15 @@
 		<link rel="stylesheet" href="style.css" />
 		
 		<img src="Ressources/Images/Site_Banner.png">
-		
-		<nav>
-			<?php include('nav.php');?>
-			<br>
 			<?php if(null == session_id())
 			session_start(); 
 			?>
+			
+		<nav>
+		
+			<?php include('nav.php');?>
+			<br>
+
 		</nav>
 	
     </header>

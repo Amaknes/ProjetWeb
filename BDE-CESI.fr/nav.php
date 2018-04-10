@@ -5,11 +5,11 @@
 		<a href="evenements.php">Événements</a>
 		<a href="boutique.php">Goodies</a>
 		<?php
-		if($_SESSION['Nom'] == null){
-			echo "<a href='inscription.php'>Inscription</a>"
-			echo "<a href='connexion.php'>Connexion</a>"
+		if(isset($_SESSION['Nom'])){
+			echo "<a>Déconnexion</a>";
 		}else
-			echo "<a>Déconnexion</a>"
+			echo "<a href='inscription.php'>Inscription</a>";
+			echo "<a href='connexion.php'>Connexion</a>";
 		?>
 	</nav>
  

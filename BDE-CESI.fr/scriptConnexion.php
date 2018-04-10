@@ -19,4 +19,5 @@
 			$_SESSION['Nom'] = $test[1];
 			$_SESSION['Prenom'] = $test[2];
 	$requeteConnexion->closeCursor();
+			echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
 ?>
