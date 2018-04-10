@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 			$Email = $_POST['Email'];

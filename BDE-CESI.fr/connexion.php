@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
@@ -32,12 +32,12 @@
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
                             <h1>Connexion</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" > Pseudo : </label>
-                                    <input id="username" name="pseudo" required="required" type="text" placeholder="pseudo"/>
+                                    <label for="Email" class="uname" data-icon="u" > Email : </label>
+                                    <input id="Email" name="Email" required="required" type="text" placeholder="Email"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
-                                    <input id="password" name="motDePasse" required="required" type="password" placeholder="motdepasse" /> 
+                                    <label for="Password" class="youpasswd" data-icon="p"> Mot de passe : </label>
+                                    <input id="Password" name="Password" required="required" type="password" placeholder="Password" /> 
                                 </p>
                             
                                 <p class="login button"> 
