@@ -2,12 +2,23 @@
 #        Script MySQL.
 #------------------------------------------------------------
 
+#------------------------------------------------------------
+# Erase old database and create the new one : projetweb
+#------------------------------------------------------------
+
+#------------------------------------------------------------
+# DROP DATABASE `projetweb`;
+#
+# CREATE DATABASE `projetweb`;
+#------------------------------------------------------------
+
+
 
 #------------------------------------------------------------
 # Table: Users
 #------------------------------------------------------------
 
-CREATE TABLE Users(
+CREATE TABLE `Users`(
         IDUser    int (11) Auto_increment  NOT NULL ,
         LastName  Varchar (50) NOT NULL ,
         FirstName Varchar (50) NOT NULL ,
@@ -22,7 +33,7 @@ CREATE TABLE Users(
 # Table: Products
 #------------------------------------------------------------
 
-CREATE TABLE Products(
+CREATE TABLE `Products`(
         IDProduct   int (11) Auto_increment  NOT NULL ,
         Name        Varchar (50) NOT NULL ,
         Category    Varchar (50) NOT NULL ,
@@ -37,7 +48,7 @@ CREATE TABLE Products(
 # Table: Orders
 #------------------------------------------------------------
 
-CREATE TABLE Orders(
+CREATE TABLE `Orders`(
         IDOrder   int (11) Auto_increment  NOT NULL ,
         OrderDate Date NOT NULL ,
         Status    Bool NOT NULL ,
@@ -50,7 +61,7 @@ CREATE TABLE Orders(
 # Table: Events
 #------------------------------------------------------------
 
-CREATE TABLE Events(
+CREATE TABLE `Events`(
         IDEvent   int (11) Auto_increment  NOT NULL ,
         Name      Varchar (50) NOT NULL ,
         EventDate Date ,
@@ -65,7 +76,7 @@ CREATE TABLE Events(
 # Table: Pictures
 #------------------------------------------------------------
 
-CREATE TABLE Pictures(
+CREATE TABLE `Pictures`(
         IDPicture int (11) Auto_increment  NOT NULL ,
         UrlImage  Varchar (50) NOT NULL ,
         IDEvent   Int NOT NULL ,
@@ -78,7 +89,7 @@ CREATE TABLE Pictures(
 # Table: Comments
 #------------------------------------------------------------
 
-CREATE TABLE Comments(
+CREATE TABLE `Comments`(
         IDComment int (11) Auto_increment  NOT NULL ,
         Content   Varchar (250) NOT NULL ,
         IDPicture Int NOT NULL ,
@@ -91,7 +102,7 @@ CREATE TABLE Comments(
 # Table: Contain
 #------------------------------------------------------------
 
-CREATE TABLE Contain(
+CREATE TABLE `Contain`(
         Quantity  Int NOT NULL ,
         IDOrder   Int NOT NULL ,
         IDProduct Int NOT NULL ,
@@ -103,7 +114,7 @@ CREATE TABLE Contain(
 # Table: Participate
 #------------------------------------------------------------
 
-CREATE TABLE Participate(
+CREATE TABLE `Participate`(
         IDUser  Int NOT NULL ,
         IDEvent Int NOT NULL ,
         PRIMARY KEY (IDUser ,IDEvent )
@@ -114,21 +125,21 @@ CREATE TABLE Participate(
 # Table: Like
 #------------------------------------------------------------
 
-CREATE TABLE Like(
+CREATE TABLE `Like`(
         IDUser    Int NOT NULL ,
         IDPicture Int NOT NULL ,
         PRIMARY KEY (IDUser ,IDPicture )
 )ENGINE=InnoDB;
 
-ALTER TABLE Orders ADD CONSTRAINT FK_Orders_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Events ADD CONSTRAINT FK_Events_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Pictures ADD CONSTRAINT FK_Pictures_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
-ALTER TABLE Pictures ADD CONSTRAINT FK_Pictures_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Comments ADD CONSTRAINT FK_Comments_IDPicture FOREIGN KEY (IDPicture) REFERENCES Pictures(IDPicture);
-ALTER TABLE Comments ADD CONSTRAINT FK_Comments_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Contain ADD CONSTRAINT FK_Contain_IDOrder FOREIGN KEY (IDOrder) REFERENCES Orders(IDOrder);
-ALTER TABLE Contain ADD CONSTRAINT FK_Contain_IDProduct FOREIGN KEY (IDProduct) REFERENCES Products(IDProduct);
-ALTER TABLE Participate ADD CONSTRAINT FK_Participate_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Participate ADD CONSTRAINT FK_Participate_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
-ALTER TABLE Like ADD CONSTRAINT FK_Like_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
-ALTER TABLE Like ADD CONSTRAINT FK_Like_IDPicture FOREIGN KEY (IDPicture) REFERENCES Pictures(IDPicture);
+ALTER TABLE `Orders` ADD CONSTRAINT FK_Orders_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Events` ADD CONSTRAINT FK_Events_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Pictures` ADD CONSTRAINT FK_Pictures_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
+ALTER TABLE `Pictures` ADD CONSTRAINT FK_Pictures_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Comments` ADD CONSTRAINT FK_Comments_IDPicture FOREIGN KEY (IDPicture) REFERENCES Pictures(IDPicture);
+ALTER TABLE `Comments` ADD CONSTRAINT FK_Comments_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Contain` ADD CONSTRAINT FK_Contain_IDOrder FOREIGN KEY (IDOrder) REFERENCES Orders(IDOrder);
+ALTER TABLE `Contain` ADD CONSTRAINT FK_Contain_IDProduct FOREIGN KEY (IDProduct) REFERENCES Products(IDProduct);
+ALTER TABLE `Participate` ADD CONSTRAINT FK_Participate_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Participate` ADD CONSTRAINT FK_Participate_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
+ALTER TABLE `Like` ADD CONSTRAINT FK_Like_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
+ALTER TABLE `Like` ADD CONSTRAINT FK_Like_IDPicture FOREIGN KEY (IDPicture) REFERENCES Pictures(IDPicture);
