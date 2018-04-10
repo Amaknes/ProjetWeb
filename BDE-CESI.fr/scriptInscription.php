@@ -22,6 +22,13 @@
 					$requete->bindValue(':Password', $Password, PDO::PARAM_STR);
 					
 					$requete->execute();
+					
+					echo $LastName;
+					echo $FirstName;
+					echo $Email;
+					echo $Password;
+					
+					
 						}
  
 					else {
@@ -29,6 +36,8 @@
 						echo 'Mot de passe non conforme';
  
 						} 
+						
+				echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
 			}
 			//echo $Email;
 			//else echo "<h1>WHY IS THE FBI HERE ?!</h1>";	
