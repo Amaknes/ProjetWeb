@@ -15,7 +15,6 @@
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>Connexion</h2>
     </head>
 	
 	
@@ -25,7 +24,7 @@
 				<div id="connexion">
                     <div id="login" class="animate form">
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
-                            <h1>Connexion</h1> 
+                            <h1>Connexion</h1>
                                 <p> 
                                     <label for="Email" class="uname" data-icon="u" > Email : </label>
                                     <input id="Email" name="Email" required="required" type="text" placeholder="Email"/>

@@ -14,7 +14,6 @@
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>inscription</h2>
     </head>
 	
 
