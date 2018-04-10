@@ -1,0 +1,15 @@
+DROP PROCEDURE IF EXISTS `Ajout_nouvel_Event`;
+
+DELIMITER $
+
+CREATE PROCEDURE `Ajout_nouveau_produit`(IN `NewName` VARCHAR(50),IN `NewCategory` VARCHAR(50), IN `NewPrice` INT, IN `Newdescription` VARCHAR(100), IN `NewurlImage` VARCHAR(50))
+BEGIN
+
+SET AUTOCOMMIT = 0;
+
+START TRANSACTION;
+
+        INSERT INTO products(Name, Category, Price, description, urlImage)
+        VALUES (`NewName`, `NewCategory`, `NewPrice`, `Newdescription`, `NewurlImage`);
+        COMMIT;
+END $
