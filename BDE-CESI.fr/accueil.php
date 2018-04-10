@@ -27,7 +27,7 @@
         <?php
 	
         ?>
-
+		
     </body>
 	
 	<footer>
