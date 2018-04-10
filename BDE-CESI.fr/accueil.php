@@ -22,7 +22,9 @@
     <body>
 	
         <?php
-	
+		if($_SESSION['Nom'] !== null){
+		echo "<h3>Bonjour</h3>" + $_SESSION['Prenom'] + $_SESSION['Nom']
+		}
         ?>
 		
     </body>
