@@ -6,6 +6,7 @@
 		<a href="boutique.php">Goodies</a>
 		<?php
 		if(isset($_SESSION['Nom'])){
+			echo ("Bonjour".$_SESSION['Prenom']." ".$_SESSION['Nom']);
 			echo "<a href='deconnexion.php'>Déconnexion</a>";
 		}else{
 			echo "<a href='inscription.php'>Inscription</a>";
