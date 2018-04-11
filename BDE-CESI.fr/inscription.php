@@ -9,7 +9,7 @@
 <html>
 <?php session_start(); ?>
 	<header>
-		<?php include('header.php'); ?>
+		<?php include('header.php');?>
 	</header>
 	
     <head>
@@ -26,20 +26,25 @@
                     <h1> Inscription </h1> 
 						<p> 
                                     <label for="firstnamesignup" class="uname" data-icon="u" >Prénom : </label>
-                                    <input id="Prenom" name="Prenom" required="required" type="text" placeholder="Prenom" />
+                                    <input id="Prenom" name="Prenom" required="required" type="text" placeholder="Saisissez votre prénom" />
 						</p>
 						<p> 
                                     <label for="lastnamesignup" class="uname" data-icon="u" >Nom : </label>
-                                    <input id="Nom" name="Nom" required="required" type="text" placeholder="Nom" />
+                                    <input id="Nom" name="Nom" required="required" type="text" placeholder="Saisissez votre nom" />
 						</p>
 						<p> 
                                     <label for="usernamesignup" class="uname" data-icon="u" >Email : </label>
-                                    <input id="Email" name="Email" required="required" type="text" placeholder="Email" />
+                                    <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
                         
 						<p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p" >Mot de passe : </label>
-                                    <input id="Password" name="Password" required="required" type="password" placeholder="Password"/>
+                                    <input id="Password" name="Password" required="required" type="password" placeholder="Saisissez votre mot de passe"/>
+						</p>
+						
+						<p> 
+                                    <label for="passwordsignupConfirm" class="youpasswd" data-icon="p" >Confirmation du mot de passe : </label>
+                                    <input id="PasswordConfirm" name="PasswordConfirm" required="required" type="password" placeholder="Confirmer votre mot de passe"/>
 						</p>
                                 
 						<p class="signin button"> 
