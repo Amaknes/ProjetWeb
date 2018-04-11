@@ -19,14 +19,7 @@
     </head>
 	
 	
-    <body>
-	
-        <?php
-		if(isset($_SESSION['Nom'])){
-		echo "<h3>Bonjour</h3>".$_SESSION['Prenom']." ".$_SESSION['Nom'];
-		}else echo "Nope"
-        ?>
-		
+    <body>	
     </body>
 	
 	<footer>
