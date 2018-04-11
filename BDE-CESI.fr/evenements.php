@@ -20,11 +20,11 @@
 	
 	
     <body>
-	
+		<h3>Évènement du mois</h3>
         <?php
 	
         ?>
-
+		<h3>Liste des évènements</h3>
     </body>
 	
 	<footer>
