@@ -1,5 +1,5 @@
 ﻿<?php
-			//session_start();
+			session_start();
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 			$Email = $_POST['Email'];
@@ -37,9 +37,9 @@
 									$requete->bindValue(':Password', $Password, PDO::PARAM_STR);
 					
 									$requete->execute();
-									//$_SESSION['Nom'] = $LastName;
-									//$_SESSION['Prenom'] = $FirstName;
-									//$_SESSION['Email'] = $Email;
+									$_SESSION['Nom'] = $LastName;
+									$_SESSION['Prenom'] = $FirstName;
+									$_SESSION['Email'] = $Email;
 									/*echo $LastName;
 									echo $FirstName;
 									echo $Email;
