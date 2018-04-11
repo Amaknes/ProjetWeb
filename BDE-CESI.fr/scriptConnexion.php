@@ -21,6 +21,7 @@
 	}else{ echo "<h1>OK</h1>";
 			$_SESSION['Nom'] = $test[1];
 			$_SESSION['Prenom'] = $test[2];
+			$_SESSION['Email'] = $Email;
 			echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
 	}
 	$requeteConnexion->closeCursor();
