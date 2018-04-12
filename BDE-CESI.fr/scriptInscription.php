@@ -40,6 +40,7 @@
 									$_SESSION['Nom'] = $LastName;
 									$_SESSION['Prenom'] = $FirstName;
 									$_SESSION['Email'] = $Email;
+									$_SESSION['Status'] = 1;
 									/*echo $LastName;
 									echo $FirstName;
 									echo $Email;
