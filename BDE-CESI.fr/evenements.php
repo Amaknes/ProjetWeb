@@ -7,8 +7,10 @@
  #######################################-->
  
 <html>
-<?php session_start(); ?>
-		<?php include('header.php'); ?>
+	<?php 
+		session_start(); 
+		include('header.php'); 
+	?>
 	
 	
     <head>
@@ -38,6 +40,6 @@
 		
     </body>
 	
-		<?php include('footer.php'); ?>
+	<?php include('footer.php'); ?>
 	
 </html>
