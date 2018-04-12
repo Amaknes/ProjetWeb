@@ -8,9 +8,7 @@
  
 <html>
 <?php session_start(); ?>
-	<header>
 		<?php include('header.php');?>
-	</header>
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
@@ -61,8 +59,6 @@
 
     </body>
 	
-	<footer>
 		<?php include('footer.php'); ?>
-	</footer>
 	
 </html>
