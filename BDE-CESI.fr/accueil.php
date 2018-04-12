@@ -8,9 +8,7 @@
  
 <html>
 <?php session_start(); ?>
-	<header>
 		<?php include('header.php'); ?>
-	</header>
 	
 	
     <head>
@@ -22,8 +20,6 @@
     <body>	
     </body>
 	
-	<footer>
 		<?php include('footer.php'); ?>
-	</footer>
 	
 </html>

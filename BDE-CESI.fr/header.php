@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="style.css" />
 		
-		<img src="Ressources/Images/Site_Banner.png">
+		<img src="Ressources/SiteImages/Site_Banner.png">
 	
 		<div>
 		<?php
@@ -18,12 +18,10 @@
 		?>
 		</div>
 		
-		<nav>
+
 		
 			<?php include('nav.php');?>
 			<br>
-
-		</nav>
 
 	
     </header>
