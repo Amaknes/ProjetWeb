@@ -1,0 +1,30 @@
+
+
+
+
+/*.MonthEventBackgroundPic {
+	
+	background-image;
+    width: 500px;
+	height: 500px;
+} */
+
+.EventName {
+	color: green;
+	opacity: 1;
+}
+
+.EventDescription {
+	opacity: 1;
+}
+
+.MonthEvent {
+  background-image: url('Images/Accueil.jpg');
+  width: 200px;
+  height: 100px;
+  background-position: center;
+  /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;
+  opacity: 0.2;
+}
+
