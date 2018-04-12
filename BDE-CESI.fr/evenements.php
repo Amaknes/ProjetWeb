@@ -21,7 +21,7 @@
 	
     <body>
 		<h3>Évènement du mois</h3>
-        <?php
+		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 			$requete = $bdd->prepare("SELECT * FROM Events WHERE Selected = true");
 			$requete = execute();
@@ -29,12 +29,15 @@
 			if(count($ans) == 1){
 				echo "<h1>PAS OK</h1>";
 			}else{  
-				echo "<p class='EventTitle'>".$ans[1]."</p>";
-				echo '<img src="'.$ans[4].'"/>'
-				echo "<p class='EventText'>".$ans[5]."</p>";
+				echo '<div href ="EvenementUnique.php?id='.$ans[0].'">'
+					echo "<p class='EventTitle'>".$ans[1]."</p>";
+					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>'
+					echo "<p class='EventText'>".$ans[5]."</p>";
+				echo "</div>"
 			}
-        ?>
-		<h3>Liste des évènements</h3>
+		?>
+		<h3><a href="EventList.php">Liste des évènements</a></h3>
+		
     </body>
 	
 	<footer>
