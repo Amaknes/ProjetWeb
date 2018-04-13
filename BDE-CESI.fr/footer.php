@@ -7,18 +7,20 @@
 					<p>bdesaintnazaire@viacesi.fr 
 				</div>
 				
+				<div id="Facebook">
+					<a href="https://www.facebook.com" title="Facebook">
+					<img class="Facebook" img src="Ressources/SiteImages/facebook.png" alt="Facebook" style="width: 50px;"></a>
 				<div>
-					<!--<a style="display:scroll;position:fixed;bottom:5px;left:5px;" href="#" title="Facebook">-->
-					<img src="Ressources/SiteImages/facebook.png" ></a>
-				<div>
+				</div id="Twitter">
+					<a  href="https://twitter.com" title="Twitter">
+					<img class="Twitter" img src="Ressources/SiteImages/twitter.png" alt="Twitter" style="width: 50px;"></a>
 				</div>
-					<!--<a style="display:scroll;position:fixed;bottom:5px;left:5px;" href="#" title="Twitter">-->
-					<img src="Ressources/SiteImages/twitter.png" ></a>
 			</div>
 			<div id="MentionsLegales">
-				<a href="#">Mentions Légales</a> <a href="accueil.php">Retour à l'accueil</a></p>
-				
-
+				<a href="mentionslegales.php">Mentions Légales</a> 
+			</div>	
+			<div id=RetourAccueil">
+				<a href="accueil.php">Retour à l'accueil</a></p>
 			</div>
 			
 			<div id="HautDePage">

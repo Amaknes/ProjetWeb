@@ -12,6 +12,13 @@ footer {
    color: white;
    text-align: center;
 }
-.contact {
-
+.Facebook {
+  height: 200px;
+  width: 100px;
+  background-color: powderblue;
 }
+/*#Facebook{
+ height: 200px;
+  width: 50%;
+  background-color: powderblue;
+  }
