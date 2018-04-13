@@ -12,8 +12,9 @@
 	
 	
     <head>
+		<link rel="stylesheet" type="text/css" href="css/accueilstyle.css">
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>Boutique</h2>
+		<h1>Boutique</h1>
     </head>
 		
 		
