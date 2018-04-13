@@ -6,7 +6,7 @@
 
  <?php
 
-$dir = "Ressources/SiteImages/*png";
+$dir = "Ressources/Products/*png";
 $images = glob( $dir );
 
 foreach( $images as $image ):

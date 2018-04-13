@@ -1,0 +1,16 @@
+DROP PROCEDURE IF EXISTS `AfficherProduits`;
+
+DELIMITER $
+
+CREATE PROCEDURE `AfficherProduits`(IN `SearchName` VARCHAR(50),IN `SearchCategory` VARCHAR(50), IN `SearchPriceMin` INT, IN `SearchPriceMax` INT)
+BEGIN
+
+SET AUTOCOMMIT = 0;
+
+START TRANSACTION;
+
+        SELECT * FROM `products` WHERE SearchName=Name 
+		AND SearchCategory=Category OR 
+		AND Price BETWEEN SearchPriceMin AND SearchPriceMax;
+        COMMIT;
+END $
