@@ -1,24 +1,27 @@
 
 h1 {
-    background-color: green;
+   /* background-color: green;*/
 }
 
+
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+body {
+	display : table;
+	width: 100%;
+}
 footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: red;
-   color: white;
-   text-align: center;
+	display : table-row;
+	height: 100px; /* à titre d'exemple */
 }
-.Facebook {
-  height: 200px;
-  width: 100px;
-  background-color: powderblue;
+#contact{
+    width:100%
 }
-/*#Facebook{
- height: 200px;
-  width: 50%;
-  background-color: powderblue;
-  }
+.Networks{
+    float: left;
+	height: 5%;
+	width: 5%;
+	margin-left: 1%;
+}
