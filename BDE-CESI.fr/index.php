@@ -16,6 +16,7 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/fonts.css"/>
+		<link rel="icon" href="favicon.ico" />
     </head>
 	<?php include('header.php'); ?>
 	

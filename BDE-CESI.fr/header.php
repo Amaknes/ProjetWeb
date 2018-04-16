@@ -8,7 +8,7 @@
     </head>
 	<body>
     <header>
-		<img src="Ressources/SiteImages/Site_Banner.png">
+		<img src="Ressources/SiteImages/Site_Banner.png" alt="Bannière du site">
 		<div>
 		<?php
 		if(isset($_SESSION['Nom'])){
