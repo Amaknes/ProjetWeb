@@ -1,51 +1,44 @@
-<!DOCTYPE HTML>
-<html>
-
     <footer>
-		<section>
-			<div id="contact">
-				<div>
-					<p>bdesaintnazaire@viacesi.fr 
-				</div>
-				
-				<div id="Facebook">
-					<a href="https://www.facebook.com" title="Facebook">
-					<img class="Networks" img src="Ressources/SiteImages/facebook2.png" alt="Facebook"></a>
-				<div>
-				</div id="Twitter">
-					<a  href="https://twitter.com" title="Twitter">
-					<img class="Networks" img src="Ressources/SiteImages/twitter2.png" alt="Twitter"></a>
-				</div>
-				</div id="LinkIn">
-					<a  href="https://fr.linkedin.com" title="LinkIn">
-					<img class="Networks" img src="Ressources/SiteImages/linkin.png" alt="LinkIn"></a>
-				</div>
-				</div id="Snapchat">
-					<a  href="https://www.snapchat.com/l/fr-fr/" title="Snapchat">
-					<img class="Networks" img src="Ressources/SiteImages/snapchat.png" alt="Snapchat"></a>
-				</div>
-				</div id="Instagram">
-					<a  href="https://instagram.com" title="Instagram">
-					<img class="Networks" img src="Ressources/SiteImages/instagram.png" alt="Instagram"></a>
-				</div>
-				</div id="Whatsapp">
-					<a  href="https://www.whatsapp.com/?l=fr" title="Whatsapp">
-					<img class="Networks" img src="Ressources/SiteImages/whatsapp.png" alt="Whatsapp"></a>
-				</div>
-			</div>
-			<div id="MentionsLegales">
-				<a href="mentionslegales.php">Mentions Légales</a> 
-			</div>	
-			<div id=RetourAccueil">
-				<a href="accueil.php">Retour à l'accueil</a></p>
+			<div id="LogoRetourAccueil">
+				<a href="accueil.php"> <img class="RetourAccueil" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="RetourAccueil"</a>
 			</div>
 			
-			<div id="HautDePage">
-				<a style="display:scroll;position:fixed;bottom:5px;right:5px;" href="#" title="Retour haut de page">
-				<img src="Ressources/SiteImages/top.png" ></a>
+			<div id="TexteRetourAccueil">
+				<a href="accueil.php">BDE CESI Saint-Nazaire</a>
+			</div>
+			
+			
+			<div id="contact">
+				
+				<div id="external-link">
+					<a class="extern fb" target="_blank" href="https://www.facebook.com" title="Facebook"></a>
+				</div>
+				<div id="external-link">
+					<a class="extern twitter" target="_blank" href="https://twitter.com" title="Twitter"></a>
+				</div>
+				<div id="external-link">
+					<a class="extern linkedin" target="_blank" href="https://fr.linkedin.com" title="LinkedIn"></a>
+				</div>
+				<div id="external-link">
+					<a class="extern youtube" target="_blank" href="https://www.youtube.com/?hl=fr&gl=FR" title="youtube"></a>
+				</div>
+				<div id="external-link">
+					<a class="extern instagram" target="_blank" href="https://instagram.com" title="Instagram"></a>
+				</div>
+				<div id="external-link">
+					<a class="extern mail" target="_blank" href="#" title="Mail"></a>
+				</div>
+			</div>
+			
+			<div id="MentionsLegales">
+				<a class="Mentionslegales" target="_blank" href="mentionslegales.php" title="MentionsLegales" >Mentions Légales</a> 
+			</div>
+			
+			<div id="FlecheHautDePage">
+				<a href="#" title="Retour haut de page">
+				<img src="Ressources/SiteImages/fleche.png" ></a>
 				<!--<button type="button" id="IDdubouton" title="Haut de page">Haut de page</button>-->
 			</div>
-		</section>
 	</footer>
- 
+	</body>
 </html>

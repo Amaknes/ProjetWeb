@@ -9,15 +9,16 @@
 <html>
 
 	
-		<?php include('header.php'); ?>
+		
 	
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
-		<h2>TEST</h2>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/fonts.css"/>
     </head>
+	<?php include('header.php'); ?>
 	
-	
-		<?php include('nav.php'); ?>
 		<br>
 	
     <body>

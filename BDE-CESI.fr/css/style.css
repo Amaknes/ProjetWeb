@@ -1,27 +1,99 @@
-
-h1 {
-   /* background-color: green;*/
-}
-
-
 html, body {
-	height: 100%;
+	height: 1000px;
 	margin: 0; padding: 0;
 }
 body {
 	display : table;
 	width: 100%;
+	background-color: #D7D7D7;
 }
+
+/*Footer*/
+
 footer {
 	display : table-row;
-	height: 100px; /* à titre d'exemple */
+	width: 100%;
+	height:100px;
+	background-color: white;
+    /*position: absolute;
+	bottom: 0;*/
+}
+.RetourAccueil{
+	padding : 5px;
+	float: left;
+	height: 10%;
+	width: 10%;
+}
+#TexteRetourAccueil{
+	text-decoration: none;
 }
 #contact{
-    width:100%
+    width:100%;
+	text-decoration:none;
 }
-.Networks{
-    float: left;
-	height: 5%;
-	width: 5%;
-	margin-left: 1%;
+#contact a{
+text-decoration:none;
+}
+#external-link {
+display: inline-block;
+}
+.extern {
+display: inline-block;
+padding : 2%;
+vertical-align:top;
+width: 45px;
+height: 45px;
+background: white;
+text-align:center;
+color: #3897c1;
+}
+.extern:hover {
+background: #3897c1;
+color: white;
+}
+.extern:after {
+position: relative;
+content:"\E808";
+font: 2em/40px 'fontello';
+text-align: center;
+}
+
+.fb:after {
+content: "\F30C";
+}
+.twitter:after {
+content: "\F309";
+}
+.linkedin:after {
+content: "\F0E1";
+}
+.youtube:after {
+content: "\F167";
+}
+.instagram:after {
+content: "\E808";
+}
+.mail:after {
+content: "\E81A";
+}
+
+.Mentionslegales:before {
+font: 2em/40px 'fontello';
+content: "\E847";
+}
+
+#MentionsLegales{
+float: right;
+bottom: 5%;
+padding-right: 50px;
+text-decoration: none; 
+}
+#MentionsLegales a {
+text-decoration: none;
+}
+#FlecheHautDePage{
+	display: scroll;
+	position: fixed;
+	bottom: 50px;
+	right: 15px;
 }
