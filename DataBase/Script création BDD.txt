@@ -2,7 +2,9 @@
 #        Script MySQL.
 #------------------------------------------------------------
 
-DROP DATABASE `projetweb` IF EXISTS DATABASE `projetweb`;
+
+DROP DATABASE IF EXISTS `projetweb`;
+
 CREATE DATABASE `projetweb`;
 
 #------------------------------------------------------------
@@ -98,6 +100,7 @@ CREATE TABLE `Comments`(
 CREATE TABLE `Ideas`(
         IDIdea   int (11) Auto_increment  NOT NULL ,
         Activity Varchar (500) NOT NULL ,
+		IdeaFlag Bool NOT NULL ,
         IDUser   Int NOT NULL ,
         PRIMARY KEY (IDIdea )
 )ENGINE=InnoDB;
