@@ -94,8 +94,8 @@ CREATE TABLE `Events`(
 INSERT INTO `Events` (`Name`, `EventDate`, `Price`, `UrlImage`, `Description`, `Selected`) VALUES
 		('Entreprendre pour apprendre', '2018-04-09', 0, 'http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/imageEvent.jpg', '« Un centre ville connecté au service du citoyen » ! Une belle thématique pour cette journée de créativité #innovepa en partenariat avec LA CPME Pays de la Loire La Carène Saint-Nazaire et agglomération et le Campus CESI Saint-Nazaire!', 1),
 		('Césiades', '2018-05-10', 95, 'http://localhost/projetWEB/DataBase/Events/Césiades/imageEvent.jpg', 'Les pré-inscriptions pour les cesiades sont bientôt terminées (plus de 20 préinscrits) !\r\n\r\nIl ne reste plus que quelques places, alors n’hésitez pas à vous inscrire !!!\r\n\r\nCeux déjà inscrits, pour clôturer la démarche, merci de ramener, la semaine prochaine, un chèque de 95€ à l’ordre du BDE CESI Saint-Nazaire.\r\n\r\nNous passerons dans les salles vous distribuez un papier récapitulant vos informations personnelles et pour récupérer les chèques.', 0),
-		('Western Party', '2018-02-07', 0, 'http://localhost/projetWEB/DataBase/Events/WesternParty/imageEvent.jpg', 'Préparez vos chapeaux pour demain... On vous amène un taureau mécanique à l\'intérieur du Bières et chopes Pornichet !\r\n\r\nEvidemment celui qui tiendra le plus longtemps gagnera un petit cadeau !\r\n\r\nUn lot sera remis au meilleur COWBOY !\r\n\r\nN\'oubliez pas de venir déguiser', 0);
-
+		('Western Party', '2018-02-07', 0, 'http://localhost/projetWEB/DataBase/Events/WesternParty/imageEvent.jpg', 'Préparez vos chapeaux pour demain... On vous amène un taureau mécanique à l\'intérieur du Bières et chopes Pornichet !\r\n\r\nEvidemment celui qui tiendra le plus longtemps gagnera un petit cadeau !\r\n\r\nUn lot sera remis au meilleur COWBOY !\r\n\r\nN\'oubliez pas de venir déguiser', 0),
+		('Babyfoot de fou avec Joris et Gaëlle', '2018-04-22', 58, 'http://localhost/projetWEB/DataBase/Events/Babyfoot/Main_Pic.jpg', 'Gros tournois de Babyfoot prévu à Polytech, une compétition très ardue incluant notamment des joueurs reconnus professionels depuis leurs victoires éclatantes aux championnats intercommunaux de 2012 sous la bannière de l\'équipe "Les Requins Marteaux". Merci de prévoir vos propres serviettes pour essuyer la transpiration sur les poignées.', 0);
 
 
 #------------------------------------------------------------
@@ -116,7 +116,9 @@ INSERT INTO `Pictures` (`UrlImage`, `IDEvent`, `IDUser`) VALUES
 		('http://localhost/projetWEB/DataBase/Events/Western_Party/WesternParty(2).jpg', 3, 4),
 		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_1.jpg', 1, 3),
 		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_2.jpg', 1, 3),
-		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_3.jpg', 1, 3);
+		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_3.jpg', 1, 3),
+		('http://localhost/projetWEB/DataBase/Events/Babyfoot/Pic_1.jpg', 4, 2),
+		('http://localhost/projetWEB/DataBase/Events/Babyfoot/Pic_2.jpg', 4, 2);
 
 #------------------------------------------------------------
 # Table: Comments
@@ -146,7 +148,7 @@ CREATE TABLE `Ideas`(
 
 INSERT INTO `Ideas` (`Activity`, `IDUser`) VALUES
 		('On pourrait faire un tournoi de basket', 3),
-		('Une initiation au Quidditch', 18);
+		('Une initiation au Quidditch', 4);
 
 #------------------------------------------------------------
 # Table: Contain
