@@ -21,14 +21,20 @@ footer {
 .RetourAccueil{
 	padding : 5px;
 	float: left;
-	height: 10%;
-	width: 10%;
+	height: 8%;
+	width: 8%;
 }
-#TexteRetourAccueil{
+
+#TexteRetourAccueil a{
 	text-decoration: none;
+	font-family: bahnschrift, arial, trebuchet MS, verdana;
+	font-size: 300%;
+	padding: 1%;
+	
 }
 #contact{
-    width:100%;
+
+	position: right;
 	text-decoration:none;
 }
 #contact a{
@@ -82,15 +88,21 @@ font: 2em/40px 'fontello';
 content: "\E847";
 }
 
+
+
 #MentionsLegales{
+font-family: bahnschrift, arial, trebuchet MS, verdana;
+font-size: 200%;
 float: right;
 bottom: 5%;
-padding-right: 50px;
+padding-right: 100px;
 text-decoration: none; 
 }
+
 #MentionsLegales a {
 text-decoration: none;
 }
+
 #FlecheHautDePage{
 	display: scroll;
 	position: fixed;

@@ -30,6 +30,7 @@
 				</div>
 			</div>
 			
+
 			<div id="MentionsLegales">
 				<a class="Mentionslegales" target="_blank" href="mentionslegales.php" title="MentionsLegales" >Mentions Légales</a> 
 			</div>
@@ -37,7 +38,6 @@
 			<div id="FlecheHautDePage">
 				<a href="#" title="Retour haut de page">
 				<img src="Ressources/SiteImages/fleche.png" ></a>
-				<!--<button type="button" id="IDdubouton" title="Haut de page">Haut de page</button>-->
 			</div>
 	</footer>
 	</body>
