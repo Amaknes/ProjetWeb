@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <html>
-    <header>
+    <head>
+        <title>BDE CESI EXIA St Nazaire</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="style.css" />
-		
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/fonts.css"/>
+    </head>
+	<body>
+    <header>
 		<img src="Ressources/SiteImages/Site_Banner.png">
-	
 		<div>
 		<?php
 		if(isset($_SESSION['Nom'])){
@@ -25,5 +28,4 @@
 
 	
     </header>
- 
-</html>
+	
