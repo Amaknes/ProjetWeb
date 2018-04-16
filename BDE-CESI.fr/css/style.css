@@ -26,6 +26,8 @@ footer {
 }
 
 #TexteRetourAccueil a{
+	display: inline-block;
+	float: left;
 	text-decoration: none;
 	font-family: bahnschrift, arial, trebuchet MS, verdana;
 	font-size: 300%;
@@ -33,12 +35,18 @@ footer {
 	
 }
 #contact{
-
+	display: inline-block;
 	position: right;
+/*float: right;*/
 	text-decoration:none;
 }
 #contact a{
+/*display: inline-block;*/
 text-decoration:none;
+}
+#content{
+width: 80%;
+display: inline-block;
 }
 #external-link {
 display: inline-block;
@@ -92,7 +100,7 @@ content: "\E847";
 
 #MentionsLegales{
 font-family: bahnschrift, arial, trebuchet MS, verdana;
-font-size: 200%;
+font-size: 150%;
 float: right;
 bottom: 5%;
 padding-right: 100px;
