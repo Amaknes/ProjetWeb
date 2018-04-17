@@ -20,7 +20,7 @@
 	<body>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-			$requete = $bdd->prepare("SELECT * FROM Events");
+			$requete = $bdd->prepare("SELECT * FROM Events WHERE PicFlag=false");
 			$requete->execute();
 			foreach($requete as $ans){
 				echo '<div href ="EvenementUnique.php?id='.$ans[0].'">';
