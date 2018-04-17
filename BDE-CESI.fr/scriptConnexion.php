@@ -18,7 +18,7 @@
 		//$message = "<p class=\"red\">PAS OK.</p>";
 		echo $message;
 		$requeteConnexion->closeCursor();
-	}else{ echo "<h1>OK</h1>";
+	}else{
 			$_SESSION['Nom'] = $ans[1];
 			$_SESSION['Prenom'] = $ans[2];
 			$_SESSION['Email'] = $Email;

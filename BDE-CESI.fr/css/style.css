@@ -61,6 +61,14 @@ width: 15%;
 	padding-left: 10px;
 	color: #000144;
 }
+.sessionsignout:after{
+		position: relative;
+	content:"\E84A";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
 
 
 #BDEHeader{
