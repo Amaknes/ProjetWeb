@@ -9,39 +9,38 @@
     </head>
 	<body>
 		<header>
+			<section id="top">
+				<div id="LogoBBE">
+					<a href="accueil.php"> <img class="LogoBDE" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
+				</div>
 
-			<div class="session">
+				<div id="BDEHeader">
+					<a href="accueil.php"><span>BDE </span><span>CESI </span><span>Saint-Nazaire </span></a>
+				</div>
+			
+				<nav>
+					<a class="accueilnav" href="accueil.php">Accueil</a>
+					<a class="evenementsnav" href="evenements.php">Événements</a>
+					<a class="boutiquenav" href="boutique.php">Boutique</a>
+				</nav>
+			
+				<div class="session">
 
-				<?php
-					if(isset($_SESSION['Nom'])){
-						echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
-						echo "<a href='deconnexion.php'>Déconnexion</a>";
-					}else{
-						echo "<a class='test' href='inscription.php'>Inscription</a>";
-						echo "<a href='connexion.php'>Connexion</a>";
-					}
-				?>
-			</div>
-		
- 	
-			<div id="LogoBBE">
-				<a href="accueil.php"> <img class="LogoBDE" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
-			</div>
-			<nav>
-				<a class="accueilnav" href="accueil.php">Accueil</a>
-				<a class="evenementsnav" href="evenements.php">Événements</a>
-				<a class="boutiquenav" href="boutique.php">Boutique</a>
-			</nav>
-			<div id="BDEHeader">
-				<a href="accueil.php">BDE CESI Saint-Nazaire</a>
-			</div>
+					<?php
+						if(isset($_SESSION['Nom'])){
+							echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
+							echo "<a href='deconnexion.php'>Déconnexion</a>";
+						}else{
+							echo "<a class='sessionsignup' href='inscription.php'>Inscription</a>";
+							echo "<a class='sessionlogin' href='connexion.php'>Connexion</a>";
+						}
+					?>
+				</div>
+			</section>
 	
-
-	
-			<div id="banniere">	
-				<h2> Site</h2>
-			</div>
-	
+				<div id="banniere">	
+					<h2> Site</h2>
+				</div>
 	
 		</header>
 	

@@ -6,20 +6,22 @@ body {
 	display : table;
 	width: 100%;
 	background-color: #D7D7D7;
+    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
 }
 
 
 
 
-/*Header*/
+/*_____________________________Header_____________________________________*/
 
 header{
 background-color: white;
-height: 250px;
+height: 332px;
 }
 .LogoBDE{
   border-width:0px;
   float: left;
+  margin-top: 10px;
   width:240px;
   height:240px;
 }
@@ -31,27 +33,63 @@ float: right;
 .session a  {
 	display: block;
 	margin:10px;
+	text-decoration: none;
+	color: #000144;
+	font-size: 20px;
 }
+
+.sessionsignup:after{
+	position: relative;
+	content:"\F234";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+.sessionlogin:after{
+	position: relative;
+	content:"\E849";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+
+
 #BDEHeader{
 border-width: 0px;
-    position: absolute;
-    left: 250px;
-    top: 54px;
-    width: 582px;
-    height: 67px;
-    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
-    font-weight: 700;
+margin-top: 50px;
+    width: 600px;
+  /*  height: 67px;*/
+	font-size: 60px;
+  /*  font-weight: 30px;*/
     font-style: normal;
     text-align: center;
 }
 #BDEHeader a{
 	text-decoration: none;
+	color: #B7030D;
+	/*rouge: #B7030D*/
+}
+#BDEHeader span:first-child{
+color : #000144;	
+}
+#BDEHeader span:last-child{
+color : #343434;	
+}
+
+#top{
+	display: flex;
+	justify-content: space-between;
+	height: 250px;
 }
 
 nav a{
 display: inline-block;
-margin: 0 20px;
+margin: 50px 60px;
 text-decoration: none;
+color: #000144;
+font-size: 25px;
 }
 
 .accueilnav:before {
@@ -59,31 +97,34 @@ text-decoration: none;
 	content:"\E84C";
 	font: 2em/40px 'fontello';
 	text-align: center;
+	padding-right: 10px;
+	color: #B7030D;
 }
 .evenementsnav:before {
 	position: relative;
 	content:"\E84B";
 	font: 2em/40px 'fontello';
 	text-align: center;
+	padding-right: 10px;
+	color: #B7030D;
 }
 .boutiquenav:before {
 	position: relative;
 	content:"\E843";
 	font: 2em/40px 'fontello';
 	text-align: center;
+	padding-right: 10px;
+	color: #B7030D;
 }
-
-
-
 
 
 
 #banniere{
     border-width: 0px;
-    position: absolute;
+	/*position: bottom;*/
     left: 0px;
     top: 250px;
-    width: 1920px;
+    width: 100%;
     height: 82px;
     background: inherit;
     background-color: rgba(255, 255, 255, 1);
@@ -93,7 +134,6 @@ text-decoration: none;
     border-color: rgba(178, 3, 10, 1);
     border-radius: 0px;
     box-shadow: none;
-    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
     font-weight: 700;
     font-style: normal;
     font-size: 42px;
@@ -109,7 +149,6 @@ border-width: 0px;
     top: 300px;
     width: 1920px;
     height: 82px;
-    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
     font-weight: 700;
     font-style: normal;
     font-size: 42px;
@@ -120,7 +159,7 @@ border-width: 0px;
 
 
 
-/*Footer*/
+/*____________________________________________________Footer___________________________________________*/
 
 footer {
 	display : table-row;
@@ -141,11 +180,18 @@ footer {
 	display: inline-block;
 	float: left;
 	text-decoration: none;
-	font-family: bahnschrift, arial, trebuchet MS, verdana;
 	font-size: 300%;
 	padding: 1%;
-	
+	color: #B7030D;
 }
+
+#TexteRetourAccueil span:first-child{
+color : #000144;	
+}
+#TexteRetourAccueil span:last-child{
+color : #343434;	
+}
+
 #contact{
 	display: inline-block;
 	position: right;
@@ -210,7 +256,6 @@ content: "\E847";
 
 
 #MentionsLegales{
-font-family: bahnschrift, arial, trebuchet MS, verdana;
 font-size: 150%;
 float: right;
 bottom: 5%;

@@ -5,7 +5,7 @@
 			
 			<div id="content">
 				<div id="TexteRetourAccueil">
-					<a href="accueil.php">BDE CESI Saint-Nazaire</a>
+					<a href="accueil.php"><span>BDE </span><span>CESI </span><span>Saint-Nazaire</span></a>
 				</div>
 			
 			
