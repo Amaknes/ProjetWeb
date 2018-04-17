@@ -25,6 +25,7 @@
 		$requete->bindValue(1, $Idreq, PDO::PARAM_INT);
 		$requete->execute();
 		$ans = $requete->fetch();
+		
 		echo "<p class='EventTitle'>".$ans[1]."</p>";
 		if($_SESSION['Status']=2)echo "<button>Signaler comme inapproprié</button>";
 		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>'
@@ -37,20 +38,34 @@
 			$requete2->execute();
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
-				echo "<button>Signaler comme inapproprié</button>";
+				if($_SESSION['Status']=2) echo "<button>Signaler comme inapproprié</button>";
 				echo "<p>Commentaires</p>"
 				
 				//requête récupération de commentaires
-				$requete3 = $bdd->prepare("SELECT IDComment,Content,LastName,FirstName FROM Comments INNER JOIN Users  WHERE IDPicture = ?");
+				$requete3 = $bdd->prepare("SELECT IDComment,Content,LastName,FirstName FROM Comments INNER JOIN Users ON Users.IDUser = Comments.IDUser  WHERE IDPicture = ?");
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
 				foreach($requete3 as $row2){
-					
+					echo "<p class='CommentName'>".$row2[3]." ".$row2[2]."</p>"
+					echo "<p class='CommentContent'>".$row2[1]."</p>"
+					if($_SESSION['Status']=2) echo "<button>Signaler comme inapproprié</button>";
 				}
 			}			
 			
+		}else{
+		$requete4 = $bdd->prepare("SELECT COUNT FROM Participate  WHERE IDEvent = ?");
+				$requete4->bindValue(1, $Idreq, PDO::PARAM_INT);
+				$requete4->execute();
+				$ans4 = $requete4->fetch();
+				
+			//Placeholder pour le nombre de participants à revérifier
+			echo "<p>Déja ".$ans4[0]." participants</p>"
+			echo "<button>participer</button>"
+			if($_SESSION['Status']=2) echo "<button>Signaler comme inapproprié</button>";
+			if($_SESSION['Status']=3) echo "<button>Télécharger en CSV</button>";
+			if($_SESSION['Status']=3) echo "<button>Télécharger en PDF</button>";
 		}
-		//else
+	
 		?>
 	</body>
 	
