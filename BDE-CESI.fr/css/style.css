@@ -178,6 +178,37 @@ border-width: 0px;
 }
 
 
+
+#register input{
+	width:300px;
+	height:20px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+    
+}
+
+#signupbutton{
+    
+	width:200px;
+    height:30px;    
+    border-radius:5px;
+    color:#E9EBEF;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	
+    
+  }
+
+
 /*____________________________________________________Footer___________________________________________*/
 
 footer {
