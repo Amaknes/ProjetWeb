@@ -59,7 +59,7 @@ INSERT INTO `Products` (`Name`, `Category`, `Price`, `UrlImage`) VALUES
 		('T-shirt gris WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Gris.png'),
 		('T-shirt jaune WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Jaune.png'),
 		('T-shirt rouge WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Rouge.png'),
-		('Verre WEI 2K17', 'Accessoires', 2, 'Ressources/Products/Gobelet_BDE.png');
+		('Gobelet WEI 2K17', 'Accessoires', 2, 'Ressources/Products/Gobelet_BDE.png');
 
 
 
