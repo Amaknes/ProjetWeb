@@ -36,7 +36,7 @@
 				echo "</div>";
 			}
 		?>
-		<h3><a href="EventList.php">Liste des évènements</a></h3>
+		<h3><a href="EvenementListe.php">Liste des évènements</a></h3>
 		
     </body>
 	
