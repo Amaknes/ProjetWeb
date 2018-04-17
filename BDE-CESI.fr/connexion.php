@@ -24,11 +24,11 @@
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
                             <h1>Connexion</h1>
                                 <p> 
-                                    <label for="Email" class="uname" data-icon="u" > Email : </label>
+                                    <label for="Email" class="uname"> Email : </label>
                                     <input id="Email" name="Email" required="required" type="text" placeholder="Email"/>
                                 </p>
                                 <p> 
-                                    <label for="Password" class="youpasswd" data-icon="p"> Mot de passe : </label>
+                                    <label for="Password" class="youpasswd"> Mot de passe : </label>
                                     <input id="Password" name="Password" required="required" type="password" placeholder="Password" /> 
                                 </p>
                             
