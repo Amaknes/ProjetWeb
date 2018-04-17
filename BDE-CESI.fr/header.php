@@ -10,12 +10,12 @@
 	<body>
 		<header>
 			<section id="top">
-				<div id="LogoBBE">
+				<div id="LogoBDE">
 					<a href="accueil.php"> <img class="LogoBDE" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
 				</div>
 
 				<div id="BDEHeader">
-					<a href="accueil.php"><span>BDE </span><span>CESI </span><span>Saint-Nazaire </span></a>
+					<a href="accueil.php"><h1><span>BDE </span><span>CESI </span><span>Saint-Nazaire </span></h1></a>
 				</div>
 			
 				<nav>
@@ -37,10 +37,6 @@
 					?>
 				</div>
 			</section>
-	
-				<div id="banniere">	
-					<h2> Site</h2>
-				</div>
-	
+
 		</header>
 	

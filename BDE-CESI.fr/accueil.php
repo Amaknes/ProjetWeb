@@ -9,9 +9,10 @@
  
  
 <content id="Accueil">
-	<div/>
-	<h2>voici mon accueil<h2>
-    </div>
+	<div id="banniere">	
+		<h2>Accueil</h2>
+	</div>
+	
 </content>
 
 		<?php include('footer.php'); ?>

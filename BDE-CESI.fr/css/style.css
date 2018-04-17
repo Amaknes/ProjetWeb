@@ -16,26 +16,33 @@ body {
 
 header{
 background-color: white;
-height: 332px;
+height: 250px;
 }
+
+#LogoBDE{
+	width: 15%;
+	height: 85%;
+	
+}
+
 .LogoBDE{
   border-width:0px;
   float: left;
   margin-top: 10px;
-  width:240px;
-  height:240px;
+  height: 100%;
 }
 
 
 .session {
 float: right;
+width: 15%;
 }
 .session a  {
 	display: block;
-	margin:10px;
+	margin:40px 5px;
 	text-decoration: none;
 	color: #000144;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .sessionsignup:after{
@@ -59,10 +66,9 @@ float: right;
 #BDEHeader{
 border-width: 0px;
 margin-top: 50px;
-    width: 600px;
+    width: 30%;
   /*  height: 67px;*/
-	font-size: 60px;
-  /*  font-weight: 30px;*/
+	font-size: 30px;
     font-style: normal;
     text-align: center;
 }
@@ -84,9 +90,13 @@ color : #343434;
 	height: 250px;
 }
 
+nav{
+width: 55%;	
+}
+
 nav a{
 display: inline-block;
-margin: 50px 60px;
+margin: 85px 60px;
 text-decoration: none;
 color: #000144;
 font-size: 25px;
@@ -119,13 +129,20 @@ font-size: 25px;
 
 
 
+
+
+
+/*_____________________________________________________________général________________________________________________________*/
+
+
+
 #banniere{
     border-width: 0px;
 	/*position: bottom;*/
     left: 0px;
     top: 250px;
     width: 100%;
-    height: 82px;
+    height: 80px;
     background: inherit;
     background-color: rgba(255, 255, 255, 1);
     box-sizing: border-box;
@@ -139,21 +156,19 @@ font-size: 25px;
     font-size: 42px;
     color: #B2030A;
     text-align: center;
-
 }
 
-#banniere p{
+#banniere h2{
 border-width: 0px;
-    position: absolute;
     left: 0px;
-    top: 300px;
-    width: 1920px;
-    height: 82px;
+	margin: 5px 0;
+    width: 100%;
     font-weight: 700;
     font-style: normal;
-    font-size: 42px;
+    font-size: 50px;
     color: #B2030A;
     text-align: center;
+	padding: 5px;
 }
 
 
@@ -163,26 +178,40 @@ border-width: 0px;
 
 footer {
 	display : table-row;
+	display : 75px;
 	width: 100%;
-	height:150px;
+	height:75px;
 	background-color: white;
-    position: absolute;
 	bottom: 0;
 }
+
+#bottom{
+display: flex;	
+justify-content: space-between;
+}
+	
+#LogoRetourAccueil{
+width: 10%;
+height: 50%;
+}
+
 .RetourAccueil{
 	padding : 5px;
-	float: left;
-	height: 8%;
-	width: 8%;
+	height: 100%;
+	width: 100%;
+}
+
+#TexteRetourAccueil{
+margin: auto;
 }
 
 #TexteRetourAccueil a{
-	display: inline-block;
-	float: left;
+	width: 40%;
 	text-decoration: none;
 	font-size: 300%;
-	padding: 1%;
+	padding: 0;
 	color: #B7030D;
+	
 }
 
 #TexteRetourAccueil span:first-child{
@@ -197,15 +226,15 @@ color : #343434;
 	position: right;
 /*float: right;*/
 	text-decoration:none;
+	margin: auto;
 }
 #contact a{
 /*display: inline-block;*/
 text-decoration:none;
+width: 30%;
+margin: 5px;
 }
-#content{
-width: 80%;
-display: inline-block;
-}
+
 #external-link {
 display: inline-block;
 }
@@ -257,14 +286,15 @@ content: "\E847";
 
 #MentionsLegales{
 font-size: 150%;
-float: right;
 bottom: 5%;
-padding-right: 100px;
-text-decoration: none; 
+text-decoration: none;
+width: 20%;
+	margin: auto;
 }
 
 #MentionsLegales a {
 text-decoration: none;
+color: #343434;
 }
 
 #FlecheHautDePage{
