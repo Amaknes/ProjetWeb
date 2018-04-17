@@ -551,6 +551,20 @@
       ]
     },
     {
+      "uid": "a6df3c02ac46c982f8a559a4eaf22d99",
+      "css": "right-open-2",
+      "code": 59471,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M98 224L324 460Q340 476 340 500 340 522 324 538L98 774Q82 790 58 790T18 774Q-18 738 18 694L204 500 18 304Q-18 260 18 224 34 208 59 208T98 224Z",
+        "width": 340
+      },
+      "search": [
+        "right-open-1"
+      ]
+    },
+    {
       "uid": "fde6e573d8c42de505dd7028cf5448cb",
       "css": "arrows-ccw",
       "code": 59392,
@@ -870,20 +884,6 @@
       },
       "search": [
         "left-open-1"
-      ]
-    },
-    {
-      "uid": "a6df3c02ac46c982f8a559a4eaf22d99",
-      "css": "right-open-1",
-      "code": 59416,
-      "src": "custom_icons",
-      "selected": false,
-      "svg": {
-        "path": "M98 224L324 460Q340 476 340 500 340 522 324 538L98 774Q82 790 58 790T18 774Q-18 738 18 694L204 500 18 304Q-18 260 18 224 34 208 59 208T98 224Z",
-        "width": 340
-      },
-      "search": [
-        "right-open-1"
       ]
     },
     {

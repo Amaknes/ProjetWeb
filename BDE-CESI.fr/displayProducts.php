@@ -39,28 +39,34 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	}
 	
 	
-	$ans = $requeteConnexion->fetch();
+	//$ans = $requeteConnexion->fetch();
 
-	/*
-	foreach ($answer as $ans){
-		for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
-		}
+	
+	foreach($requeteConnexion as $ans){
+		
+		echo("<div class='DisplayedProduct'>");
+		echo("<img src='".$ans[4]."' class='ProductPic' />");
+		echo("<p class='ProductName'> ".$ans[1]." </p>");
+		
+		
+
 	}
-	*/
+
+
+
+/*
+foreach( $images as $image ):
+    echo "<div class='displayprod'>
+	<img src='" . $image . "', class='prodpic' />
+		<div class='price'> 150€ </div>
+		<div class='description'> 
+			Foot control and protection with active comfort provided through a stable chassis ...
+		</div>
+	</div>";
+endforeach;
+*/
 	
-	
-	
-	/*
-	for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
-	
-	$ans = $requeteConnexion->fetch();
-	for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
-	}
-	*/
-		$requeteConnexion->closeCursor();
+	$requeteConnexion->closeCursor();
 	
 	var_dump($ans);
 
@@ -86,15 +92,4 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 
 
 
-/*
-foreach( $images as $image ):
-    echo "<div class='displayprod'>
-	<img src='" . $image . "', class='prodpic' />
-		<div class='price'> 150€ </div>
-		<div class='description'> 
-			Foot control and protection with active comfort provided through a stable chassis ...
-		</div>
-	</div>";
-endforeach;
-*/
 ?>
