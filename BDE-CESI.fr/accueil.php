@@ -6,10 +6,12 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-    <div>	
-			<h1>Accueil</h1>
+ 
+ 
+<content id="Accueil">
+	<div/>
 	<h2>voici mon accueil<h2>
     </div>
-	
+</content>
+
 		<?php include('footer.php'); ?>
-	

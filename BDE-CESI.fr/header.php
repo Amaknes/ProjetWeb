@@ -5,27 +5,43 @@
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/fonts.css"/>
+		<link rel="icon" type="image/png" href="Ressources/SiteImages/Site_Favicon4.png" />
     </head>
 	<body>
-    <header>
-		<img src="Ressources/SiteImages/Site_Banner.png">
-		<div>
-		<?php
-		if(isset($_SESSION['Nom'])){
-			echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
-			echo "<a href='deconnexion.php'>Déconnexion</a>";
-		}else{
-			echo "<a href='inscription.php'>Inscription</a>";
-			echo "<a href='connexion.php'>Connexion</a>";
-		}
-		?>
-		</div>
-		
+		<header>
 
+			<div class="session">
+
+				<?php
+					if(isset($_SESSION['Nom'])){
+						echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
+						echo "<a href='deconnexion.php'>Déconnexion</a>";
+					}else{
+						echo "<a class='test' href='inscription.php'>Inscription</a>";
+						echo "<a href='connexion.php'>Connexion</a>";
+					}
+				?>
+			</div>
 		
-			<?php include('nav.php');?>
-			<br>
+ 	
+			<div id="LogoBBE">
+				<a href="accueil.php"> <img class="LogoBDE" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
+			</div>
+			<nav>
+				<a class="accueilnav" href="accueil.php">Accueil</a>
+				<a class="evenementsnav" href="evenements.php">Événements</a>
+				<a class="boutiquenav" href="boutique.php">Boutique</a>
+			</nav>
+			<div id="BDEHeader">
+				<a href="accueil.php">BDE CESI Saint-Nazaire</a>
+			</div>
+	
 
 	
-    </header>
+			<div id="banniere">	
+				<h2> Site</h2>
+			</div>
+	
+	
+		</header>
 	

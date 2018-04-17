@@ -1,5 +1,5 @@
 html, body {
-	height: 1000px;
+	height: 100%;
 	margin: 0; padding: 0;
 }
 body {
@@ -8,31 +8,157 @@ body {
 	background-color: #D7D7D7;
 }
 
+
+
+
+/*Header*/
+
+header{
+background-color: white;
+height: 250px;
+}
+.LogoBDE{
+  border-width:0px;
+  float: left;
+  width:240px;
+  height:240px;
+}
+
+
+.session {
+float: right;
+}
+.session a  {
+	display: block;
+	margin:10px;
+}
+#BDEHeader{
+border-width: 0px;
+    position: absolute;
+    left: 250px;
+    top: 54px;
+    width: 582px;
+    height: 67px;
+    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+#BDEHeader a{
+	text-decoration: none;
+}
+
+nav a{
+display: inline-block;
+margin: 0 20px;
+text-decoration: none;
+}
+
+.accueilnav:before {
+	position: relative;
+	content:"\E84C";
+	font: 2em/40px 'fontello';
+	text-align: center;
+}
+.evenementsnav:before {
+	position: relative;
+	content:"\E84B";
+	font: 2em/40px 'fontello';
+	text-align: center;
+}
+.boutiquenav:before {
+	position: relative;
+	content:"\E843";
+	font: 2em/40px 'fontello';
+	text-align: center;
+}
+
+
+
+
+
+
+#banniere{
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 250px;
+    width: 1920px;
+    height: 82px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(178, 3, 10, 1);
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 42px;
+    color: #B2030A;
+    text-align: center;
+
+}
+
+#banniere p{
+border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 300px;
+    width: 1920px;
+    height: 82px;
+    font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 42px;
+    color: #B2030A;
+    text-align: center;
+}
+
+
+
+
 /*Footer*/
 
 footer {
 	display : table-row;
 	width: 100%;
-	height:100px;
+	height:150px;
 	background-color: white;
-    /*position: absolute;
-	bottom: 0;*/
+    position: absolute;
+	bottom: 0;
 }
 .RetourAccueil{
 	padding : 5px;
 	float: left;
-	height: 10%;
-	width: 10%;
+	height: 8%;
+	width: 8%;
 }
-#TexteRetourAccueil{
+
+#TexteRetourAccueil a{
+	display: inline-block;
+	float: left;
 	text-decoration: none;
+	font-family: bahnschrift, arial, trebuchet MS, verdana;
+	font-size: 300%;
+	padding: 1%;
+	
 }
 #contact{
-    width:100%;
+	display: inline-block;
+	position: right;
+/*float: right;*/
 	text-decoration:none;
 }
 #contact a{
+/*display: inline-block;*/
 text-decoration:none;
+}
+#content{
+width: 80%;
+display: inline-block;
 }
 #external-link {
 display: inline-block;
@@ -82,15 +208,20 @@ font: 2em/40px 'fontello';
 content: "\E847";
 }
 
+
 #MentionsLegales{
+font-family: bahnschrift, arial, trebuchet MS, verdana;
+font-size: 150%;
 float: right;
 bottom: 5%;
-padding-right: 50px;
+padding-right: 100px;
 text-decoration: none; 
 }
+
 #MentionsLegales a {
 text-decoration: none;
 }
+
 #FlecheHautDePage{
 	display: scroll;
 	position: fixed;
