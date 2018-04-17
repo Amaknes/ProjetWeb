@@ -14,9 +14,9 @@
 			
 	$ans = $requeteConnexion->fetch();
 	if(count($ans) == 1){
-		echo "<h1>PAS OK</h1>";
-		//$message = "<p class=\"red\">PAS OK.</p>";
-		echo $message;
+		echo "<h1>Echec de la connexion</h1>";
+		/*$message = "<p class=\"red\">PAS OK.</p>";
+		echo $message;*/
 		$requeteConnexion->closeCursor();
 	}else{
 			$_SESSION['Nom'] = $ans[1];

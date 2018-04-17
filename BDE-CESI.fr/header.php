@@ -46,12 +46,13 @@
 
 					<?php
 						if(isset($_SESSION['Nom'])){
-							echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
-							echo "<a class='sessionsignout' href='deconnexion.php'>Déconnexion</a>";
-						}else{
+							$sessionfinale= ($_SESSION['Prenom']." ".$_SESSION['Nom']);
+							echo "<p>$sessionfinale</p>";
+							echo "<a class='sessionsignout' href='deconnexion.php'>Déconnexion</a>";;
+					}else{
 							echo "<a class='sessionsignup' href='inscription.php'>Inscription</a>";
 							echo "<a class='sessionlogin' href='connexion.php'>Connexion</a>";
-						}
+					}
 					?>
 				</div>
 			</section>
