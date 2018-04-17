@@ -44,6 +44,13 @@ width: 15%;
 	color: #000144;
 	font-size: 30px;
 }
+.session p{
+	display: block;
+	margin:40px 5px;
+	text-decoration: none;
+	color: #000144;
+	font-size: 30px;	
+}
 
 .sessionsignup:after{
 	position: relative;
@@ -56,6 +63,22 @@ width: 15%;
 .sessionlogin:after{
 	position: relative;
 	content:"\E849";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+.sessionsignout:after{
+		position: relative;
+	content:"\E84A";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+.sessionlog:after{
+	position: relative;
+	content:"\E84A";
 	font: 2em/40px 'fontello';
 	text-align: center;
 	padding-left: 10px;
