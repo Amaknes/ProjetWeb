@@ -1,4 +1,4 @@
-#------------------------------------------------------------
+﻿#------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
 
@@ -47,19 +47,19 @@ CREATE TABLE `Products`(
 )ENGINE=InnoDB;
 
 INSERT INTO `Products` (`Name`, `Category`, `Price`, `UrlImage`) VALUES
-		('4L', 'Voiture', 1500, 'http://localhost/projetWEB/DataBase/Products/4L.jpg'),
-		('Blouson', 'Vêtements', 45, 'http://localhost/projetWEB/DataBase/Products/Blouson.png'),
-		('Polo', 'Vêtements', 20, 'http://localhost/projetWEB/DataBase/Products/Polo.jpg'),
-		('Sweat à capuche bleu et blanc', 'Vêtements', 37, 'http://localhost/projetWEB/DataBase/Products/Pull1_Blanc.png'),
-		('Sweat à capuche bleu et noir', 'Vêtements', 35, 'http://localhost/projetWEB/DataBase/Products/Pull2_Noir.png'),
-		('Sweat à capuche bleu et bleu marine', 'Vêtements', 32, 'http://localhost/projetWEB/DataBase/Products/Pull3_Bleu.png'),
-		('Sandwich Elior', 'Alimentaire', 13, 'http://localhost/projetWEB/DataBase/Products/SandwitchElior.png'),
-		('Sweat à capuche logo blanc', 'Vêtements', 30, 'http://localhost/projetWEB/DataBase/Products/Sweat1.jpg'),
-		('Sweat à capuche', 'Vêtements', 30, 'http://localhost/projetWEB/DataBase/Products/Sweat2.jpg'),
-		('T-shirt gris WEI 2K17', 'Vêtements', 14, 'http://localhost/projetWEB/DataBase/Products/TShirt_Gris.png'),
-		('T-shirt jaune WEI 2K17', 'Vêtements', 14, 'http://localhost/projetWEB/DataBase/Products/TShirt_Jaune.jpg'),
-		('T-shirt rouge WEI 2K17', 'Vêtements', 14, 'http://localhost/projetWEB/DataBase/Products/TShirt_Rouge.png'),
-		('Verre WEI 2K17', 'Accessoires', 2, 'http://localhost/projetWEB/DataBase/Products/Gobelet_BDE.png');
+		('4L', 'Voiture', 1500, 'Ressources/Products/4L.png'),
+		('Blouson', 'Vêtements', 45, 'Ressources/Products/Blouson.png'),
+		('Polo', 'Vêtements', 20, 'Ressources/Products/Polo.png'),
+		('Sweat à capuche bleu et blanc', 'Vêtements', 37, 'Ressources/Products/Pull1_Blanc.png'),
+		('Sweat à capuche bleu et noir', 'Vêtements', 35, 'Ressources/Products/Pull2_Noir.png'),
+		('Sweat à capuche bleu et bleu marine', 'Vêtements', 32, 'Ressources/Products/Pull3_Bleu.png'),
+		('Sandwich Elior', 'Alimentaire', 13, 'Ressources/Products/SandwitchElior.png'),
+		('Sweat à capuche logo blanc', 'Vêtements', 30, 'Ressources/Products/Sweat1.png'),
+		('Sweat à capuche', 'Vêtements', 30, 'Ressources/Products/Sweat2.png'),
+		('T-shirt gris WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Gris.png'),
+		('T-shirt jaune WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Jaune.png'),
+		('T-shirt rouge WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Rouge.png'),
+		('Verre WEI 2K17', 'Accessoires', 2, 'Ressources/Products/Gobelet_BDE.png');
 
 
 
@@ -92,10 +92,10 @@ CREATE TABLE `Events`(
 )ENGINE=InnoDB;
 
 INSERT INTO `Events` (`Name`, `EventDate`, `Price`, `UrlImage`, `Description`, `Selected`) VALUES
-		('Entreprendre pour apprendre', '2018-04-09', 0, 'http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/imageEvent.jpg', '« Un centre ville connecté au service du citoyen » ! Une belle thématique pour cette journée de créativité #innovepa en partenariat avec LA CPME Pays de la Loire La Carène Saint-Nazaire et agglomération et le Campus CESI Saint-Nazaire!', 1),
-		('Césiades', '2018-05-10', 95, 'http://localhost/projetWEB/DataBase/Events/Césiades/imageEvent.jpg', 'Les pré-inscriptions pour les cesiades sont bientôt terminées (plus de 20 préinscrits) !\r\n\r\nIl ne reste plus que quelques places, alors n’hésitez pas à vous inscrire !!!\r\n\r\nCeux déjà inscrits, pour clôturer la démarche, merci de ramener, la semaine prochaine, un chèque de 95€ à l’ordre du BDE CESI Saint-Nazaire.\r\n\r\nNous passerons dans les salles vous distribuez un papier récapitulant vos informations personnelles et pour récupérer les chèques.', 0),
-		('Western Party', '2018-02-07', 0, 'http://localhost/projetWEB/DataBase/Events/WesternParty/imageEvent.jpg', 'Préparez vos chapeaux pour demain... On vous amène un taureau mécanique à l\'intérieur du Bières et chopes Pornichet !\r\n\r\nEvidemment celui qui tiendra le plus longtemps gagnera un petit cadeau !\r\n\r\nUn lot sera remis au meilleur COWBOY !\r\n\r\nN\'oubliez pas de venir déguiser', 0),
-		('Babyfoot de fou avec Joris et Gaëlle', '2018-04-22', 58, 'http://localhost/projetWEB/DataBase/Events/Babyfoot/Main_Pic.jpg', 'Gros tournois de Babyfoot prévu à Polytech, une compétition très ardue incluant notamment des joueurs reconnus professionels depuis leurs victoires éclatantes aux championnats intercommunaux de 2012 sous la bannière de l\'équipe "Les Requins Marteaux". Merci de prévoir vos propres serviettes pour essuyer la transpiration sur les poignées.', 0);
+		('Entreprendre pour apprendre', '2018-04-09', 0, 'Ressources/Events/EntreprendrePourApprendre/Main_Pic.jpg', '« Un centre ville connecté au service du citoyen » ! Une belle thématique pour cette journée de créativité #innovepa en partenariat avec LA CPME Pays de la Loire La Carène Saint-Nazaire et agglomération et le Campus CESI Saint-Nazaire!', 1),
+		('Césiades', '2018-05-10', 95, 'Ressources/Events/Cesiades/Main_Pic.jpg', 'Les pré-inscriptions pour les cesiades sont bientôt terminées (plus de 20 préinscrits) !\r\n\r\nIl ne reste plus que quelques places, alors n’hésitez pas à vous inscrire !!!\r\n\r\nCeux déjà inscrits, pour clôturer la démarche, merci de ramener, la semaine prochaine, un chèque de 95€ à l’ordre du BDE CESI Saint-Nazaire.\r\n\r\nNous passerons dans les salles vous distribuez un papier récapitulant vos informations personnelles et pour récupérer les chèques.', 0),
+		('Western Party', '2018-02-07', 0, 'Ressources/Events/WesternParty/Main_Pic.jpg', 'Préparez vos chapeaux pour demain... On vous amène un taureau mécanique à l\'intérieur du Bières et chopes Pornichet !\r\n\r\nEvidemment celui qui tiendra le plus longtemps gagnera un petit cadeau !\r\n\r\nUn lot sera remis au meilleur COWBOY !\r\n\r\nN\'oubliez pas de venir déguiser', 0),
+		('Babyfoot de fou avec Joris et Gaëlle', '2018-04-22', 58, 'Ressources/Events/Babyfoot/Main_Pic.jpg', 'Gros tournois de Babyfoot prévu à Polytech, une compétition très ardue incluant notamment des joueurs reconnus professionels depuis leurs victoires éclatantes aux championnats intercommunaux de 2012 sous la bannière de l\'équipe "Les Requins Marteaux". Merci de prévoir vos propres serviettes pour essuyer la transpiration sur les poignées.', 0);
 
 
 #------------------------------------------------------------
@@ -112,13 +112,13 @@ CREATE TABLE `Pictures`(
 )ENGINE=InnoDB;
 
 INSERT INTO `Pictures` (`UrlImage`, `IDEvent`, `IDUser`) VALUES
-		('http://localhost/projetWEB/DataBase/Events/Western_Party/WesternParty(1).jpg', 3, 1),
-		('http://localhost/projetWEB/DataBase/Events/Western_Party/WesternParty(2).jpg', 3, 4),
-		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_1.jpg', 1, 3),
-		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_2.jpg', 1, 3),
-		('http://localhost/projetWEB/DataBase/Events/EntreprendrePourApprendre/Pic_3.jpg', 1, 3),
-		('http://localhost/projetWEB/DataBase/Events/Babyfoot/Pic_1.jpg', 4, 2),
-		('http://localhost/projetWEB/DataBase/Events/Babyfoot/Pic_2.jpg', 4, 2);
+		('Ressources/Events/WesternParty/Pic_1.jpg', 3, 1),
+		('Ressources/Events/WesternParty/Pic_2.jpg', 3, 4),
+		('Ressources/Events/EntreprendrePourApprendre/Pic_1.jpg', 1, 3),
+		('Ressources/Events/EntreprendrePourApprendre/Pic_2.jpg', 1, 3),
+		('Ressources/Events/EntreprendrePourApprendre/Pic_3.jpg', 1, 3),
+		('Ressources/Events/Babyfoot/Pic_1.jpg', 4, 2),
+		('Ressources/Events/Babyfoot/Pic_2.jpg', 4, 2);
 
 #------------------------------------------------------------
 # Table: Comments
@@ -148,7 +148,7 @@ CREATE TABLE `Ideas`(
 
 INSERT INTO `Ideas` (`Activity`, `IDUser`) VALUES
 		('On pourrait faire un tournoi de basket', 3),
-		('Une initiation au Quidditch', 4);
+		('Une initiation au Quidditch', 1);
 
 #------------------------------------------------------------
 # Table: Contain
@@ -177,7 +177,7 @@ CREATE TABLE `Participate`(
 # Table: Like
 #------------------------------------------------------------
 
-CREATE TABLE `Like`(
+CREATE TABLE `Like`(	
         IDUser    Int NOT NULL ,
         IDPicture Int NOT NULL ,
         PRIMARY KEY (IDUser ,IDPicture )
