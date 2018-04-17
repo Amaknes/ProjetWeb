@@ -12,16 +12,17 @@
 				
 		}
 			
-	$test = $requeteConnexion->fetch();
-	if(count($test) == 1){
+	$ans = $requeteConnexion->fetch();
+	if(count($ans) == 1){
 		echo "<h1>PAS OK</h1>";
 		//$message = "<p class=\"red\">PAS OK.</p>";
 		echo $message;
 		$requeteConnexion->closeCursor();
 	}else{ echo "<h1>OK</h1>";
-			$_SESSION['Nom'] = $test[1];
-			$_SESSION['Prenom'] = $test[2];
+			$_SESSION['Nom'] = $ans[1];
+			$_SESSION['Prenom'] = $ans[2];
 			$_SESSION['Email'] = $Email;
+			$_SESSION['Status'] = $ans[5];
 			echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
 	}
 	$requeteConnexion->closeCursor();

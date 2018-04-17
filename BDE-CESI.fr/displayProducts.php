@@ -6,7 +6,11 @@
 
  <?php
 
+<<<<<<< HEAD
+$dir = "Ressources/SiteImages/Products/*png";
+=======
 $dir = "Ressources/Products/*png";
+>>>>>>> b479d5e9a50f1a29b6b6956b1f633fd04d393e8b
 $images = glob( $dir );
 
 foreach( $images as $image ):

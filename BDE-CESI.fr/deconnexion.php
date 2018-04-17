@@ -10,5 +10,6 @@
 	unset($_SESSION['Nom']);
 	unset($_SESSION['Prenom']);
 	unset($_SESSION['Email']);
+	unset($_SESSION['Status']);
 	echo '<meta http-equiv="refresh" content="0;URL=accueil.php">' 
  ?>
