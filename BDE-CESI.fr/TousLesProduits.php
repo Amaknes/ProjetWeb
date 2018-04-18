@@ -9,6 +9,8 @@ function LaunchSearch() {
 	$Category = isset($_POST['Category']) ? $_POST['Category'] : "Tous les produits";
 	$MinPrice = isset($_POST['MinPrice']) ? $_POST['MinPrice'] : 0;
 	$MaxPrice = isset($_POST['MaxPrice']) ? $_POST['MaxPrice'] : 99999999999;
+	$C1=0;
+	$C2= 1;
 	
 	if ($Category == 'Tous les produits') {$Category = '%';} else {}
 	if ($MinPrice == '') {$MinPrice = 0;} else {}
@@ -34,12 +36,21 @@ function LaunchSearch() {
 
 	if ($requeteConnexion != null) {
 		foreach($requeteConnexion as $ans){
-
-			echo("<div id='".$ans[0]."' class='DisplayedProduct'>");
-			echo("<p class='ProductName'> ".$ans[1]." </p>");
-			echo("<img src='".$ans[4]."' class='ProductPic' />");
-			echo("<p class='Price'> ".$ans[3]." €</p>");
+		$C1++;
+		if($C1==1){
+			echo("<div class='Container' id='".$C2."'>");
+		}
+			echo("<div class='DisplayedProduct' id='".$ans[0]."'>");
+			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
+			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans[4]."' /></div>");
+			echo("<div class='Price'><p> ".$ans[3]." €</p></div></div>");
 			
+		if($C1==3){
+			echo("</div>");
+			$C1=0;
+			$C2++;
+		}
+	
 		}
 	}
 	
@@ -93,7 +104,7 @@ function LaunchSearch() {
 									
                                 </p>
 								
-								<p class="SearchButton">
+								<p id="boutonRechercher" class="SearchButton">
 									<input type="submit" value="Rechercher" />
 								</p>
                         </form>
@@ -114,9 +125,4 @@ function LaunchSearch() {
 	
 			<?php include('footer.php'); ?>
 
-
-	
-	
-	
-	
  
