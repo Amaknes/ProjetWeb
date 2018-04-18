@@ -13,7 +13,7 @@
 			
 			
 			<div id="FormNewProduit" class="NouveauProduitform form">
-                <form  method="post" action="scriptInscription.php" autocomplete="on">  
+                <form  method="post" action="scriptNouveauProduit.php" autocomplete="on">  
 						<p> 
 
                                     <label for="Name" class="uname" data-icon="u" >Produit</label>
@@ -29,7 +29,7 @@
                                     <label for="Price" class="uname" data-icon="u" >Prix</label>
 									<br/>
 
-                                    <input id="Price" name="Price" required="required" type="text" placeholder="Prix" />
+                                    <input id="Price" name="Price" required="required" type="text" placeholder="Prix						       €" />
 						</p>
 						<p> 
                                     <label for="UrlImage" class="uname" data-icon="u" >Image du produit</label>
