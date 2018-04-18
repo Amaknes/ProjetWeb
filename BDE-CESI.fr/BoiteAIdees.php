@@ -1,6 +1,7 @@
 
 	<?php session_start(); ?>
 	<head>
+	<link rel="stylesheet" href="css/BoiteAIdees.css"/>
 		<link rel="stylesheet" href="css/BoiteAIdees.css"/>
 		<script src="js/jQuery.js"></script>
 	</head>
@@ -64,14 +65,17 @@
 <content id="BoiteAIdees">
 	<div id="banniere">	
 		<h2>Boite à idées</h2>
+	</div>	
 	</div>
 
 	
 	<section id="sectionidees">
+
 		<?php if(isset($_SESSION['Status'])){
 			ShowForm();
 			ShowActivities();
 		} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>";} ?>
+
 	</section>
 </content>
 
