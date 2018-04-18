@@ -103,7 +103,9 @@ function LaunchSearch() {
 	
 	
             <div class="products">
+
             <?php LaunchSearch(); ?>
+
 			</div>
 	
 		<?php include('footer.php'); ?>
