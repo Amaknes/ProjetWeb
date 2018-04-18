@@ -1,6 +1,7 @@
 <?php session_start(); ?>
-<?php include('header.php'); ?>
 <link rel="stylesheet" href="css/caroussel.css"/>
+<?php include('header.php'); ?>
+
 <script type="text/javascript" src="js/Caroussel.js"></script>			
 	<!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
@@ -13,9 +14,9 @@
 		<h2>Accueil</h2>
 	</div>
 	
-	<div id="EventAccueil">
+	<div id="EventAccueil" class="AccueilCategorie">
 		
-		<div>
+		<div class="Ah3">
 			<h3>Événement à venir</h3>
 		</div>
 		<div>
@@ -23,10 +24,11 @@
 		</div>
 	</div>
 	
-	<div id="VentesAccueil">
+	
+	<div id="VentesAccueil" class="AccueilCategorie">
 		
-		<div>
-			<h3>Meilleures ventes</h3><!--caroussel-->
+		<div class="Ah3">
+			<h3>Meilleures ventes</h3><!--CAROUSSEL-->
 		</div>
 		
 		<!-- slideshow container -->
@@ -67,8 +69,8 @@
 	</div>
 	
 	
-	<div id="NousAccueil">
-		<div>
+	<div id="NousAccueil" class="AccueilCategorie">
+		<div class="Ah3">
 			<h3>Qui sommes-nous?</h3>
 		</div>
 		<div>
