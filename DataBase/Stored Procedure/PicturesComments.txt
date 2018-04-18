@@ -1,0 +1,15 @@
+
+SELECT IDComment, LastName, FirstName, Content
+FROM Users
+INNER JOIN
+(
+SELECT IDComment, Content
+FROM Comments
+INNER JOIN Pictures
+ON Pictures.IDPicture = Comments.IDPicture
+WHERE IDPicture = ? AND CommentFlag = false
+)
+
+temptable
+
+ON Users.IDUser = temptable.IDUser
