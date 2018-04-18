@@ -3,6 +3,7 @@
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 			$Email = $_POST['Email'];
+			$EmailConfirm = $_POST['EmailConfirm'];
 			$Password = $_POST['Password'];
 			$FirstName = $_POST['Prenom'];
 			$LastName = $_POST['Nom'];
@@ -22,8 +23,15 @@
 							echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
 						}
 						else{
-							echo 'Mot de passe conforme';
-						
+							if ( $_POST['EmailConfirm'] != $_POST['Email'] ){
+								echo"<script>";
+								echo"alert('Les deux Email sont différents')";
+								echo"</script>";
+								echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
+							}
+							else{
+								echo 'Mot de passe conforme';
+							
 								//if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $Email)) {
 								if (preg_match('#^[\w.-]+@(cesi.fr|viacesi.fr)$#i', $Email)) //Accepte uniquement les addresses finissant par cesi.fr ou viacesi.fr
 								{  
@@ -56,6 +64,7 @@
 									echo"</script>";
 									echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
 									}
+								}
 						}
 					
 					}

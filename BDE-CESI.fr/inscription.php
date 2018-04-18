@@ -37,6 +37,12 @@
 
                                     <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
+						<p> 
+                                    <label for="usernamesignupConfirm" class="uname" data-icon="u" >Confirmation de l'Email</label>
+									<br/>
+
+                                    <input id="EmailConfirm" name="EmailConfirm" required="required" type="text" placeholder="exemple@viacesi.fr" />
+						</p>
                         
 						<p> 
 
@@ -55,7 +61,7 @@
 						</p>
                                 
 						<p> 
-                            <button id="signupbutton" type="submit">S'inscrire</button> 
+                            <button class="loginscrcon" id="signupbutton" type="submit">S'inscrire</button> 
 						</p>
 						<p class="change_link">  
                                     Déjà inscrit ?

@@ -240,7 +240,9 @@ background-color: #FFFFFF;
 
 /*_____________________________________________________________général________________________________________________________*/
 
-
+#connexion{
+	min-height:400px;
+}
 
 #banniere{
     border-width: 0px;
@@ -265,7 +267,7 @@ background-color: #FFFFFF;
 }
 
 #banniere h2{
-border-width: 0px;
+	border-width: 0px;
     left: 0px;
 	margin: 5px 0;
     width: 100%;
@@ -280,7 +282,14 @@ border-width: 0px;
 /*____________________________________________________Inscription___________________________________________*/
 
 #register{
-	text-align:center;
+	text-align: center;
+}
+
+#register form{
+	width: 400px;
+    display: inline-block;
+    margin: 20px 0px;
+    background: #E2E2E2;
 }
 
 
@@ -299,28 +308,99 @@ border-width: 0px;
     
 }
 
-#signupbutton{
+/*#signupbutton{
     
 	width:200px;
-    height:30px;    
+    height:40px;    
     border-radius:5px;
-    color:#E9EBEF;
     font-size:18px;
 	color:white;
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	
+	font-style:bold;
+    
+  }*/
+
+  #signupbutton:after{
+	position: relative;
+	content:"\F234";
+	font: 1.5em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #FFFFFF;
+}
+
+  
+/*____________________________________________________Connexion___________________________________________*/
+
+/*.sectionconnexion{
+min-height: 500px;
+}	*/
+
+.animateform{
+margin-top: 100px;
+margin-bottom: 100px;
+}
+
+#login{
+	text-align: center;
+}
+
+#login form{
+	width: 400px;
+    display: inline-block;
+    margin: 20px 0px;
+    background: #E2E2E2;
+}
+
+#login input{
+	width:300px;
+	height:20px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+}
+  #loginbutton:after{
+	position: relative;
+	content:"\E849";
+	font: 1.5em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #FFFFFF;
+}
+
+.loginscrcon{							/*_____loginscrcon = class des boutons inscription et connexion______*/
+    
+	width:200px;
+    height:40px;    
+    border-radius:5px;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
     
   }
-
-
+  .loginscrcon:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+  
 /*____________________________________________________Footer___________________________________________*/
 
 footer {
 	width: 100%;
 	background-color: white;
-	bottom: 0;
+	/*bottom: 0;*/
+	position: absolute;
+	
 }
 
 #bottom{

@@ -11,29 +11,29 @@
 		<?php include('header.php'); ?>
 	
 	
-    <head>
-        <title>BDE CESI EXIA St Nazaire</title>
-    </head>
-	
-	
     <body>
-            
-            <section>
-				<div id="connexion">
-                    <div id="login" class="animate form">
+        <div id="connexion">
+			<div id="banniere">	
+				<h2>Connexion</h2>
+			</div>
+            <section class="sectionconnexion">
+				
+                    <div id="login" class="animateform">
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
-                            <h1>Connexion</h1>
+                           
                                 <p> 
-                                    <label for="Email" class="uname"> Email : </label>
-                                    <input id="Email" name="Email" required="required" type="text" placeholder="Email"/>
+                                    <label for="Email" class="uname"> Email</label>
+									<br/>
+                                    <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr"/>
                                 </p>
                                 <p> 
-                                    <label for="Password" class="youpasswd"> Mot de passe : </label>
-                                    <input id="Password" name="Password" required="required" type="password" placeholder="Password" /> 
+                                    <label for="Password" class="youpasswd"> Mot de passe</label>
+									<br/>
+                                    <input id="Password" name="Password" required="required" type="password" placeholder="Saisissez votre mot de passe" /> 
                                 </p>
                             
-                                <p class="login button"> 
-                                    <input type="submit" value="Connexion" /> 
+                                <p> 
+                                    <button class="loginscrcon" id="loginbutton" type="submit">Se connecter</button> 
                                 </p>
                                 <p class="change_link">
                                     Pas encore inscrit ?
@@ -41,10 +41,10 @@
                                 </p>
                         </form>
                     </div>                       
-                </div> 
+                
             </section>
 
-        
+        </div>
     </div>
 
     </body>
