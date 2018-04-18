@@ -1,5 +1,8 @@
  <?php session_start(); ?>
 		<?php include('header.php'); ?>
+	<head>
+		<link rel="stylesheet" href="css/AccueilEvenements.css"/>
+	</head>
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
  Date : 2018
@@ -9,8 +12,10 @@
 	
     <content id="Evenements">
 		<div id="banniere">	
-			<h2>Évènement du mois</h2>
+			<h2>Événements</h2>
 		</div>
+		<div class="monthevent">
+			<h3>Événement du mois</h3>
 			<?php
 				$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 				$requete = $bdd->prepare("SELECT * FROM Events WHERE Selected = true");
@@ -20,13 +25,23 @@
 					echo "<h1>PAS OK</h1>";
 				}else{  
 					echo '<div href ="EvenementUnique.php?id='.$ans[0].'">';
-					echo "<p class='EventTitle'>".$ans[1]."</p>";
 					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
-					echo "<p class='EventText'>".$ans[5]."</p>";
+					echo "<p class='EventTitle'>".$ans[1]."</p>";
+					/*echo "<p class='EventText'>".$ans[5]."</p>";*/
 					echo "</div>";
 				}
 			?>
-		
+		</div>
+		<div id="eventclick">
+			<a id="allevents" href="EvenementListe.php">
+				<h3>Tous les événements</h3>
+				<p></p>
+			</a>
+			<a id="proposeevent" href="BoiteAIdees.php">
+				<h3>Proposer un événement</h3>
+				<p></p>
+			</a>
+		</div>
     </content>
 	
 	<?php include('footer.php'); ?>
