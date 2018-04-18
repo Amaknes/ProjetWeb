@@ -37,6 +37,12 @@
 
                                     <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
+						<p> 
+                                    <label for="usernamesignupConfirm" class="uname" data-icon="u" >Confirmation de l'Email</label>
+									<br/>
+
+                                    <input id="EmailConfirm" name="EmailConfirm" required="required" type="text" placeholder="exemple@viacesi.fr" />
+						</p>
                         
 						<p> 
 
