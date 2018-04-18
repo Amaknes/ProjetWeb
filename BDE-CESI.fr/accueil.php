@@ -24,8 +24,10 @@
 		</div>
 	</div>
 	
-
-	<div id="VentesAccueil">
+	<div id="VentesAccueil" class="AccueilCategorie">
+		<div class="Ah3">
+			<h3>Meilleures ventes</h3>
+		</div>
 		<?php include("meilleuresVentes.php"); ?>
 
 	</div>
@@ -38,7 +40,7 @@
 		<div>
 			<img id="bde_img" class="img" src="Ressources/SiteImages/BDE.png">
 		</div>
-				<p>Martine Durand, Jacquie Michel, Flavien Spataro, Judith Felix, Paul Berger</p>
+			<p>Martine Durand, Jacquie Michel, Flavien Spataro, Judith Felix, Paul Berger</p>
 	</div>	
 	
 </content>
