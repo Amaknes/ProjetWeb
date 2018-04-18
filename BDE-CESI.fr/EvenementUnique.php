@@ -43,13 +43,26 @@
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
-				$requete3 = $bdd->prepare("SELECT IDComment,Content,LastName,FirstName FROM Comments INNER JOIN Users ON Users.IDUser = Comments.IDUser  WHERE IDPicture = ? AND CommentFlage = false");
+				$requete3 = $bdd->prepare("
+					SELECT IDComment, LastName, FirstName, Content
+					FROM Users
+					INNER JOIN
+					(
+					SELECT Comments.IDUser, IDComment, Content
+					FROM Comments
+					INNER JOIN Pictures
+					ON Pictures.IDPicture = Comments.IDPicture
+					WHERE Pictures.IDPicture = ? AND CommentFlag = false
+					)	temptable
+					ON Users.IDUser = temptable.IDUser");
+					
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
 				
 				foreach($requete3 as $row2){
-					echo "<p class='CommentName'>".$row2[3]." ".$row2[2]."</p>";
-					echo "<p class='CommentContent'>".$row2[1]."</p>";
+					var_dump($row2);
+					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
+					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == 2||3)
 					{echo "<button>Signaler comme inapproprié</button>";}

@@ -17,9 +17,9 @@ CREATE TABLE `Users`(
         IDUser    int (11) Auto_increment  NOT NULL ,
         LastName  Varchar (50) NOT NULL ,
         FirstName Varchar (50) NOT NULL ,
-        Email     Varchar (100) NOT NULL ,
+        Email     Varchar (100) NOT NULL UNIQUE,
         Password  Varchar (255) NOT NULL ,
-        Status    Int NOT NULL DEFAULT 0,
+        Status    Int NOT NULL DEFAULT 1,
         PRIMARY KEY (IDUser )
 )ENGINE=InnoDB;
 
@@ -31,7 +31,10 @@ INSERT INTO `Users` (`LastName`, `FirstName`, `Email`, `Password`, `Status`) VAL
 		('Gallet', 'Jeremy', 'jgallet@cesi.fr', 'Mespetitspoulets44600', 2),
 		('Van damme', 'Jean-Claude', 'jcvd@cesi.fr', 'AZERTY123', 1),
 		('Schwarzy', 'Arnold', 'iwillbeback@cesi.fr', 'SARAHCONNOR1984', 1),
-		('Potter', 'Harry', 'harry.potter@cesi.fr', 'AVADAKEDAVRA666', 1);
+		('Potter', 'Harry', 'harry.potter@cesi.fr', 'AVADAKEDAVRA666', 1),
+		('Etudiant', 'CESI', 'etudiant@cesi.fr', 'Etudiant123456', 1),
+		('Salarie', 'CESI', 'cesi@cesi.fr', 'Salarie123456', 2),
+		('BDE', 'CESI', 'bde@cesi.fr', 'Bde123456', 3);
 
 
 
@@ -41,10 +44,10 @@ INSERT INTO `Users` (`LastName`, `FirstName`, `Email`, `Password`, `Status`) VAL
 
 CREATE TABLE `Products`(
         IDProduct int (11) Auto_increment  NOT NULL ,
-        Name      Varchar (50) NOT NULL ,
+        Name      Varchar (50) NOT NULL,
         Category  Varchar (50) NOT NULL DEFAULT 'Others',
         Price     Int NOT NULL DEFAULT 0,
-        UrlImage  Varchar (200) NOT NULL ,
+        UrlImage  Varchar (200) NOT NULL,
         PRIMARY KEY (IDProduct )
 )ENGINE=InnoDB;
 
@@ -91,7 +94,7 @@ INSERT INTO `Orders` (`OrderDate`, `Status`,`IDUser`) VALUES
 
 CREATE TABLE `Events`(
         IDEvent     int (11) Auto_increment  NOT NULL ,
-        Name        Varchar (50) NOT NULL ,
+        Name        Varchar (50) NOT NULL,
         EventDate   Date ,
         Price       Int NOT NULL DEFAULT 0,
         UrlImage    Varchar (200) ,
@@ -113,7 +116,7 @@ INSERT INTO `Events` (`Name`, `EventDate`, `Price`, `UrlImage`, `Description`, `
 
 CREATE TABLE `Pictures`(
         IDPicture int (11) Auto_increment  NOT NULL ,
-        UrlImage  Varchar (200) NOT NULL ,
+        UrlImage  Varchar (200) NOT NULL UNIQUE,
         PicFlag   Bool NOT NULL DEFAULT 0,
         IDEvent   Int NOT NULL ,
         IDUser    Int NOT NULL ,
@@ -141,6 +144,10 @@ CREATE TABLE `Comments`(
         IDUser      Int NOT NULL ,
         PRIMARY KEY (IDComment )
 )ENGINE=InnoDB;
+
+INSERT INTO `Comments` (`Content`, `CommentFlag`, `IDPicture`, `IDUser`) VALUES
+		("Quelqu'un connait le modèle de l'écharpe noire et blanche de Mr Poulot? Je la trouve super stylée et j'aimerais bien avoir la même !", 0, 2, 2),
+		("Je l'ai aperçue a Desigual il y a quelques jours, vas voir si c'est la même ;)", 0, 2, 5);
 
 
 #------------------------------------------------------------
