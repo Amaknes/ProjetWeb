@@ -25,14 +25,14 @@
 						</li>
 						<li> <a class="evenementsnav" href="evenements.php">Événements</a>
 							<ul class="submenu">
-								<li><a href="evenements.php">Accueil événements</a></li>
+								<li><a href="AccueilEvenements.php">Accueil événements</a></li>
 								<li><a href="EvenementListe.php">Tous les événements</a></li>
 								<li><a href="BoiteAIdee.php">Propositions d'activités</a></li>
 							</ul>
 						</li>
 						<li> <a class="boutiquenav" href="AccueilBoutique.php">Boutique</a>
 							<ul class="submenu">
-								<li><a href="AccueilBoutique.php">Accueil Boutique</a></li>
+								<li><a href="AccueilBoutique.php">Accueil boutique</a></li>
 								<li><a href="TousLesProduits.php">Tous les produits</a></li>
 								<li><a href="Panier.php">Mon panier</a></li>
 							</ul>
