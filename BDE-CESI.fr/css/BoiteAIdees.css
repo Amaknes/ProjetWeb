@@ -1,0 +1,20 @@
+#sectionboiteaidees{
+	text-align:center;
+}
+
+.proposition{
+	text-align:center;
+	background:#E2E2E2;
+	margin: 5px 20%;
+}
+
+input{
+	width:80%;
+	height:100px;
+    margin:5px 0;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+}
