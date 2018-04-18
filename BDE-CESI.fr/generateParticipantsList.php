@@ -1,33 +1,50 @@
 <?php
 
 	$IDEvent = $_GET['id'];
+	$FileName = "Liste_des_participants.csv";
 	
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
-	$requeteConnexion = $bdd->prepare("SELECT * FROM users WHERE Email=? AND Password=?");
-	$requeteConnexion->execute(array($Email,$Password));
+	$getList = $bdd->prepare("SELECT FirstName,LastName
+		FROM Users
+		INNER JOIN Participate
+		ON Users.IDUser = Participate.IDUser
+		INNER JOIN Events
+		ON Events.IDEvent = Participate.IDEvent
+		WHERE Events.IDEvent = ?");
+		
+	$getList->execute(array($IDEvent));
 				
 				
-		if(!$requeteConnexion->execute()){
-			print_r($requeteConnexion->errorInfo());
-				
-		}
-			
-	$ans = $requeteConnexion->fetch();
-	if(count($ans) == 1){
-		echo"<script>";
-		echo"alert('Echec de la connexion, veuillez vérifier votre Email ou votre mot de passe')";
-		echo"</script>";
-		echo '<meta http-equiv="refresh" content="0;URL=connexion.php">';
-		/*$message = "<p class=\"red\">PAS OK.</p>";
-		echo $message;*/
-		$requeteConnexion->closeCursor();
-	}else{
-			$_SESSION['Nom'] = $ans[1];
-			$_SESSION['Prenom'] = $ans[2];
-			$_SESSION['Email'] = $Email;
-			$_SESSION['Status'] = $ans[5];
-			echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
+	if(!$getList->execute()){
+		print_r($getList->errorInfo());
 	}
-	$requeteConnexion->closeCursor();
-			
+
+	$List = fopen($FileName, "w") or die("Impossible d'ouvrir le fichier!");
+	
+	fwrite($List,"Prenom;Nom\n");
+	
+	foreach($getList as $ans){
+		
+		var_dump($ans);
+		
+		fwrite($List,$ans[0].";".$ans[1]."\n");
+		
+	}
+	
+	$getList->closeCursor();
+	
+	if (file_exists($FileName)) {
+		header('Content-Description: File Transfer');
+		header('Content-Type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="'.basename($List).'"');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header('Content-Length: ' . filesize($List));
+		readfile($List);
+		exit;
+	}
+	
+	fclose($List);
+	unlink($FileName);
 ?>
