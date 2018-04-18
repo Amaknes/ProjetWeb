@@ -23,7 +23,7 @@
 					<ul>
 						<li> <a class="accueilnav" href="accueil.php">Accueil</a>
 						</li>
-						<li> <a class="evenementsnav" href="evenements.php">Événements</a>
+						<li> <a class="evenementsnav" href="AccueilEvenements.php">Événements</a>
 							<ul class="submenu">
 								<li><a href="AccueilEvenements.php">Accueil événements</a></li>
 								<li><a href="EvenementListe.php">Tous les événements</a></li>
