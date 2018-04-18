@@ -37,3 +37,63 @@ textarea{
 	background: #f18186;
 	color: #FFFFFF;
 }
+
+.ideavote{
+	background:#E2E2E2;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+h3{
+	text-align:center;
+}
+
+.IdeeName{
+	width:250px;
+    height:25px;    
+    border-radius:5px;
+    font-size:20px;
+	color:white;
+	text-align:center;
+    background:#000144;
+    border:none;
+	font-style:bold;
+	padding-top:5px;
+	margin-left:20px;
+	margin-bottom:5px;
+	margin-top:2px;
+}
+
+.IdeeContent{
+	margin:0 10px;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:20px;
+}
+
+.vote{
+	text-align:center;
+	background:white;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+button{
+	width:20%;
+    height:40px;    
+    border-radius:5px;
+    font-size:15px;
+	color:white;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+	margin-left:10px;
+	margin-top:5px;
+}
+
+button:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
