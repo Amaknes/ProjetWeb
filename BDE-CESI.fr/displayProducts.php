@@ -23,8 +23,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	$MaxPrice = $MaxPrice=='' ? $_POST['MaxPrice'] : '99999999999';
 	*/
 	
-	var_dump($Name);
-	var_dump($Category);
+	/*var_dump($Name);
+	var_dump($Category);*/
 	
 	/*
 	var_dump($MinPrice);
