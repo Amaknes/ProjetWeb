@@ -39,7 +39,7 @@
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
-			
+				echo "<a href='scriptLike.php?id=".$row[0]."'>Like</a>";
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
