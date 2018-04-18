@@ -7,6 +7,8 @@ DROP DATABASE IF EXISTS `projetweb`;
 
 CREATE DATABASE `projetweb`;
 
+USE `projetweb`;
+
 #------------------------------------------------------------
 # Table: Users
 #------------------------------------------------------------
