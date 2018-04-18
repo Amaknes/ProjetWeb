@@ -49,11 +49,7 @@
 									$_SESSION['Prenom'] = $FirstName;
 									$_SESSION['Email'] = $Email;
 									$_SESSION['Status'] = 1;
-									/*echo $LastName;
-									echo $FirstName;
-									echo $Email;
-									echo $Password;
-									echo $PasswordConfirm;*/
+									
 						
 									echo '<meta http-equiv="refresh" content="0;URL=accueil.php">';
 					
@@ -69,16 +65,15 @@
 					
 					}
 					else{ 
-					//echo "pb";
+					
 
 					echo"<script>";
 					echo"alert('Votre mot de passe nest pas conforme')";
 					echo"</script>";
 					echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
-					//echo 'Mot de passe non conforme';
+					
 
 					} 	
 			}
-			//echo $Email;
-			//else echo "<h1>WHY IS THE FBI HERE ?!</h1>";	
+			
 ?>
