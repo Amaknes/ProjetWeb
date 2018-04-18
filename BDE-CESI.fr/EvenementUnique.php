@@ -30,7 +30,7 @@
 			$requete2->execute();
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
-				if($_SESSION['Status']==2) echo "<a href='scriptSignalement.php?type='Pic'&id=".$row[0]."'>Signaler comme inapproprié</a>";
+				if($_SESSION['Status']==2) echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
