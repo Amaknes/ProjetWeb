@@ -1,0 +1,20 @@
+SELECT FirstName,LastName
+FROM Users
+INNER JOIN
+(
+SELECT Participate.IDUser
+FROM Participate
+INNER JOIN Events
+ON Participate.IDEvent = Events.IDEvent
+WHERE Events.IDEvent = ?
+)	temptable
+ON Users.IDUser = temptable.IDUser
+
+SELECT FirstName,LastName
+FROM Users
+INNER JOIN Participate
+ON Users.IDUser = Participate.IDUser
+INNER JOIN Events
+ON Events.IDEvent = Participate.IDEvent
+WHERE Events.IDEvent = 1
+
