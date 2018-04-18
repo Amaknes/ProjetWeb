@@ -293,7 +293,29 @@ background-color: #FFFFFF;
     color: #B2030A;
 	text-align: center;
 }
-
+#BoutiqueAjoutProduit{
+	text-align:center;
+width: 30%;
+height:100px;
+}
+.NouveauProduit:after{
+	position: relative;
+	content:"\E821";
+	font: 1.3em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #B2030A;
+}
+.NouveauProduit{
+	text-align: center;
+    font-weight: 300;
+    font-size: 36px;
+    color: #B2030A;
+	text-decoration: none;
+	position: relative;
+	right: 0;
+	height: 50%;
+}
 
 /*_____________________________________________________________________________________________________TousLesProduits_____________________________________________________________________________________________________________*/
 
