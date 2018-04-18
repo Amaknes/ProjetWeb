@@ -306,14 +306,70 @@ background-color: #FFFFFF;
 	text-align: center;
 	padding: 40px
 }
-#search form{
-	width: 400px;
-    display: inline-block;
-    margin: 20px 0px;
-    background: #E2E2E2;
-}
-	
 
+#Recherche{
+    background-color: rgba(228, 228, 228, 1);
+}
+#Recherche input{
+    margin:5px 0;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+}
+#Recherche #boutonRechercher{
+ 
+    border-radius:5px;
+    font-size:18px;
+	color:#B2030A;
+    letter-spacing:2px;
+    background: rgba(228, 228, 228, 1);
+    border:none;
+	font-style:bold;
+  }
+  
+  
+#TousLesProduits .DisplayedProduct{
+background-color: rgba(228, 228, 228, 1);
+	border: 1px navy solid;
+	flex-basis: 20%;
+	padding: 5px;
+}
+
+#TousLesProduits .Container{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: line;
+
+}
+#TousLesProduits #imgproduit {
+height:75%;
+width:auto;
+}         
+#TousLesProduits #imgproduit img{
+width:100%;	
+height:auto;
+}
+#TousLesProduits .Price{
+bottom: 5px;
+}	
+
+/*#TousLesProduits #products{
+	display: flex;
+	weight: 100%;
+	height: auto;
+	justify-content: space-between;
+}*/
+
+
+  
+  
+  
+  
+  
+  
 /*_______________________________________________________________________________________________________Inscription_______________________________________________________________________________________________________________*/
 
 #register{
