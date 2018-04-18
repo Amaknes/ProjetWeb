@@ -15,8 +15,11 @@
 		<div id="banniere">	
 			<h2>Accueil boutique</h2>
 		</div>
+			<div class="ABh3">
+				<h3>Meilleures Ventes</h3>
+			</div>
 			<div id="Meilleures Ventes">
-				<h1>Meilleures Ventes</h1>
+
 					<?php
 						include("meilleuresVentes.php");
 					?>
