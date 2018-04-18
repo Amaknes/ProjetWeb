@@ -33,7 +33,7 @@
                                 </p>
                             
                                 <p> 
-                                    <button id="loginbutton" type="submit">Se connecter</button> 
+                                    <button class="loginscrcon" id="loginbutton" type="submit">Se connecter</button> 
                                 </p>
                                 <p class="change_link">
                                     Pas encore inscrit ?

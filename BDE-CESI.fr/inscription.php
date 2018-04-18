@@ -55,7 +55,7 @@
 						</p>
                                 
 						<p> 
-                            <button id="signupbutton" type="submit">S'inscrire</button> 
+                            <button class="loginscrcon" id="signupbutton" type="submit">S'inscrire</button> 
 						</p>
 						<p class="change_link">  
                                     Déjà inscrit ?

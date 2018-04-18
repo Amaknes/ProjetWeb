@@ -308,7 +308,7 @@ background-color: #FFFFFF;
     
 }
 
-#signupbutton{
+/*#signupbutton{
     
 	width:200px;
     height:40px;    
@@ -320,8 +320,18 @@ background-color: #FFFFFF;
     border:none;
 	font-style:bold;
     
-  }
+  }*/
 
+  #signupbutton:after{
+	position: relative;
+	content:"\F234";
+	font: 1.5em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #FFFFFF;
+}
+
+  
 /*____________________________________________________Connexion___________________________________________*/
 
 #login{
@@ -351,7 +361,7 @@ background-color: #FFFFFF;
     
 }
 
-#loginbutton{
+.loginscrcon{							/*_____loginscrcon = class des boutons inscription et connexion______*/
     
 	width:200px;
     height:40px;    
@@ -364,7 +374,10 @@ background-color: #FFFFFF;
 	font-style:bold;
     
   }
-  
+  .loginscrcon:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
   
 /*____________________________________________________Footer___________________________________________*/
 
