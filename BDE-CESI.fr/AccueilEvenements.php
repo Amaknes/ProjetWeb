@@ -1,7 +1,7 @@
  <?php session_start(); ?>
 		<?php include('header.php'); ?>
 	<head>
-		<link rel="stylesheet" href="css/AccueilEvenements.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 	</head>
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
