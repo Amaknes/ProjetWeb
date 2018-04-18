@@ -386,16 +386,16 @@ height:auto;
   
 #FormNewProduit{
 	text-align: center;
+    margin: 0px 20px;
 }
 
 #FormNewProduit form{
-	width: 400px;
+	min-height: 250px;
+	margin:50px;
+	width: 25%;
     display: inline-block;
-    margin: 40px 0px;
     background: #E2E2E2;
 }
-
-
 
 #FormNewProduit input{
 	width:300px;
@@ -408,8 +408,8 @@ height:auto;
     border-radius:5px;
     font-size:15px;
     letter-spacing:2px;
-    
 }
+
 #BoutonAjoutProduit:after{
 	position: relative;
 	content:"\E821";
@@ -424,12 +424,11 @@ height:auto;
     border-radius:5px;
     font-size:18px;
 	color:white;
-    letter-spacing:2px;
     background:#B2030A;
     border:none;
 	font-style:bold;
-    
   }
+  
   .BoutonAjoutProduit:active{  
 	background: #f18186;
 	color: #FFFFFF;
