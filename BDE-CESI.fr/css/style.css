@@ -331,6 +331,9 @@ background-color: #FFFFFF;
 	color: #FFFFFF;
 }
 
+.uname, .youpasswd{
+	font-size:20px;
+}
   
 /*____________________________________________________Connexion___________________________________________*/
 

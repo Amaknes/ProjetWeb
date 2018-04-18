@@ -1,4 +1,7 @@
-<!DOCTYPE HTML>
+
+	<?php session_start(); ?>
+	<?php include('header.php'); ?>
+	
 
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
@@ -6,25 +9,20 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
  
-<html>
-	<?php 
-		session_start(); 
-		include('header.php'); 
-	?>
 	
-	
-    <head>
-        <title>BDE CESI EXIA St Nazaire</title>
+<content id="BoiteAIdees">
+	<div id="banniere">	
 		<h2>Boite a Idées</h2>
-    </head>
+	</div>	
+
 	
 	
-    <body>
+
 		<h3>Proposer une idée</h3>
-		<?phpif(isset($_SESSION['Status']))echo"<p>Vous devez être connectés pour pouvoir participer ou proposer une idée</p>";?>
+<?php if(isset($_SESSION['Status'])){} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>"; } ?>
 		
 						<p> 
-                                    <label for="Activity" class="Activity">Activité </label>
+                                    <label for="Activity" class="Activity">Activité</label>
                                     <input id="Activity" name="Activity" required="required" type="Activity" placeholder="Décrivez votre activité"/>
 						</p>
                                 
@@ -38,16 +36,18 @@
 			$requete->execute();
 			foreach($requete as $ans){
 				echo '<div>';
-					echo "<p class='IdeeName'>"+$ans[2]+" "+$ans[1]+"</p>";
-					echo "<p class='IdeeContent'>"$ans[0]"</p>";
-					if(isset($_SESSION['Status']))echo "<button>Voter pour cette idée</button>";
-					if($_SESSION['Status']=2)echo "<button>Signaler comme inapproprié</button>";
-					if($_SESSION['Status']=3)echo "<button>Créer un événement</button>";
+					echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
+					echo "<p class='IdeeContent'>".$ans[0]."</p>";
+					if(isset($_SESSION['Status'])){ 
+						echo "<button>Voter pour cette idée</button>";
+						if($_SESSION['Status']==2) echo "<button>Signaler comme inapproprié</button>";
+						if($_SESSION['Status']==3) echo "<button>Créer un événement</button>";
+					}
 				echo "</div>";
+			}
 		?>
-		
-    </body>
-	
+
+</content>
+
 	<?php include('footer.php'); ?>
 	
-</html>
