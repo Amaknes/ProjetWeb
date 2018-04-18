@@ -34,12 +34,15 @@
 		<h3>Idées</h3>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-			$requete = $bdd->prepare("SELECT * FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE PicFlag=false");
+			$requete = $bdd->prepare("SELECT Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
 			$requete->execute();
 			foreach($requete as $ans){
 				echo '<div>';
-					echo "<p class='IdeeName'>""</p>";
-					echo "<p class='IdeeContent'>" "</p>";
+					echo "<p class='IdeeName'>"+$ans[2]+" "+$ans[1]+"</p>";
+					echo "<p class='IdeeContent'>"$ans[0]"</p>";
+					if(isset($_SESSION['Status']))echo "<button>Voter pour cette idée</button>";
+					if($_SESSION['Status']=2)echo "<button>Signaler comme inapproprié</button>";
+					if($_SESSION['Status']=3)echo "<button>Créer un événement</button>";
 				echo "</div>";
 		?>
 		
