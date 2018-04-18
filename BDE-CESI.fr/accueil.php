@@ -1,6 +1,6 @@
- <?php session_start(); ?>
-		<?php include('header.php'); ?>
-				<link rel="stylesheet" href="css/caroussel.css"/>
+<?php session_start(); ?>
+<?php include('header.php'); ?>
+<link rel="stylesheet" href="css/caroussel.css"/>
 <script type="text/javascript" src="js/Caroussel.js"></script>			
 	<!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
@@ -8,9 +8,6 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- 
 <content id="Accueil">
 	<div id="banniere">	
 		<h2>Accueil</h2>
