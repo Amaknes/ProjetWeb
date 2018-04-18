@@ -14,7 +14,7 @@ $email = $_SESSION['Email'];
 		$requete->execute();
 		$ans = $requete->fetch();
 		
-		//Insertion de l'événement
+		//Insertion de l'idée
 		$requete2 = $bdd->prepare("INSERT INTO Ideas (Activity, IdeaFlag, IDUser) VALUES( :Activity, false, :IDUser) ");
 		$requete2->bindValue(':Activity', $activity, PDO::PARAM_STR);
 		$requete2->bindValue(':IDUser', $ans[0], PDO::PARAM_STR);
