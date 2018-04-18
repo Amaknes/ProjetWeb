@@ -37,7 +37,7 @@
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
 				
-				if(isset($_SESSION['Status']) && $_SESSION['Status'] == 2||3)
+				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 			
 				echo "<p>Commentaires</p>";
@@ -63,7 +63,7 @@
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					
-					if(isset($_SESSION['Status']) && $_SESSION['Status'] == 2||3)
+					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 					{echo "<button>Signaler comme inapproprié</button>";}
 				}
 			}
