@@ -22,33 +22,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	if ($MaxPrice == '') {$MaxPrice = 99999999999;} else {}
 	
 	$Name = "%".$Name."%";
-	var_dump($Name);
-	var_dump($Category);
 	
-	
-	var_dump($MinPrice);
-	var_dump($MaxPrice);
-	
-	/*
-	if ($Category == "Tous les produits" && $Name == "") {
-		$Request = "SELECT * FROM products WHERE Price BETWEEN ? AND ?";
-		$Param = array($MinPrice,$MaxPrice);
-		echo "Hello1";
-	}
-	
-	else if ($Category == "Tous les produits" && $Name != "") {
-		$Request = "SELECT * FROM products WHERE Name LIKE ? AND Price BETWEEN ? AND ?";
-		$Param = array($Name,$MinPrice,$MaxPrice);
-	}
-	else if ($Category != "Tous les produits" && $Name == "") {
-		$Request = "SELECT * FROM products WHERE Category LIKE ? AND Price BETWEEN ? AND ?";
-		$Param = array($Category,$MinPrice,$MaxPrice);
-	}
-	else {
-		$Request = "SELECT * FROM products WHERE Name LIKE ? AND Category LIKE ? AND Price BETWEEN ? AND ?";
-		$Param = array($Name,$Category,$MinPrice,$MaxPrice);
-	}
-	*/
 	
 	$Request = "SELECT * FROM products WHERE Name LIKE ? AND Category LIKE ? AND Price BETWEEN ? AND ?";
 	$Param = array($Name,$Category,$MinPrice,$MaxPrice);
@@ -62,15 +36,17 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 		print_r($requeteConnexion->errorInfo());
 	$requeteConnexion->closeCursor();
 	}
+	
+
 
 	if ($requeteConnexion != null) {
 		foreach($requeteConnexion as $ans){
-		
-			echo("<div class='DisplayedProduct'>");
+
+			echo("<div id='".$ans[0]."' class='DisplayedProduct'>");
 			echo("<p class='ProductName'> ".$ans[1]." </p>");
 			echo("<img src='".$ans[4]."' class='ProductPic' />");
+			echo("<p class='Price'> ".$ans[3]." €</p>");
 			
-		
 		}
 	}
 	
