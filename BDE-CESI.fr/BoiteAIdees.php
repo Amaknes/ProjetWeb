@@ -2,6 +2,7 @@
 	<?php session_start(); ?>
 	<head>
 		<link rel="stylesheet" href="css/BoiteAIdees.css"/>
+		<script src="js/jQuery.js"></script>
 	</head>
 	<?php include('header.php'); ?>
 
@@ -18,12 +19,12 @@
 		$requete->execute();
 		
 		foreach($requete as $ans){
-			echo '<div>';
+			echo '<div class="vote">';
 				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 				echo "<p class='IdeeContent'>".$ans[0]."</p>";
 				if(isset($_SESSION['Status'])){ 
 					echo "<button>Voter pour cette idée</button>";
-					if($_SESSION['Status']==2) echo "<button>Signaler comme inapproprié</button>";
+					if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
 					if($_SESSION['Status']==3) echo "<button>Créer un événement</button>";
 				}
 			echo ('</div>');
@@ -45,6 +46,12 @@
 					</div>');
 
 	}
+	
+	//function VoteFor() {
+		
+		
+		
+		
 	?>
 	
 <!--####################################
