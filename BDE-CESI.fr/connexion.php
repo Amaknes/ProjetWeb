@@ -16,9 +16,9 @@
 			<div id="banniere">	
 				<h2>Connexion</h2>
 			</div>
-            <section>
+            <section class="sectionconnexion">
 				
-                    <div id="login" class="animate form">
+                    <div id="login" class="animateform">
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
                            
                                 <p> 

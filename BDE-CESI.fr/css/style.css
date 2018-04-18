@@ -334,6 +334,15 @@ background-color: #FFFFFF;
   
 /*____________________________________________________Connexion___________________________________________*/
 
+/*.sectionconnexion{
+min-height: 500px;
+}	*/
+
+.animateform{
+margin-top: 100px;
+margin-bottom: 100px;
+}
+
 #login{
 	text-align: center;
 }
@@ -344,8 +353,6 @@ background-color: #FFFFFF;
     margin: 20px 0px;
     background: #E2E2E2;
 }
-
-
 
 #login input{
 	width:300px;
@@ -358,7 +365,14 @@ background-color: #FFFFFF;
     border-radius:5px;
     font-size:15px;
     letter-spacing:2px;
-    
+}
+  #loginbutton:after{
+	position: relative;
+	content:"\E849";
+	font: 1.5em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #FFFFFF;
 }
 
 .loginscrcon{							/*_____loginscrcon = class des boutons inscription et connexion______*/
@@ -384,7 +398,9 @@ background-color: #FFFFFF;
 footer {
 	width: 100%;
 	background-color: white;
-	bottom: 0;
+	/*bottom: 0;*/
+	position: absolute;
+	
 }
 
 #bottom{
