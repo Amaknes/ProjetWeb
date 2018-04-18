@@ -286,7 +286,217 @@ background-color: #FFFFFF;
     color: #B2030A;	
 }
 
-/*_____________________________________________________________________________________________________AccueilBoutique_____________________________________________________________________________________________________________*/
+
+/*__________________________________________________________________________________________________Accueil Événements_____________________________________________________________________________________________________________*/
+
+#Evenements{
+	text-align:center;
+}
+
+#Evenements h3{
+	font-size:40px;
+}
+
+.monthevent{
+	width: 100%;
+	display: inline-block;
+	text-align:center;
+	background:#E2E2E2;
+}
+
+.EventThumbnail{
+	max-width:90%;
+}
+
+#eventclick{
+	text-align:center;
+	letter-spacing:300px;
+	text-transform:underline;
+	margin: 20px 0;
+}
+
+
+
+#allevents{
+	display: inline-block;
+	background: #E2E2E2;
+	color: #B7030D;
+	width: 300px;
+	height: 300px;
+    border-radius:20px;
+	letter-spacing:0px;
+	text-decoration:none;
+}
+
+#allevents p:after{
+	content:"\E84B";
+	font: 100px 'fontello';
+}
+
+#allevents:hover{
+	background: #f18186;
+	color:#FFFFFF
+}
+
+#proposeevent{
+	display: inline-block;
+	background: #E2E2E2;
+	color: #B7030D;
+	width: 300px;
+	height: 300px;
+    border-radius:20px;
+	letter-spacing:0px;
+	text-decoration:none;
+}
+
+#proposeevent p:after{
+	content:"\F271";
+	font: 100px 'fontello';
+}
+
+#proposeevent:hover{
+	background: #f18186;
+	color:#FFFFFF
+}
+
+
+
+
+
+/*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
+#sectionboiteaidees{
+	text-align:center;
+}
+
+.proposition{
+	text-align:center;
+	background:#E2E2E2;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+textarea{
+	width:80%;
+	height:150px;
+    margin:5px 0;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+}
+
+#propose{ 
+	width:200px;
+    height:60px;    
+    border-radius:5px;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+    
+}
+
+#propose:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+.ideavote{
+	background:#E2E2E2;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+h3{
+	text-align:center;
+	font-size: 40px;
+}
+
+.IdeeName{
+	width:250px;
+    height:25px;    
+    border-radius:5px;
+    font-size:20px;
+	color:white;
+	text-align:center;
+    background:#000144;
+    border:none;
+	font-style:bold;
+	padding-top:5px;
+	margin-left:20px;
+	margin-bottom:5px;
+	margin-top:2px;
+}
+
+.IdeeContent{
+	margin:0 10px;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:20px;
+}
+
+.vote{
+	text-align:center;
+	background:white;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+button{
+	width:22%;
+    height:50px;    
+    border-radius:5px;
+    font-size:16px;
+	color:white;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+	margin: 8px 10px;
+}
+
+button:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+.votefor:before{
+	position: relative;
+	content:"\E842";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.signal:before{
+	position: relative;
+	content:"\E850";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.createevent:before{
+	position: relative;
+	content:"\F271";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+
+
+
+
+
+/*_____________________________________________________________________________________________________Accueil Boutique_____________________________________________________________________________________________________________*/
 #AccueilBoutique .ABh3 h3{
     font-weight: 400;
     font-size: 36px;

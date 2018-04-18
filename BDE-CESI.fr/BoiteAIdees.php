@@ -1,7 +1,7 @@
 
 	<?php session_start(); ?>
 	<head>
-		<link rel="stylesheet" href="css/BoiteAIdees.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 		<script src="js/jQuery.js"></script>
 	</head>
 	<?php include('header.php'); ?>
