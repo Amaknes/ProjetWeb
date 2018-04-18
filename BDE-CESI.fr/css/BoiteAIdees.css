@@ -61,6 +61,7 @@ h3{
 	padding-top:5px;
 	margin-left:20px;
 	margin-bottom:5px;
+	margin-top:2px;
 }
 
 .IdeeContent{
@@ -74,17 +75,17 @@ h3{
 
 .vote{
 	text-align:center;
-	margin-bottom: 20px;
 	background:white;
+	margin: 20px 20%;
+	padding:5px 0;
 }
 
 button{
-	width:40%;
+	width:20%;
     height:40px;    
     border-radius:5px;
-    font-size:18px;
+    font-size:15px;
 	color:white;
-    letter-spacing:2px;
     background:#B2030A;
     border:none;
 	font-style:bold;

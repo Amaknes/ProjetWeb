@@ -10,7 +10,7 @@
 	function ShowActivities() {
 		
 		echo('<div class="ideavote">
-			<h3>Proposer une activité</h3>
+			<h3>Voter pour une idée</h3>
 		</div>');
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
@@ -34,7 +34,7 @@
 	function ShowForm() {
 		
 			echo ('<div class="proposition">
-					<h3>Voter pour une idée</h3>
+					<h3>Proposer une activité</h3>
 					<form  method="post" action="scriptProposition.php" autocomplete="on">  
 					<p>
 					<textarea id="Activity" name="Activity" required="required" type="Activity" rows="10" cols=80% placeholder="Décrivez votre activité"></textarea>
