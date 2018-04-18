@@ -1,5 +1,3 @@
-
-
 <?php session_start(); ?>
 <?php include('header.php'); ?>
 <?php
@@ -59,14 +57,16 @@ function LaunchSearch() {
 	<div id="banniere">	
 		<h2>Tous les produits</h2>
 	</div>
-			<div id="Recherche">
+		<div class="Ph3 TLPcategories">
+            <h3>Rechercher un produit</h3>
+		</div>
+			<div id="Recherche" class="TLPcategories">
                 <div id="search" class="animate form">
                     <form method="post" action="" autocomplete="on">
-                        <h1>Rechercher un produit</h1>
                             <p> 
-                                    <label for="PName" class="PName"> Nom du produit : </label>
-                                    <input id="PName" name="PName" type="text" placeholder="Nom du produit"/>
-                                </p>
+                                <label for="PName" class="PName"> Nom du produit : </label>
+                                <input id="PName" name="PName" type="text" placeholder="Nom du produit"/>
+                            </p>
 								
 								<p class="categoryList">
 									Catégorie du produit :
@@ -98,16 +98,25 @@ function LaunchSearch() {
 								</p>
                         </form>
                     </div>                       
-                </div> 
-            </content>
+                </div>
+				
+				
+		<div id="tlproduits" class="Ph3 TLPcategories">
+            <h3>Tous les produits</h3>
+		</div>
+				<div id="products" class="TLPcategories">
 	
-	
-	
-	
-            <div class="products">
-
-            <?php LaunchSearch(); ?>
+				<?php LaunchSearch(); ?>
 
 			</div>
+
+	</content>
 	
-		<?php include('footer.php'); ?>
+			<?php include('footer.php'); ?>
+
+
+	
+	
+	
+	
+ 

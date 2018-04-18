@@ -565,6 +565,18 @@
       ]
     },
     {
+      "uid": "4i0s2bklai5fywieqm4dqqngfz9ptfab",
+      "css": "flag-filled",
+      "code": 59472,
+      "src": "typicons"
+    },
+    {
+      "uid": "e7eecc3cc44f3f4cad6229b202588308",
+      "css": "calendar-plus-o",
+      "code": 62065,
+      "src": "fontawesome"
+    },
+    {
       "uid": "fde6e573d8c42de505dd7028cf5448cb",
       "css": "arrows-ccw",
       "code": 59392,
