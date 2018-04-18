@@ -39,7 +39,7 @@
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
-			
+				echo "<a href='scriptLike.php?id=".$row[0]."'>Like</a>";
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
@@ -64,7 +64,7 @@
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-					{echo "<button>Signaler comme inapproprié</button>";}
+					{echo "<a href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 				}
 			}
 			
@@ -77,7 +77,7 @@
 			//Placeholder pour le nombre de participants à revérifier
 			echo "<p>Déja ".$ans4[0]." participants</p>";
 			echo "<button>participer</button>";
-			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
+			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>"; //??
 			if($_SESSION['Status']==3) echo "<button>Télécharger en CSV</button><button>Télécharger en PDF</button>";
 		}
 	
