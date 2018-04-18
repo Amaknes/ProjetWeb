@@ -3,7 +3,7 @@
 function MeilleuresVentesRequest() {
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	
-	$Request = "SELECT products.IDProduct,`Name`, `URLImage`
+	$Request = "SELECT `Name`, `URLImage`
 				FROM `products`
 				INNER JOIN(
 				SELECT IDProduct, SUM(Quantity)
@@ -23,14 +23,24 @@ function MeilleuresVentesRequest() {
 	}
 	
 	if ($requeteConnexion != null) {
+		echo '<div class="slideshow-container">';
 		for ($i = 0; $i <= 2; $i++) {
 			$ans = $requeteConnexion->fetch();
 				
-				echo("<div id='".$ans[0]."' class='BestSoldProduct'>");
-				echo("<p class='ProductName'> ".$ans[1]." </p>");
-				echo("<img src='".$ans[2]."' class='ProductPic' />");
-				
+				echo('<div class="mySlides fade">
+					<div class="numbertext">'.($i+1).' / 3</div>
+					<img src="'.$ans[1].'" style="height:100%">
+					<div class="text">'.$ans[0].'</div></div>');
 		}
+		echo '<a class="prev" onclick="plusSlides(-1)"></a>
+				<a class="next" onclick="plusSlides(1)"></a>
+				</div>
+				<br>
+				<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span> 
+				<span class="dot" onclick="currentSlide(2)"></span> 
+				<span class="dot" onclick="currentSlide(3)"></span> 
+				</div>';
 	}
 	
 	$requeteConnexion->closeCursor();
