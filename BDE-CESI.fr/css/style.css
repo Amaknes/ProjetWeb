@@ -294,16 +294,25 @@ background-color: #FFFFFF;
     font-size: 36px;
     color: #B2030A;
 }
+#TousLesProduits #tlproduits{
+	border-style: solid;
+	border-color: #B2030A;
+	border-top-width: 2px;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
 .TLPcategories{
 	text-align: center;
 	padding: 40px
 }
-
-#TousLesProduits #tlproduits{
-	border-box: 10px;
-	border-color: #B2030A;
-	border-top-width: 70%;
-}	
+#search form{
+	width: 400px;
+    display: inline-block;
+    margin: 20px 0px;
+    background: #E2E2E2;
+}
+	
 
 /*_______________________________________________________________________________________________________Inscription_______________________________________________________________________________________________________________*/
 
