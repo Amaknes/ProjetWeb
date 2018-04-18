@@ -15,7 +15,7 @@ switch($Typereq){
 	$requete2->execute();
 	$ans = $requete2->fetch();
 	
-	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id=".'$ans[0]'.">';
+	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id="'.$ans[0].'">';
 	break;
 	
 	case "Comment" :
@@ -29,14 +29,14 @@ switch($Typereq){
 	$requete2->execute();
 	$ans = $requete2->fetch();
 	
-	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id=".'$ans[0]'.">';
+	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id="'.$ans[0].'">';
 	break;
 	
 	case "Idea" :
 	$requete = $bdd->prepare("UPDATE Ideas SET IdeaFlag = 1 WHERE IDIdea = ?");
 	$requete->bindValue(1, $Idreq, PDO::PARAM_INT);
 	$requete->execute();
-	echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">'
+	echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
 	break;
 	}
 ?>
