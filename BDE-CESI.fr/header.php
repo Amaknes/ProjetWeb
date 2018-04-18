@@ -32,9 +32,9 @@
 						</li>
 						<li> <a class="boutiquenav" href="boutique.php">Boutique</a>
 							<ul class="submenu">
-								<li><a href="boutique.php">Accueil Boutique</a></li>
-								<li><a href="boutique.php">Tous les produits</a></li>
-								<li><a href="boutique.php">Mon panier</a></li>
+								<li><a href="AccueilBoutique.php">Accueil Boutique</a></li>
+								<li><a href="TousLesProduits.php">Tous les produits</a></li>
+								<li><a href="Panier.php">Mon panier</a></li>
 							</ul>
 						</li>
 					</ul>
