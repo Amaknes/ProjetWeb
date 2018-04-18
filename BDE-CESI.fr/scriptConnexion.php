@@ -14,7 +14,10 @@
 			
 	$ans = $requeteConnexion->fetch();
 	if(count($ans) == 1){
-		echo "<h1>Echec de la connexion</h1>";
+		echo"<script>";
+		echo"alert('Echec de la connexion, veuillez vérifier votre Email ou votre mot de passe')";
+		echo"</script>";
+		echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
 		/*$message = "<p class=\"red\">PAS OK.</p>";
 		echo $message;*/
 		$requeteConnexion->closeCursor();
