@@ -53,7 +53,7 @@ INSERT INTO `Products` (`Name`, `Category`, `Price`, `UrlImage`) VALUES
 		('Sweat à capuche bleu et blanc', 'Vêtements', 37, 'Ressources/Products/Pull1_Blanc.png'),
 		('Sweat à capuche bleu et noir', 'Vêtements', 35, 'Ressources/Products/Pull2_Noir.png'),
 		('Sweat à capuche bleu et bleu marine', 'Vêtements', 32, 'Ressources/Products/Pull3_Bleu.png'),
-		('Sandwich Elior', 'Alimentaire', 13, 'Ressources/Products/SandwitchElior.png'),
+		('Sandwich Elior', 'Alimentaire', 13, 'Ressources/Products/Sandwich_Elior.png'),
 		('Sweat à capuche logo blanc', 'Vêtements', 30, 'Ressources/Products/Sweat1.png'),
 		('Sweat à capuche', 'Vêtements', 30, 'Ressources/Products/Sweat2.png'),
 		('T-shirt gris WEI 2K17', 'Vêtements', 14, 'Ressources/Products/TShirt_Gris.png'),
