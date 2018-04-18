@@ -30,7 +30,7 @@
 								<li><a href="BoiteAIdee.php">Propositions d'activités</a></li>
 							</ul>
 						</li>
-						<li> <a class="boutiquenav" href="boutique.php">Boutique</a>
+						<li> <a class="boutiquenav" href="AccueilBoutique.php">Boutique</a>
 							<ul class="submenu">
 								<li><a href="AccueilBoutique.php">Accueil Boutique</a></li>
 								<li><a href="TousLesProduits.php">Tous les produits</a></li>
