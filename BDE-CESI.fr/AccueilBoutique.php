@@ -24,6 +24,11 @@
 						include("meilleuresVentes.php");
 					?>
             </div>
+			
+			<div class="BoutiqueAjoutProduit">
+				<?php if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
+				{echo "<a class='NouveauProduit' href='NouveauProduit.php'>Ajouter un nouveau produit</a>";} ?>
+			</div>
     </content>
 
 		<?php include('footer.php'); ?>
