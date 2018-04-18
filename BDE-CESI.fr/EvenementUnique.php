@@ -60,7 +60,6 @@
 				$requete3->execute();
 				
 				foreach($requete3 as $row2){
-					var_dump($row2);
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					

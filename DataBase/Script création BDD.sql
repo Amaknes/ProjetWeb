@@ -147,7 +147,9 @@ CREATE TABLE `Comments`(
 
 INSERT INTO `Comments` (`Content`, `CommentFlag`, `IDPicture`, `IDUser`) VALUES
 		("Quelqu'un connait le modèle de l'écharpe noire et blanche de Mr Poulot? Je la trouve super stylée et j'aimerais bien avoir la même !", 0, 2, 2),
-		("Je l'ai aperçue a Desigual il y a quelques jours, vas voir si c'est la même ;)", 0, 2, 5);
+		("Je l'ai aperçue a Desigual il y a quelques jours, vas voir si c'est la même ;)", 0, 2, 5),
+		("Toutes mes pensées vont vers Bruno pour lui souhaiter le plus prompt rétablissement !", 0, 1, 1),
+		("Oui, pas de chance pour lui d'avoir rebondi sur la bordure gonflable pour aller s'encastrer dans le mur...", 0, 1, 3);
 
 
 #------------------------------------------------------------
@@ -201,6 +203,29 @@ CREATE TABLE `Participate`(
         PRIMARY KEY (IDUser ,IDEvent )
 )ENGINE=InnoDB;
 
+INSERT INTO `Participate` (`IDUser`, `IDEvent`) VALUES
+		(1, 1),
+		(2, 1),
+		(4, 1),
+		(5, 1),
+		(7, 1),
+		(8, 1),
+		(1, 2),
+		(3, 2),
+		(4, 2),
+		(5, 2),
+		(1, 3),
+		(2, 3),
+		(4, 3),
+		(7, 3),
+		(1, 4),
+		(2, 4),
+		(3, 4),
+		(4, 4),
+		(5, 4),
+		(6, 4),
+		(7, 4),
+		(8, 4);
 
 #------------------------------------------------------------
 # Table: Like
@@ -212,6 +237,20 @@ CREATE TABLE `Like`(
         PRIMARY KEY (IDUser ,IDPicture )
 )ENGINE=InnoDB;
 
+INSERT INTO `Like`(`IDUser`, `IDPicture`) VALUES
+		(1, 1),
+		(1, 2),
+		(1, 3),
+		(1, 7),
+		(2, 1),
+		(2, 5),
+		(2, 6),
+		(3, 1),
+		(4, 1),
+		(4, 7),
+		(5, 1),
+		(5, 7);
+		
 
 #------------------------------------------------------------
 # Table: Vote
@@ -222,6 +261,21 @@ CREATE TABLE `Vote`(
         IDIdea Int NOT NULL ,
         PRIMARY KEY (IDUser ,IDIdea )
 )ENGINE=InnoDB;
+
+INSERT INTO `Vote`(`IDUser`, `IDIdea`) VALUES
+		(1, 1),
+		(1, 2),
+		(2, 1),
+		(2, 2),
+		(3, 1),
+		(4, 1),
+		(4, 2),
+		(5, 1),
+		(5, 2),
+		(6, 2),
+		(7, 1),
+		(7, 2),
+		(8, 2);
 
 ALTER TABLE `Orders` ADD CONSTRAINT FK_Orders_IDUser FOREIGN KEY (IDUser) REFERENCES Users(IDUser);
 ALTER TABLE `Pictures` ADD CONSTRAINT FK_Pictures_IDEvent FOREIGN KEY (IDEvent) REFERENCES Events(IDEvent);
