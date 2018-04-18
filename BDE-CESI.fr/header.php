@@ -18,22 +18,41 @@
 					<a href="accueil.php"><h1><span>BDE </span><span>CESI </span><span>Saint-Nazaire </span></h1></a>
 				</div>
 			
+			
 				<nav>
-					<a class="accueilnav" href="accueil.php">Accueil</a>
-					<a class="evenementsnav" href="evenements.php">Événements</a>
-					<a class="boutiquenav" href="boutique.php">Boutique</a>
+					<ul>
+						<li> <a class="accueilnav" href="accueil.php">Accueil</a>
+						</li>
+						<li> <a class="evenementsnav" href="evenements.php">Événements</a>
+							<ul class="submenu">
+								<li><a href="evenements.php">Accueil événements</a></li>
+								<li><a href="EvenementListe.php">Tous les événements</a></li>
+								<li><a href="BoiteAIdee.php">Propositions d'activités</a></li>
+							</ul>
+						</li>
+						<li> <a class="boutiquenav" href="boutique.php">Boutique</a>
+							<ul class="submenu">
+								<li><a href="boutique.php">Accueil Boutique</a></li>
+								<li><a href="boutique.php">Tous les produits</a></li>
+								<li><a href="boutique.php">Mon panier</a></li>
+							</ul>
+						</li>
+					</ul>
 				</nav>
+			
+			
 			
 				<div class="session">
 
 					<?php
 						if(isset($_SESSION['Nom'])){
-							echo ($_SESSION['Prenom']." ".$_SESSION['Nom']);
-							echo "<a href='deconnexion.php'>Déconnexion</a>";
-						}else{
+							$sessionfinale= ($_SESSION['Prenom']." ".$_SESSION['Nom']);
+							echo "<p>$sessionfinale</p>";
+							echo "<a class='sessionsignout' href='deconnexion.php'>Déconnexion</a>";;
+					}else{
 							echo "<a class='sessionsignup' href='inscription.php'>Inscription</a>";
 							echo "<a class='sessionlogin' href='connexion.php'>Connexion</a>";
-						}
+					}
 					?>
 				</div>
 			</section>

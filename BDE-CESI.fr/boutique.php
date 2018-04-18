@@ -31,8 +31,8 @@
                                 </p>
 								
 								<p class="categoryList">
-									
-									<select name="category" size="1">
+									Catégorie du produit :
+									<select name="Category" size="1">
 									<option>Tous les produits
 									<option>Vêtements
 									<option>Alimentaire
@@ -56,7 +56,7 @@
                                 </p>
 								
 								<p class="SearchButton">
-									<input type="submit" value="Rechercher" /> 
+									<input type="submit" value="Rechercher" />
 								</p>
                         </form>
                     </div>                       

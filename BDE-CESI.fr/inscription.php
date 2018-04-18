@@ -10,43 +10,52 @@
 <?php session_start(); ?>
 		<?php include('header.php');?>
 	
-    <head>
-        <title>BDE CESI EXIA St Nazaire</title>
-    </head>
-	
-
 	
     <body>
 		
-		<section>
+		<content id="Inscription">
+			<div id="banniere">	
+				<h2>Inscription</h2>
+			</div>
+		
 			<div id="register" class="animate form">
-                <form  method="post" action="scriptInscription.php" autocomplete="on"> 
-                    <h1> Inscription </h1> 
+                <form  method="post" action="scriptInscription.php" autocomplete="on">  
 						<p> 
-                                    <label for="firstnamesignup" class="uname">Prénom : </label>
+
+                                    <label for="firstnamesignup" class="uname" data-icon="u" >Prénom</label>
+									<br/>
                                     <input id="Prenom" name="Prenom" required="required" type="text" placeholder="Saisissez votre prénom" />
 						</p>
 						<p> 
-                                    <label for="lastnamesignup" class="uname">Nom : </label>
+                                    <label for="lastnamesignup" class="uname" data-icon="u" >Nom</label>
+									<br/>
                                     <input id="Nom" name="Nom" required="required" type="text" placeholder="Saisissez votre nom" />
 						</p>
 						<p> 
-                                    <label for="usernamesignup" class="uname">Email : </label>
+                                    <label for="usernamesignup" class="uname" data-icon="u" >Email</label>
+									<br/>
+
                                     <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
                         
 						<p> 
-                                    <label for="passwordsignup" class="youpasswd">Mot de passe : </label>
+
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p" >Mot de passe</label>
+									<br/>
+
                                     <input id="Password" name="Password" required="required" type="password" placeholder="Saisissez votre mot de passe"/>
 						</p>
 						
 						<p> 
-                                    <label for="passwordsignupConfirm" class="youpasswd">Confirmation du mot de passe : </label>
+
+                                    <label for="passwordsignupConfirm" class="youpasswd" data-icon="p" >Confirmation du mot de passe</label>
+									<br/>
+
                                     <input id="PasswordConfirm" name="PasswordConfirm" required="required" type="password" placeholder="Confirmer votre mot de passe"/>
 						</p>
                                 
-						<p class="signin button"> 
-                                    <input type="submit" value="S'inscrire"/> 
+						<p> 
+                            <button id="signupbutton" type="submit">S'inscrire</button> 
 						</p>
 						<p class="change_link">  
                                     Déjà inscrit ?
@@ -55,7 +64,7 @@
                 </form>
             </div>
 						
-		</section>
+		</content>
 
     </body>
 	

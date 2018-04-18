@@ -11,8 +11,7 @@
 <content id="Accueil">
 	<div id="banniere">	
 		<h2>Accueil</h2>
-	</div>
-	
+	</div>	
 </content>
 
 		<?php include('footer.php'); ?>

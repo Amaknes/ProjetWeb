@@ -44,6 +44,13 @@ width: 15%;
 	color: #000144;
 	font-size: 30px;
 }
+.session p{
+	display: block;
+	margin:40px 5px;
+	text-decoration: none;
+	color: #000144;
+	font-size: 30px;	
+}
 
 .sessionsignup:after{
 	position: relative;
@@ -56,6 +63,22 @@ width: 15%;
 .sessionlogin:after{
 	position: relative;
 	content:"\E849";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+.sessionsignout:after{
+		position: relative;
+	content:"\E84A";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #000144;
+}
+.sessionlog:after{
+	position: relative;
+	content:"\E84A";
 	font: 2em/40px 'fontello';
 	text-align: center;
 	padding-left: 10px;
@@ -90,17 +113,100 @@ color : #343434;
 	height: 250px;
 }
 
+/*_________________________________________________menu déroulant_________________________*/
 nav{
 width: 55%;	
 }
 
-nav a{
+nav ul li{
 display: inline-block;
-margin: 85px 60px;
+margin: 55px 20px;
 text-decoration: none;
 color: #000144;
 font-size: 25px;
 }
+
+nav li{
+	list-style-type:none;
+}
+nav ul li{
+float: left;
+position: relative;
+}
+nav ul::after{
+content: "";
+display: block;
+clear: both;	
+}
+.submenu{
+display: none;	
+}
+nav input[type=checkbox]{
+	display: none;
+}
+nav label{
+	display: none;
+}
+nav a{
+	display: inline-block;
+	text-decoration: none;
+}
+nav ul li a{
+	padding: 10px 30px;
+	color: #343434;
+}
+nav li:hover .submenu{
+	display: inline-block;
+	position: absolute;
+	top: 65px;
+	left: 0px;
+	padding: 0px;
+	z-index: 10;
+	border-top : 1px solid #B7030D;
+	background-color: rgb(240, 240, 240);
+}
+ul .submenu{
+background-color: #FFFFFF;
+}
+.submenu li{
+	border-bottom: 1px solid #B7030D;
+	margin: 15px;
+}
+.submenu li a{
+		/*padding: 15px 30px;*/
+		font-size: 20px;
+		color: #222538;
+		width: 270px;
+}
+.submenu li a:before {
+	position: relative;
+	content:"\E84F";
+	font: 2em/40px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: #B7030D;
+}
+
+.accueilnav:hover{
+	border-top : 5px solid #B7030D;
+	background-color: rgb(240, 240, 240);
+}
+.evenementsnav:hover{
+	border-top : 5px solid #B7030D;
+	background-color: rgb(240, 240, 240);
+}
+.boutiquenav:hover{
+	border-top : 5px solid #B7030D;
+	background-color: rgb(240, 240, 240);
+}
+
+
+
+
+
+
+
+
 
 .accueilnav:before {
 	position: relative;
@@ -171,7 +277,42 @@ border-width: 0px;
 	padding: 5px;
 }
 
+/*____________________________________________________Inscription___________________________________________*/
 
+#register{
+	text-align:center;
+}
+
+
+
+#register input{
+	width:300px;
+	height:20px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+    
+}
+
+#signupbutton{
+    
+	width:200px;
+    height:30px;    
+    border-radius:5px;
+    color:#E9EBEF;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	
+    
+  }
 
 
 /*____________________________________________________Footer___________________________________________*/
@@ -242,10 +383,10 @@ width: 45px;
 height: 45px;
 background: white;
 text-align:center;
-color: #3897c1;
+color: #343434;
 }
 .extern:hover {
-background: #3897c1;
+background: #343434;
 color: white;
 }
 .extern:after {

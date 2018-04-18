@@ -11,58 +11,82 @@ $images = glob( $dir );
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
-
 	
-	$Name = $_POST['PName'];
-	$Category = $_POST['category'];
-	$MinPrice = $_POST['MinPrice'];
-	$MaxPrice = $_POST['MaxPrice'];
+	$Name = isset($_POST['PName']) ? $_POST['PName'] : "";
+	$Category = isset($_POST['Category']) ? $_POST['Category'] : "Tous les produits";
+
+	/*
+	$MinPrice = isset($_POST['MinPrice']) ? $_POST['MinPrice'] : 0;
+	$MaxPrice = isset($_POST['MaxPrice']) ? $_POST['MaxPrice'] : 99999999999;
+	
+	$MinPrice = $MinPrice=='' ? $_POST['MinPrice'] : '0';
+	$MaxPrice = $MaxPrice=='' ? $_POST['MaxPrice'] : '99999999999';
+	*/
 	
 	var_dump($Name);
+	var_dump($Category);
 	
-	if ($Category = "Tous les produits" && $Name == "") {
-		$requeteConnexion = $bdd->prepare("SELECT * FROM products");
-		$requeteConnexion->execute();
+	/*
+	var_dump($MinPrice);
+	var_dump($MaxPrice);
+	*/
+	
+	if ($Category == "Tous les produits" && $Name == "") {
+		$Request = "SELECT * FROM products";
+		$Param = array();
 	}
-	else if ($Category = "Tous les produits" && $Name != "") {
-		$requeteConnexion = $bdd->prepare("SELECT * FROM products WHERE Name=?");
-		$requeteConnexion->execute(array($Name));
+	else if ($Category == "Tous les produits" && $Name != "") {
+		$Request = "SELECT * FROM products WHERE Name=?";
+		$Param = array($Name);
+	}
+	else if ($Category != "Tous les produits" && $Name == "") {
+		$Request = "SELECT * FROM products WHERE Category=?";
+		$Param = array($Category);
 	}
 	else {
-		$requeteConnexion = $bdd->prepare("SELECT * FROM products WHERE Name=? AND Category=?");
-		$requeteConnexion->execute(array($Name,$Category));
+		$Request = "SELECT * FROM products WHERE Name=? AND Category=?";
+		$Param = array($Name,$Category);
 	}
+	
+	$requeteConnexion = $bdd->prepare($Request);
+	$requeteConnexion->execute($Param);
+	
+	
 	
 	if(!$requeteConnexion->execute()){
 		print_r($requeteConnexion->errorInfo());
 	$requeteConnexion->closeCursor();
 	}
 	
-	
-	$ans = $requeteConnexion->fetch();
 
-	/*
-	foreach ($answer as $ans){
-		for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
+	
+	
+	//$ans = $requeteConnexion->fetch();
+
+	if ($requeteConnexion != null) {
+		foreach($requeteConnexion as $ans){
+		
+			echo("<div class='DisplayedProduct'>");
+			echo("<img src='".$ans[4]."' class='ProductPic' />");
+			echo("<p class='ProductName'> ".$ans[1]." </p>");
+		
 		}
 	}
-	*/
+
+
+/*
+foreach( $images as $image ):
+    echo "<div class='displayprod'>
+	<img src='" . $image . "', class='prodpic' />
+		<div class='price'> 150€ </div>
+		<div class='description'> 
+			Foot control and protection with active comfort provided through a stable chassis ...
+		</div>
+	</div>";
+endforeach;
+*/
 	
-	
-	
-	/*
-	for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
-	
-	$ans = $requeteConnexion->fetch();
-	for ($i = 1; $i <= 4; $i++) {
-		var_dump($ans[$i]);
-	}
-	*/
-		$requeteConnexion->closeCursor();
-	
-	var_dump($ans);
+	$requeteConnexion->closeCursor();
 
 	/*
 	
@@ -86,15 +110,4 @@ $bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 
 
 
-/*
-foreach( $images as $image ):
-    echo "<div class='displayprod'>
-	<img src='" . $image . "', class='prodpic' />
-		<div class='price'> 150€ </div>
-		<div class='description'> 
-			Foot control and protection with active comfort provided through a stable chassis ...
-		</div>
-	</div>";
-endforeach;
-*/
 ?>
