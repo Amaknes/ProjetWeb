@@ -75,7 +75,7 @@ CREATE TABLE `Orders`(
         PRIMARY KEY (IDOrder )
 )ENGINE=InnoDB;
 
-INSERT INTO `Orders` (`OderDate`, `Status`,`IDUser`) VALUES
+INSERT INTO `Orders` (`OrderDate`, `Status`,`IDUser`) VALUES
 		('2018-01-10', 1, 1),
 		('2018-02-02', 1, 2),
 		('2018-03-12', 1, 3),
@@ -168,7 +168,7 @@ CREATE TABLE `Contain`(
         PRIMARY KEY (IDOrder ,IDProduct )
 )ENGINE=InnoDB;
 
-INSERT INTO (`Quantity`, `IDOrder`, `IDProduct`) VALUES
+INSERT INTO `Contain` (`Quantity`, `IDOrder`, `IDProduct`) VALUES
 		(3, 1, 13),
 		(1, 1, 1),
 		(12, 2, 7),
