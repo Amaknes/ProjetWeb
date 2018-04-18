@@ -7,10 +7,10 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-<content id="MentionsLegales">
-	<div id="banniere">	
-		<h2>Mentions Légales</h2>
-	</div>	
-</content>
+	<content id="MentionsLegales">
+		<div id="banniere">	
+			<h2>Mentions Légales</h2>
+		</div>	
+	</content>
 	
 		<?php include('footer.php'); ?>
