@@ -7,43 +7,40 @@
 function MeilleuresVentesRequest() {
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	
-	$Name = isset($_POST['PName']) ? $_POST['PName'] : "";
-	$Category = isset($_POST['Category']) ? $_POST['Category'] : "Tous les produits";
-	$MinPrice = isset($_POST['MinPrice']) ? $_POST['MinPrice'] : 0;
-	$MaxPrice = isset($_POST['MaxPrice']) ? $_POST['MaxPrice'] : 99999999999;
-	
-	if ($Category == 'Tous les produits') {$Category = '%';} else {}
-	if ($MinPrice == '') {$MinPrice = 0;} else {}
-	if ($MaxPrice == '') {$MaxPrice = 99999999999;} else {}
-	
-	$Name = "%".$Name."%";
-	
-	
-	$Request = "SELECT * FROM products WHERE Name LIKE ? AND Category LIKE ? AND Price BETWEEN ? AND ?";
-	$Param = array($Name,$Category,$MinPrice,$MaxPrice);
-	
+	$Request = "SELECT products.IDProduct,`Name`, `URLImage`
+				FROM `products`
+				INNER JOIN(
+				SELECT IDProduct, SUM(Quantity)
+				FROM `orders`
+				INNER JOIN `contain` ON `contain`.IDOrder = `orders`.IDOrder
+				GROUP BY `IDProduct`
+				ORDER BY SUM(Quantity) DESC)
+				temptable
+				ON products.IDProduct = temptable.IDProduct";
 	
 	$requeteConnexion = $bdd->prepare($Request);
-	$requeteConnexion->execute($Param);
+	$requeteConnexion->execute();
 	
 	
 	if(!$requeteConnexion->execute()){
 		print_r($requeteConnexion->errorInfo());
 	$requeteConnexion->closeCursor();
 	}
+
+
 	
-
-
 	if ($requeteConnexion != null) {
-		foreach($requeteConnexion as $ans){
-
-			echo("<div id='".$ans[0]."' class='DisplayedProduct'>");
-			echo("<p class='ProductName'> ".$ans[1]." </p>");
-			echo("<img src='".$ans[4]."' class='ProductPic' />");
-			echo("<p class='Price'> ".$ans[3]." €</p>");
-			
+		for ($i = 0; $i <= 2; $i++) {
+			$ans = $requeteConnexion->fetch();
+				
+				echo("<div id='".$ans[0]."' class='BestSoldProduct'>");
+				echo("<p class='ProductName'> ".$ans[1]." </p>");
+				echo("<img src='".$ans[2]."' class='ProductPic' />");
+				
 		}
 	}
+	
+	
 	
 	$requeteConnexion->closeCursor();
 }
@@ -56,6 +53,9 @@ function MeilleuresVentesRequest() {
  #######################################-->
 
 	<content id="AccueilBoutique">
+		<div id="banniere">	
+			<h2>Accueil boutique</h2>
+		</div>
 			<div id="Meilleures Ventes">
 				<h1>Meilleures Ventes</h1>
 					<?php
