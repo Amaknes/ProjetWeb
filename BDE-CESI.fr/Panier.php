@@ -13,6 +13,16 @@
 	<div id="banniere">	
 		<h2>Mon panier</h2>
 	</div>
+	
+	
+	<div>
+		<h3>sql ici</h3>
+	
+	
+	
+	
+	</div>
+	
 </content>
 
 		<?php include('footer.php'); ?>
