@@ -75,6 +75,13 @@ CREATE TABLE `Orders`(
         PRIMARY KEY (IDOrder )
 )ENGINE=InnoDB;
 
+INSERT INTO `Orders` (`OderDate`, `Status`,`IDUser`) VALUES
+		('2018-01-10', 1, 1),
+		('2018-02-02', 1, 2),
+		('2018-03-12', 1, 3),
+		('2018-04-10', 1, 7),
+		('2018-04-17', 0, 4);
+
 
 #------------------------------------------------------------
 # Table: Events
@@ -160,6 +167,19 @@ CREATE TABLE `Contain`(
         IDProduct Int NOT NULL ,
         PRIMARY KEY (IDOrder ,IDProduct )
 )ENGINE=InnoDB;
+
+INSERT INTO (`Quantity`, `IDOrder`, `IDProduct`) VALUES
+		(3, 1, 13),
+		(1, 1, 1),
+		(12, 2, 7),
+		(1, 3, 3),
+		(1, 3, 13),
+		(3, 3, 11),
+		(2, 4, 1),
+		(1, 4, 10),
+		(1, 4, 6),
+		(1, 5, 4),
+		(1, 5, 5);
 
 
 #------------------------------------------------------------

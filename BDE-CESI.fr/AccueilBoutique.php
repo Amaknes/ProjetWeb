@@ -4,7 +4,7 @@
 <?php include('header.php'); ?>
 <?php
 
-function LaunchSearch() {
+function MeilleuresVentesRequest() {
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	
 	$Name = isset($_POST['PName']) ? $_POST['PName'] : "";
@@ -55,10 +55,15 @@ function LaunchSearch() {
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-	<content id="Boutique">
+	<content id="AccueilBoutique">
 			<div id="Meilleures Ventes">
-			
-
+				<h1>Meilleures Ventes</h1>
+					<?php
+						MeilleuresVentesRequest();
+					?>
+				
+				
+				
             </div>
     </content>
 	
