@@ -21,30 +21,23 @@
 
 	$List = fopen($FileName, "w") or die("Impossible d'ouvrir le fichier!");
 	
-	fwrite($List,"Prenom;Nom\n");
+	echo("Prénom;Nom\n");
 	
 	foreach($getList as $ans){
-		
-		var_dump($ans);
-		
-		fwrite($List,$ans[0].";".$ans[1]."\n");
-		
+		echo($ans[0].";".$ans[1]."\n");
 	}
 	
+	fclose($List);
+		
 	$getList->closeCursor();
 	
 	if (file_exists($FileName)) {
 		header('Content-Description: File Transfer');
-		header('Content-Type: application/octet-stream');
-		header('Content-Disposition: attachment; filename="'.basename($List).'"');
-		header('Expires: 0');
-		header('Cache-Control: must-revalidate');
-		header('Pragma: public');
-		header('Content-Length: ' . filesize($List));
-		readfile($List);
+		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Length: ' . filesize($FileName));
+		readfile($FileName);
 		exit;
 	}
-	
-	fclose($List);
+
 	unlink($FileName);
 ?>
