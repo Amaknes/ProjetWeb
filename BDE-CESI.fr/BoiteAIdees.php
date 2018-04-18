@@ -38,7 +38,7 @@
 			$requete = $bdd->prepare("SELECT Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
 			$requete->execute();
 			foreach($requete as $ans){
-				echo '<div>';
+				echo '<div class="vote">';
 					echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 					echo "<p class='IdeeContent'>".$ans[0]."</p>";
 					if(isset($_SESSION['Status'])){ 
