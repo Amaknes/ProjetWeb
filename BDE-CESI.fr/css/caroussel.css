@@ -9,6 +9,10 @@
 }
 
 /* Hide the images by default */
+.mySlides:nth-child(1){
+display: block;
+}
+
 .mySlides {
 	display: none;
 	height: 100%;
