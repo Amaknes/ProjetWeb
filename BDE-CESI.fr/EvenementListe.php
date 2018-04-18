@@ -13,7 +13,7 @@
 		</div>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-			$requete = $bdd->prepare("SELECT * FROM Events WHERE PicFlag=false");
+			$requete = $bdd->prepare("SELECT * FROM Events");
 			$requete->execute();
 			foreach($requete as $ans){
 				echo '<div>';
