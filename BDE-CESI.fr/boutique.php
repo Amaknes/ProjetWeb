@@ -67,7 +67,7 @@
 	
 	
             <div class="products">
-            <?php include("displayProducts.php"); ?>
+           <?php include("displayProducts.php"); ?>
 			</div>
     </body>
 	

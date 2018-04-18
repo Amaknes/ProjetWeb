@@ -1,18 +1,13 @@
-﻿<!DOCTYPE HTML>
+﻿<?php session_start(); ?>
+		<?php include('header.php'); ?>
 
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
  Date : 2018
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
- 
-<html>
-<?php session_start(); ?>
-		<?php include('header.php'); ?>
 	
-	
-    <body>
-        <div id="connexion">
+        <content id="Connexion">
 			<div id="banniere">	
 				<h2>Connexion</h2>
 			</div>
@@ -44,11 +39,8 @@
                 
             </section>
 
-        </div>
-    </div>
+        </content>
 
-    </body>
 	
 		<?php include('footer.php'); ?>
 	
-</html>
