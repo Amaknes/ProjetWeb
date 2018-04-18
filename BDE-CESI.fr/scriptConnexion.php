@@ -17,7 +17,7 @@
 		echo"<script>";
 		echo"alert('Echec de la connexion, veuillez vérifier votre Email ou votre mot de passe')";
 		echo"</script>";
-		echo '<meta http-equiv="refresh" content="0;URL=inscription.php">';
+		echo '<meta http-equiv="refresh" content="0;URL=connexion.php">';
 		/*$message = "<p class=\"red\">PAS OK.</p>";
 		echo $message;*/
 		$requeteConnexion->closeCursor();
