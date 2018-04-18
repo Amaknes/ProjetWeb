@@ -1,7 +1,6 @@
 
 	<?php session_start(); ?>
 	<head>
-	<link rel="stylesheet" href="css/BoiteAIdees.css"/>
 		<link rel="stylesheet" href="css/BoiteAIdees.css"/>
 	</head>
 	<?php include('header.php'); ?>
@@ -58,7 +57,6 @@
 <content id="BoiteAIdees">
 	<div id="banniere">	
 		<h2>Boite à idées</h2>
-	</div>	
 	</div>
 
 	
