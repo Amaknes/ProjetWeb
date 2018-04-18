@@ -27,7 +27,7 @@
 							<ul class="submenu">
 								<li><a href="AccueilEvenements.php">Accueil événements</a></li>
 								<li><a href="EvenementListe.php">Tous les événements</a></li>
-								<li><a href="BoiteAIdee.php">Propositions d'activités</a></li>
+								<li><a href="BoiteAIdees.php">Propositions d'activités</a></li>
 							</ul>
 						</li>
 						<li> <a class="boutiquenav" href="AccueilBoutique.php">Boutique</a>

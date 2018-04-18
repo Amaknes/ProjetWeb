@@ -1,0 +1,39 @@
+#sectionboiteaidees{
+	text-align:center;
+}
+
+.proposition{
+	text-align:center;
+	background:#E2E2E2;
+	margin: 20px 20%;
+	padding:5px 0;
+}
+
+textarea{
+	width:80%;
+	height:150px;
+    margin:5px 0;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+}
+
+#propose{ 
+	width:200px;
+    height:60px;    
+    border-radius:5px;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+    
+}
+
+#propose:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}

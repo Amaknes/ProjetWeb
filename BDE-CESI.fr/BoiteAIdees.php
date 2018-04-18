@@ -1,5 +1,8 @@
 
 	<?php session_start(); ?>
+	<head>
+	<link rel="stylesheet" href="css/BoiteAIdees.css"/>
+	</head>
 	<?php include('header.php'); ?>
 	
 
@@ -12,24 +15,24 @@
 	
 <content id="BoiteAIdees">
 	<div id="banniere">	
-		<h2>Boite a idées</h2>
+		<h2>Boite à idées</h2>
 	</div>	
 
 	
-	
-
-		<h3>Proposer une activités</h3>
-<?php if(isset($_SESSION['Status'])){} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>"; } ?>
-		<form  method="post" action="scriptProposition.php" autocomplete="on">  
-						<p> 
-                                    <label for="Activity" class="Activity">Activité</label>
-                                    <input id="Activity" name="Activity" required="required" type="Activity" placeholder="Décrivez votre activité"/>
-						</p>
-                                
-						<p class="Confirm button"> 
-                                    <input type="submit" value="Proposer"/> 
-						</p>
-		<h3>Voter pour une idées</h3>
+	<section id="sectionidees">
+		<div class="proposition">
+			<h3>Proposer une activités</h3>
+				<?php if(isset($_SESSION['Status'])){} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>"; } ?>
+				<form  method="post" action="scriptProposition.php" autocomplete="on">  
+				<p> 
+					<textarea id="Activity" name="Activity" required="required" type="Activity" rows="10" cols=80% placeholder="Décrivez votre activité"></textarea>
+				</p>
+				<p class="Confirm button"> 
+					<button id="propose" type="submit">Soumettre ma proposition</button>
+				</p>
+		</div>
+		<div class="ideavote">
+			<h3>Voter pour une idées</h3>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 			$requete = $bdd->prepare("SELECT Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
@@ -46,7 +49,8 @@
 				echo "</div>";
 			}
 		?>
-
+		</div>
+	</section>
 </content>
 
 	<?php include('footer.php'); ?>

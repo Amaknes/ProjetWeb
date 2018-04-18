@@ -24,48 +24,10 @@
 		</div>
 	</div>
 	
-	
-	<div id="VentesAccueil" class="AccueilCategorie">
-		
-		<div class="Ah3">
-			<h3>Meilleures ventes</h3><!--CAROUSSEL-->
-		</div>
-		
-		<!-- slideshow container -->
-		<div class="slideshow-container">
 
-		<!-- Full-width images with number and caption text -->
-			<div class="mySlides fade">
-				<div class="numbertext">1 / 3</div>
-			<img src="Ressources/Products/Gobelet_BDE.png" style="height:100%">
-			<div class="text">Meilleure vente</div>
-			</div>
+	<div id="VentesAccueil">
+		<?php include("meilleuresVentes.php"); ?>
 
-			<div class="mySlides fade">
-				<div class="numbertext">2 / 3</div>
-			<img src="Ressources/Products/Sandwich_Elior.png" style="height:100%">
-				<div class="text">Deuxième meilleure vente</div>
-			</div>
-
-			<div class="mySlides fade">
-					<div class="numbertext">3 / 3</div>
-				<img src="Ressources/Products/4L.png" style="height:100%">
-					<div class="text">Troisième meilleure vente</div>
-			</div>
-
-			<!-- Next and previous buttons -->
-			<a class="prev" onclick="plusSlides(-1)"></a>
-			<a class="next" onclick="plusSlides(1)"></a>
-		</div>
-		<br>
-
-		<!-- The dots/circles -->
-		<div style="text-align:center">
-		<span class="dot" onclick="currentSlide(1)"></span> 
-		<span class="dot" onclick="currentSlide(2)"></span> 
-		<span class="dot" onclick="currentSlide(3)"></span> 
-		</div>
-		
 	</div>
 	
 	
