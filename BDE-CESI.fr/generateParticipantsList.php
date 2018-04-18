@@ -34,6 +34,7 @@
 	if (file_exists($FileName)) {
 		header('Content-Description: File Transfer');
 		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Disposition: attachment; filename="'.$FileName.'"');
 		header('Content-Length: ' . filesize($FileName));
 		readfile($FileName);
 		exit;

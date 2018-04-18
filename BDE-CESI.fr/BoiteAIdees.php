@@ -23,8 +23,13 @@
 				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 				echo "<p class='IdeeContent'>".$ans[0]."</p>";
 				if(isset($_SESSION['Status'])){ 
+<<<<<<< HEAD
 					echo "<a href='scriptVote.php?id=".$row[3]."'>Voter pour cette idée</a>";
 					if($_SESSION['Status']==(2||3)) echo "<a href='scriptSignalement.php?type=Idea&id=".$row[0]."'>Signaler comme inapproprié</a>";
+=======
+					echo "<a href='scriptVote.php?id=".$ans[0]."'>Voter pour cette idée</a>";
+					if($_SESSION['Status']==(2||3)) echo "<a href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</a>";
+>>>>>>> 11069bcda6d658d4bc34cae4328ce82bc8754d6f
 					if($_SESSION['Status']==3) echo "<button class='createevent'>Créer un événement</button>";
 				}
 			echo ('</div>');
@@ -47,6 +52,7 @@
 
 	}
 	
+	?>
 	
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
