@@ -21,8 +21,8 @@
 		
 		echo "<p class='EventTitle'>".$ans[1]."</p>";
 		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
-		echo "<p class='EventDate'>".$ans[2]."</p>";
-		echo "<p class='EventPrice'>".$ans[3]."</p>";
+		echo "<p class='EventDate'>A lieu le : ".$ans[2]."</p>";
+		echo "<p class='EventPrice'>Prix : ".$ans[3]."</p>";
 		echo "<p class='EventText'>".$ans[5]."</p>";
 		
 		$eventtime = str_replace('-','',$ans[2]);
@@ -69,7 +69,7 @@
 			}
 			
 		}else{
-		$requete4 = $bdd->prepare("SELECT COUNT FROM Participate  WHERE IDEvent = ?");
+		$requete4 = $bdd->prepare("SELECT COUNT(IDUser) FROM Participate WHERE IDEvent = ?");
 				$requete4->bindValue(1, $Idreq, PDO::PARAM_INT);
 				$requete4->execute();
 				$ans4 = $requete4->fetch();
@@ -77,9 +77,8 @@
 			//Placeholder pour le nombre de participants à revérifier
 			echo "<p>Déja ".$ans4[0]." participants</p>";
 			echo "<button>participer</button>";
-			if($_SESSION['Status']=2) echo "<button>Signaler comme inapproprié</button>";
-			if($_SESSION['Status']=3) echo "<button>Télécharger en CSV</button>";
-			if($_SESSION['Status']=3) echo "<button>Télécharger en PDF</button>";
+			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
+			if($_SESSION['Status']==3) echo "<button>Télécharger en CSV</button><button>Télécharger en PDF</button>";
 		}
 	
 		?>
