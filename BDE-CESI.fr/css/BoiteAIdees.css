@@ -46,6 +46,7 @@ textarea{
 
 h3{
 	text-align:center;
+	font-size: 40px;
 }
 
 .IdeeName{
@@ -81,19 +82,45 @@ h3{
 }
 
 button{
-	width:20%;
-    height:40px;    
+	width:22%;
+    height:50px;    
     border-radius:5px;
-    font-size:15px;
+    font-size:16px;
 	color:white;
     background:#B2030A;
     border:none;
 	font-style:bold;
-	margin-left:10px;
-	margin-top:5px;
+	margin: 8px 10px;
 }
 
 button:active{  
 	background: #f18186;
 	color: #FFFFFF;
+}
+
+.votefor:before{
+	position: relative;
+	content:"\E842";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.signal:before{
+	position: relative;
+	content:"\E850";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.createevent:before{
+	position: relative;
+	content:"\F271";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
 }

@@ -23,9 +23,9 @@
 				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 				echo "<p class='IdeeContent'>".$ans[0]."</p>";
 				if(isset($_SESSION['Status'])){ 
-					echo "<button>Voter pour cette idée</button>";
-					if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
-					if($_SESSION['Status']==3) echo "<button>Créer un événement</button>";
+					echo "<button class='votefor'>Voter pour cette idée</button>";
+					if($_SESSION['Status']==(2||3)) echo "<button class='signal'>Signaler comme inapproprié</button>";
+					if($_SESSION['Status']==3) echo "<button class='createevent'>Créer un événement</button>";
 				}
 			echo ('</div>');
 		}
@@ -63,7 +63,7 @@
 	
 <content id="BoiteAIdees">
 	<div id="banniere">	
-		<h2>Boite à idées</h2>
+		<h2>Boîte à idées</h2>
 	</div>
 
 	
