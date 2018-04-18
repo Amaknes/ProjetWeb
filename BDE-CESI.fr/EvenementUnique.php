@@ -11,6 +11,7 @@
 	
 	<content id="EvenementUnique">	
 		<?php
+		
 		$Idreq = $_GET['id'];
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		$requete = $bdd->prepare("SELECT * FROM Events WHERE IDEvent = ?");
@@ -19,30 +20,41 @@
 		$ans = $requete->fetch();
 		
 		echo "<p class='EventTitle'>".$ans[1]."</p>";
-		if($_SESSION['Status']=2)echo "<button>Signaler comme inapproprié</button>";
 		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
 		echo "<p class='EventDate'>".$ans[2]."</p>";
 		echo "<p class='EventPrice'>".$ans[3]."</p>";
 		echo "<p class='EventText'>".$ans[5]."</p>";
-		$eventtime = strtotime($ans[2]);
-		if(time() >= strtotime($eventtime)){
-			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false");
+		
+		$eventtime = str_replace('-','',$ans[2]);
+		$eventtime = strtotime($eventtime);
+			
+		if(time() >= $eventtime){
+			
+			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
+			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
+			
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
-				if($_SESSION['Status']==2) echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";
+				
+				if(isset($_SESSION['Status']) && $_SESSION['Status'] == 2||3)
+				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
+			
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
-				$requete3 = $bdd->prepare("SELECT IDComment,Content,LastName,FirstName FROM Comments INNER JOIN Users ON Users.IDUser = Comments.IDUser  WHERE IDPicture = ?");
+				$requete3 = $bdd->prepare("SELECT IDComment,Content,LastName,FirstName FROM Comments INNER JOIN Users ON Users.IDUser = Comments.IDUser  WHERE IDPicture = ? AND CommentFlage = false");
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
+				
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[3]." ".$row2[2]."</p>";
 					echo "<p class='CommentContent'>".$row2[1]."</p>";
-					if($_SESSION['Status']=2) echo "<button>Signaler comme inapproprié</button>";
+					
+					if(isset($_SESSION['Status']) && $_SESSION['Status'] == 2||3)
+					{echo "<button>Signaler comme inapproprié</button>";}
 				}
-			}			
+			}
 			
 		}else{
 		$requete4 = $bdd->prepare("SELECT COUNT FROM Participate  WHERE IDEvent = ?");

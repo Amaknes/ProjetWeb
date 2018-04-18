@@ -121,13 +121,13 @@ CREATE TABLE `Pictures`(
 )ENGINE=InnoDB;
 
 INSERT INTO `Pictures` (`UrlImage`, `IDEvent`, `IDUser`) VALUES
-		('Ressources/Events/WesternParty/Pic_1.jpg', 3, 1),
-		('Ressources/Events/WesternParty/Pic_2.jpg', 3, 4),
+		('Ressources/Events/WesternParty/Pic_1.png', 3, 1),
 		('Ressources/Events/EntreprendrePourApprendre/Pic_1.jpg', 1, 3),
 		('Ressources/Events/EntreprendrePourApprendre/Pic_2.jpg', 1, 3),
 		('Ressources/Events/EntreprendrePourApprendre/Pic_3.jpg', 1, 3),
 		('Ressources/Events/Babyfoot/Pic_1.jpg', 4, 2),
-		('Ressources/Events/Babyfoot/Pic_2.jpg', 4, 2);
+		('Ressources/Events/Babyfoot/Pic_2.jpg', 4, 2),
+		('Ressources/Events/Cesiades/Pic_1.jpg', 2, 4);
 
 #------------------------------------------------------------
 # Table: Comments
