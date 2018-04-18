@@ -21,11 +21,20 @@
 	
     <body>
 		<h3>Proposer une idée</h3>
-			
+		<?phpif(isset($_SESSION['Status']))echo"<p>Vous devez être connectés pour pouvoir participer ou proposer une idée</p>";?>
+		
+						<p> 
+                                    <label for="Activity" class="Activity">Activité </label>
+                                    <input id="Activity" name="Activity" required="required" type="Activity" placeholder="Décrivez votre activité"/>
+						</p>
+                                
+						<p class="Confirm button"> 
+                                    <input type="submit" value="Proposer"/> 
+						</p>
 		<h3>Idées</h3>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-			$requete = $bdd->prepare("SELECT * FROM Events INNER JOIN Users ON Users.IDUser = Comments.IDUser WHERE PicFlag=false");
+			$requete = $bdd->prepare("SELECT * FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE PicFlag=false");
 			$requete->execute();
 			foreach($requete as $ans){
 				echo '<div>';
