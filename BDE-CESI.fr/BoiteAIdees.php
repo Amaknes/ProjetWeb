@@ -25,11 +25,10 @@
 				<?php if(isset($_SESSION['Status'])){} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>"; } ?>
 				<form  method="post" action="scriptProposition.php" autocomplete="on">  
 				<p> 
-					<label for="Activity" class="Activity">Activité</label>
-					<input id="Activity" name="Activity" required="required" type="Activity" placeholder="Décrivez votre activité"/>
+					<textarea id="Activity" name="Activity" required="required" type="Activity" rows="10" cols=80% placeholder="Décrivez votre activité"></textarea>
 				</p>
 				<p class="Confirm button"> 
-					<input type="submit" value="Proposer"/> 
+					<button id="propose" type="submit">Soumettre ma proposition</button>
 				</p>
 		</div>
 		<div class="ideavote">
