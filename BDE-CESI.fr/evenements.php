@@ -1,25 +1,13 @@
-<!DOCTYPE HTML>
-
+ <?php session_start(); ?>
+		<?php include('header.php'); ?>
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
  Date : 2018
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
- 
-<html>
-	<?php 
-		session_start(); 
-		include('header.php'); 
-	?>
 	
 	
-    <head>
-        <title>BDE CESI EXIA St Nazaire</title>
-		<h2>Événements</h2>
-    </head>
-	
-	
-    <body>
+    <content id="Evenements">
 		<h3>Évènement du mois</h3>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
@@ -38,7 +26,7 @@
 		?>
 		<h3><a href="EvenementListe.php">Liste des évènements</a></h3>
 		
-    </body>
+    </content>
 	
 	<?php include('footer.php'); ?>
 	
