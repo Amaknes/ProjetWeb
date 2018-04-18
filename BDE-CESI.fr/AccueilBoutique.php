@@ -2,6 +2,8 @@
 
 <?php session_start(); ?>
 <?php include('header.php'); ?>
+<link rel="stylesheet" href="css/caroussel.css"/>
+<script type="text/javascript" src="js/Caroussel.js"></script>		
 
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
