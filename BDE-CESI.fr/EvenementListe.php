@@ -8,6 +8,9 @@
  #######################################-->	
  
 	<content id="EvenementListe">
+		<div id="banniere">	
+			<h2>Liste des événements</h2>
+		</div>
 		<?php
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 			$requete = $bdd->prepare("SELECT * FROM Events WHERE PicFlag=false");
