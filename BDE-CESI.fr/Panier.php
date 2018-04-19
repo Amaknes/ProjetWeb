@@ -44,6 +44,11 @@ $C2= 1;
 			echo("<div class='Price'><p> ".$ans2[2]." €</p></div>");
 			echo("<div class='Quantity'><p> ".$ans2[3]."</p></div>");
 			
+			echo("<form method='post' action='gererPanier.php'>");
+			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
+			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
+			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");
+			
 			
 		// if($C1==3){
 			echo("</div>");
@@ -73,8 +78,9 @@ $C2= 1;
 	
 	
 	<div>
-		<h3>sql ici</h3>
-		<?php LecturePanier();?>
+		<h3>Mes produits</h3>
+		<?php if(isset($_SESSION['Status'])){LecturePanier();}
+		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
 	
 	</div>
 	
