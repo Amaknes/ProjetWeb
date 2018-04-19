@@ -5,9 +5,6 @@
  #######################################-->
  <?php session_start(); ?>
 	
-	<head>
-	<link rel="stylesheet" href="css/BoiteAIdees.css"/>
-	</head>
 	<?php include('header.php'); ?>
 
 	
