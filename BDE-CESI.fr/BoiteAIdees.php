@@ -30,7 +30,6 @@
 					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");
 			
 					if($_SESSION['Status']==(2||3)){
-						//echo "<button class='signal' href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</button>";
 						
 						echo("<form method='get' action='scriptSignalement.php'>");
 						echo("<input type='text' name='type' value='Idea' style='display:none;'/>");
@@ -39,10 +38,10 @@
 						
 					}
 					
-					if($_SESSION['Status']==3){  /*echo "<button class='createevent'>Créer un événement</button>";*/
-					
-					echo("<form action='AjoutEvenement.php'>");
-					echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
+					if($_SESSION['Status']==3){
+						
+						echo("<form action='AjoutEvenement.php'>");
+						echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
 					} 
 				}
 			echo ('</div>');
