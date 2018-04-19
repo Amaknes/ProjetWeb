@@ -16,13 +16,18 @@
 			$requete = $bdd->prepare("SELECT * FROM Events");
 			$requete->execute();
 			foreach($requete as $ans){
+				
+				echo "<a class='TitleEvent' href='EvenementUnique.php?id=".$ans[0]."'>";
 				echo "<div class='EventListContainer'>";
-					echo "<a class='TitleEvent' href='EvenementUnique.php?id=".$ans[0]."'>".$ans[1]."</a>";
+					echo "<h3>".$ans[1]."</h3>";
+					
 					echo "<div class='EventListView'>";
 					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
 					echo "</div>";
+					
 					echo "<p class='EventText'>".$ans[5]."</p>";
 				echo "</div>";
+				echo "</a>";
 			}
 		?>
 	</section>
