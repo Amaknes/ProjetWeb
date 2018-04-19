@@ -1,11 +1,13 @@
 
 	<?php session_start(); ?>
+
+	<?php include('header.php'); ?>
+	
 	<head>
 		<link rel="stylesheet" href="css/style.css"/>
 		<script src="js/jQuery.js"></script>
 	</head>
-	<?php include('header.php'); ?>
-
+	
 	<?php
 	function ShowActivities() {
 		
@@ -26,7 +28,7 @@
 				
 					echo("<form method='get' action='scriptVote.php'>");
 					echo("<input type='text' name='idea' value='".$ans[3]."' style='display:none;'/>");
-					echo("<button type='submit' class='votefor'>Voter pour cette proposition !</button></form>");
+					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");
 			
 					if($_SESSION['Status']==(2||3)) echo "<button class='signal' href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</button>";
 

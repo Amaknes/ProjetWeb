@@ -299,12 +299,10 @@ background-color: #FFFFFF;
 }
 
 .monthevent{
-	width: 100%;
 	display: inline-block;
 	text-align:center;
 	background:#E2E2E2;
-	margin-top:5px
-	margin-top:5px
+	margin:10px 20%;
 }
 
 .monthevent a{
