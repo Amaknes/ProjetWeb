@@ -2,6 +2,12 @@
 <?php include('header.php'); ?>
 <?php
 
+
+function AjoutPanier(){
+	echo ("<p>test</p>");
+}
+
+
 function LaunchSearch() {
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	
@@ -46,6 +52,8 @@ function LaunchSearch() {
 			echo("<div class='Price'><p> ".$ans[3]." €</p></div>");
 			echo("<div class='AjoutPanier'><p id='AjoutPanier'> Ajouter au panier </p></div></div>");
 			
+			
+			
 		if($C1==3){
 			echo("</div>");
 			$C1=0;
@@ -57,6 +65,10 @@ function LaunchSearch() {
 	
 	$requeteConnexion->closeCursor();
 }
+
+
+
+
 ?>
 
 <!--####################################
