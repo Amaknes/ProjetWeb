@@ -9,9 +9,6 @@ body {
     font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
 }
 
-section:not(.headfoot){
-	min-height:550;
-}
 
 
 
@@ -337,7 +334,6 @@ background-color: #FFFFFF;
 #eventclick{
 	text-align:center;
 	letter-spacing:300px;
-	text-transform:underline;
 	margin: 20px 0;
 }
 
@@ -402,7 +398,6 @@ background-color: #FFFFFF;
 .EventTitle{
 	font-size:40px;
 	color:#000144;
-	font-weight:bold;
 }
 
 .EventThumbnail{
@@ -457,7 +452,6 @@ background-color: #FFFFFF;
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
 	padding:2px 5px;
 }
 
@@ -525,7 +519,6 @@ textarea{
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
     
 }
 
@@ -555,7 +548,6 @@ textarea{
 	text-align:center;
     background:#000144;
     border:none;
-	font-style:bold;
 	padding-top:5px;
 	margin-left:20px;
 	margin-bottom:5px;
@@ -591,7 +583,6 @@ textarea{
 	color:white;
     background:#B2030A;
     border:none;
-	font-style:bold;
 	margin: 8px 10px;
 }
 
@@ -748,7 +739,6 @@ textarea{
     letter-spacing:2px;
     background: rgba(228, 228, 228, 1);
     border:none;
-	font-style:bold;
   }
   
   
@@ -806,7 +796,7 @@ textarea{
 	color: #FFFFFF;
 }	
 .bouton:active{
-	background-color: #navy;
+	background-color: navy;
 }	
   
   
@@ -855,7 +845,6 @@ textarea{
 	color:white;
     background:#B2030A;
     border:none;
-	font-style:bold;
   }
   
   .BoutonAjoutProduit:active{  
@@ -982,7 +971,6 @@ textarea{
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
     
   }*/
 
@@ -1052,9 +1040,7 @@ margin-bottom: 100px;
 	color:white;
     letter-spacing:2px;
     background:#B2030A;
-    border:none;
-	font-style:bold;
-    
+    border:none;   
   }
   .loginscrcon:active{  
 	background: #f18186;
@@ -1120,7 +1106,6 @@ color : #343434;
 
 #contact{
 	display: inline-block;
-	position: right;
 /*float: right;*/
 	text-decoration:none;
 	margin: auto;
@@ -1194,8 +1179,7 @@ color: #343434;
 }
 
 #FlecheHautDePage{
-	display: scroll;
 	position: fixed;
-	bottom: 50px;
+	bottom: 40px;
 	right: 15px;
 }
