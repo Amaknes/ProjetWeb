@@ -1,0 +1,9 @@
+UPDATE Contain
+
+INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
+INNER JOIN `Products` ON Products.IDProduct = Contain.IDProduct
+
+SET Quantity = (Quantity-1)
+
+WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
+
