@@ -28,7 +28,7 @@
 						
 						echo("<form method='get' action='scriptSignalement.php'>");
 						echo("<input type='text' name='type' value='Idea' style='display:none;'/>");
-						echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
+						echo("<input type='text' name='ididea' value='".$ans[0]."' style='display:none;'/>");
 						echo("<button type='submit' class='signal'>Signaler comme inapproprié</button></form>");
 						
 					}
@@ -36,8 +36,7 @@
 					if($_SESSION['Status']==3){
 						
 						echo("<form method='post' action='AjoutEvenement.php'>");
-						echo("<input type='text' name='ididea' value='4' style='display:none;'/>");
-						// echo("<input type='text' name='ididea' value='".$ans[0]."' style='display:none;'/>");
+						echo("<input type='text' name='ididea' value='".$ans[0]."' style='display:none;'/>");
 						echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
 					} 
 				
