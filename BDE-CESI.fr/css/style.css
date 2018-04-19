@@ -371,8 +371,50 @@ background-color: #FFFFFF;
 }
 
 
+/*___________________________________________________________________________________________________Événement Unique_______________________________________________________________________________________________________________*/
 
+.TheEvent{
+	text-align:center;
+	background:#E2E2E2;
+	margin:20px 20%;
+	padding:5px 50px;
+}
 
+.EventTitle{
+	font-size:40px;
+	color:#000144;
+	font-weight:bold;
+}
+
+.EventThumbnail{
+	
+}
+
+.EventDate{
+	display:inline-block;
+	width:30%;
+	font-size: 35px ;
+	background:#000144;
+	color:white;
+	border-radius:10px;
+	margin:20px 10%;
+}
+
+.EventPrice{
+	display:inline-block;
+	width:20%;
+	font-size: 40px ;
+	background:#B2030A;
+	color:white;
+	border-radius:10px;
+	margin:20px 10%;
+}
+
+.EventText{
+	font-size:20px;
+	text-align:justify;
+	line-height:40px;
+}
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
@@ -456,8 +498,13 @@ textarea{
 .vote{
 	text-align:center;
 	background:white;
-	margin: 20px 20%;
+	margin: 20px;
 	padding:5px 0;
+	border-radius: 10px;
+}
+
+.vote form{
+	display:inline;
 }
 
 .vote button{

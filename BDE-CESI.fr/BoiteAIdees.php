@@ -10,9 +10,8 @@
 	<?php
 	function ShowActivities() {
 		
-		echo('<div class="ideavote">
-			<h3 class="BAIh3" >Voter pour une idée</h3>
-		</div>');
+	echo('<div class="ideavote">
+		<h3 class="BAIh3" >Voter pour une idée</h3>');
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		
@@ -47,6 +46,7 @@
 				}
 			echo ('</div>');
 		}
+	echo ('</div>');
 	}
 	
 	function ShowForm() {
