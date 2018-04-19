@@ -27,16 +27,18 @@ $email = $_SESSION['Email'];
 	
 		foreach($RequestPanier as $ans2){
 			
-			echo("<div class'PanierDisplayedProduct' id='".$ans2[0]."'>");
+			echo("<div class='PanierDisplayedProduct' id='".$ans2[0]."'><a class='minus' href='#'></a><a class='multiplication' href='#'></a><a class='plus' href='#'></a>");
 			echo("<div class='PanierProductName'><p> ".$ans2[1]." </p></div>");
-			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div>");
-			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div></div>");
+
+			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div>");
+			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div></div>");
+
 			
-			echo("<form method='post' action='gererPanier.php'>");
+
+			/*echo("<form method='post' action='gererPanier.php'>");
 			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
 			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
-			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");
-			
+			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");*/
 
 		}
 	
@@ -63,8 +65,6 @@ $email = $_SESSION['Email'];
 	<div id="CommandeEnAttente">
 		<?php if(isset($_SESSION['Status'])){LecturePanier();}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
-
-	
 	</div>
 	
 	

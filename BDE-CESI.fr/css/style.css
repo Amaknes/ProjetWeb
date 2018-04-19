@@ -265,7 +265,6 @@ background-color: #FFFFFF;
 
 #banniere h2{
 	border-width: 0px;
-    left: 0px;
 	margin: 5px 0;
     width: 100%;
     font-weight: 700;
@@ -273,7 +272,7 @@ background-color: #FFFFFF;
     font-size: 50px;
     color: #B2030A;
     text-align: center;
-	padding: 5px;
+	padding: 5px 0;
 }
 /*_________________________________________________________________________________________________________Accueil_________________________________________________________________________________________________________________*/
 .AccueilCategorie{
@@ -638,10 +637,35 @@ textarea{
 	color: #FFFFFF;
 }
 
+/*_____________________________________________________________________________________________________Ajout événement____________________________________________________________________________________________________________*/
 
+#AjoutEvenement{
+	text-align: center;
+}
 
+#AjoutEvenement input{
+	width:300px;
+	height:30px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+}
 
-/*_____________________________________________________________________________________________________Accueil Boutique_____________________________________________________________________________________________________________*/
+#Price:after{
+	position: relative;
+	content:"\E821";
+	font: 1.3em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #B2030A;
+}
+
+/*_____________________________________________________________________________________________________Accueil Boutique____________________________________________________________________________________________________________*/
 #AccueilBoutique .ABh3 h3{
     font-weight: 400;
     font-size: 36px;
@@ -650,8 +674,8 @@ textarea{
 }
 #BoutiqueAjoutProduit{
 	text-align:center;
-width: 30%;
-height:100px;
+	width: 30%;
+	height:100px;
 }
 .NouveauProduit:after{
 	position: relative;
@@ -839,9 +863,79 @@ height:100px;
 
 /*_______________________________________________________________________________________________________Panier____________________________________________________________________________________________________________________*/
   
-  
-  
-  
+#CommandeEnAttente{
+	position: relative;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.PanierDisplayedProduct{
+	background: #FFF;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    width: 35%;
+    margin: 5px 500px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.PanierProductName {
+	padding: 0 10px;
+	position: relative;
+}
+.PanierPrice {
+	position: relative;
+	padding: 0 10px;
+}
+.PanierQuantity {
+	position: relative;
+	padding: 0 10px;
+}
+
+.minus:before {
+	content:"\E822";
+	position: absolute;
+	top:0;
+	left: 5%;
+	font: 400 1em/40px 'fontello';
+}
+.PanierQuantity:after {
+	content:"";
+	position: absolute;
+	top:10%;
+	right:0;
+	background: black;
+	width: 1px;
+	height: 80%;
+}
+.PanierQuantity:before {
+	content:"";
+	position: absolute;
+	top:10%;
+	left:0;
+	background: black;
+	width: 1px;
+	height: 80%;
+}
+
+ .plus:before {
+	content:"\E821";
+	position: absolute;
+	top:0;
+	left: 8%;
+	font: 400 1em/40px 'fontello';
+ }
+ .multiplication:before {
+	content:"\E820";
+	position: absolute;
+	top:0;
+	left: 11%;
+	font: 400 1em/40px 'fontello';
+ }
   
   
   
@@ -1053,7 +1147,7 @@ color: white;
 .extern:after {
 position: relative;
 content:"\E808";
-font: 1.8em/25px 'fontello';
+font: 1.8em/45px 'fontello';
 text-align: center;
 }
 
