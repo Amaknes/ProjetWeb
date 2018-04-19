@@ -35,10 +35,10 @@ $email = $_SESSION['Email'];
 
 			
 
-			/*echo("<form method='post' action='gererPanier.php'>");
+			echo("<form method='post' action='gererPanier.php'>");
 			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
 			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
-			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");*/
+			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");
 
 		}
 	

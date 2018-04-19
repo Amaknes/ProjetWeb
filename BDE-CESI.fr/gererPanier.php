@@ -13,21 +13,17 @@
 	$GetUserID->closeCursor();
 	
 	var_dump($IdProduct);
-	var_dump($UserId[0]);/*
-	$IdProduct = "5";
-	$UserId[0] = "4";
-	var_dump($IdProduct);
-	var_dump($UserId[0]);*/
+	var_dump($UserId[0]);
+	$IdProduct = "12";
+	
 	$CheckCartNotEmpty = $bdd->prepare("
 				SELECT Contain.IDOrder
 				FROM Contain
 				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
-				WHERE Contain.IDProduct = :IdProduct AND Orders.IDUser = :UserId AND Orders.Status = 0
+				WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
 				");
-				
-	$CheckCartNotEmpty->bindValue(':IdProduct', $IdProduct, PDO::PARAM_STR);
-	$CheckCartNotEmpty->bindValue(':UserId', $UserId[0], PDO::PARAM_STR);
 	
+	$CheckCartNotEmpty->execute(array($IdProduct,$UserId[0]));
 	$result = $CheckCartNotEmpty->fetch();
 	$CheckCartNotEmpty->closeCursor();
 				
