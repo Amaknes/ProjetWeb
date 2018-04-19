@@ -43,7 +43,8 @@ function LaunchSearch() {
 			echo("<div class='DisplayedProduct' id='".$ans[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
 			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans[4]."' /></div>");
-			echo("<div class='Price'><p> ".$ans[3]." €</p></div></div>");
+			echo("<div class='Price'><p> ".$ans[3]." €</p></div>");
+			echo("<div class='AjoutPanier'><p id='AjoutPanier'> Ajouter au panier </p></div></div>");
 			
 		if($C1==3){
 			echo("</div>");

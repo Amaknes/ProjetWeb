@@ -612,6 +612,14 @@ height:auto;
 	justify-content: space-between;
 }*/
 
+#ProductName:after{
+	position: relative;
+	content:"\E821";
+	font: 1.3em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #FFFFFF;
+}	
 
   
   
