@@ -13,54 +13,76 @@
 	$GetUserID->closeCursor();
 	
 	var_dump($IdProduct);
-	var_dump($UserId[0]);/*
-	$IdProduct = "5";
-	$UserId[0] = "4";
-	var_dump($IdProduct);
-	var_dump($UserId[0]);*/
-	$CheckCartNotEmpty = $bdd->prepare("
+	var_dump($UserId[0]);
+	
+	/*
+	if($RequestType == 'addingfromlist'){
+	
+		if($CheckIsOrder != false) {
+			
+			
+			if($CheckIsProduct != false) {
+				
+				
+				addProduct()
+				
+			} else {}
+			
+			
+		} else {
+			
+			newOrder()
+			
+		}
+
+		
+		$CheckCartNotEmpty = $bdd->prepare("
 				SELECT Contain.IDOrder
 				FROM Contain
 				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
-				WHERE Contain.IDProduct = :IdProduct AND Orders.IDUser = :UserId AND Orders.Status = 0
+				WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
 				");
-				
-	$CheckCartNotEmpty->bindValue(':IdProduct', $IdProduct, PDO::PARAM_STR);
-	$CheckCartNotEmpty->bindValue(':UserId', $UserId[0], PDO::PARAM_STR);
 	
-	$result = $CheckCartNotEmpty->fetch();
-	$CheckCartNotEmpty->closeCursor();
+		$IdProduct = "12";
+	
+		$CheckCartNotEmpty->execute(array($IdProduct,$UserId[0]));
+		$CheckValue = $CheckCartNotEmpty->fetch();
+		$CheckCartNotEmpty->closeCursor();
 				
-				var_dump($result);
+		
+			
+			
+		var_dump($CheckValue);
 				
+				if($CheckValue != false) {
 				
-				/*
 				$SQLReq = ("UPDATE Contain
 				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
 				INNER JOIN `Products` ON Products.IDProduct = Contain.IDProduct
 				SET Quantity = (Quantity + 1)
-				WHERE Contain.IDProduct = :IdProduct AND Orders.IDUser = :UserId AND Orders.Status = 0
+				WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
 				");
 				
+				} else {
+					
+					$SQLReq = ("INSERT INTO"
+					
+					
+				}
 		
 			$CartOpe = $bdd->prepare($SQLReq);
-	
-			$CartOpe->bindValue(':IdProduct', $IdProduct, PDO::PARAM_STR);
-			$CartOpe->bindValue(':UserId', $UserId[0], PDO::PARAM_STR);
-			
 		
-			$CartOpe->execute();
+			$CartOpe->execute(array($IdProduct, $UserId[0]));
 			$CartOpe->closeCursor();
 			
 			$CleanOrders = $bdd->prepare("DELETE FROM Contain WHERE Quantity <= 0");
 			$CleanOrders->closeCursor();
 			$CleanOrders->execute();
 			
+			
+			
+	}
 			*/
-			
-			
-			
-			
-	// echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 			
 ?>

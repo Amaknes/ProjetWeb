@@ -24,7 +24,7 @@
 				}else{  
 					echo '<a href ="EvenementUnique.php?id='.$ans[0].'">';
 					echo "<p class='EventTitle'>".$ans[1]."</p>";
-					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
+					echo '<img class="EventThumbnail" src="'.$ans[4].'" alt="Evenement du mois"/>';
 					echo "</a>";
 				}
 			?>

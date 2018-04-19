@@ -12,6 +12,7 @@ body {
 
 
 
+
 /*_______________________________________________________________________________________________________Header____________________________________________________________________________________________________________________*/
 
 
@@ -97,6 +98,11 @@ margin-top: 50px;
     font-style: normal;
     text-align: center;
 }
+
+#BDEHeader h1{
+	font-size: 45px;
+}
+
 #BDEHeader a{
 	text-decoration: none;
 	color: #B7030D;
@@ -333,7 +339,6 @@ background-color: #FFFFFF;
 #eventclick{
 	text-align:center;
 	letter-spacing:300px;
-	text-transform:underline;
 	margin: 20px 0;
 }
 
@@ -384,8 +389,8 @@ background-color: #FFFFFF;
 
 /*___________________________________________________________________________________________________Événement Unique_______________________________________________________________________________________________________________*/
 
-#EvenementUnique{
-	
+#EvenementUnique a{
+	text-decoration:none;
 }
 
 .TheEvent{
@@ -398,7 +403,6 @@ background-color: #FFFFFF;
 .EventTitle{
 	font-size:40px;
 	color:#000144;
-	font-weight:bold;
 }
 
 .EventThumbnail{
@@ -453,7 +457,6 @@ background-color: #FFFFFF;
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
 	padding:2px 5px;
 }
 
@@ -486,7 +489,158 @@ background-color: #FFFFFF;
 	color: #FFFFFF;
 }
 
+.IDPic, #IDEvent{
+	display:none;
+}
 
+#PostImage{
+	margin-left:auto;
+	margin-right:auto;
+	width:700px;
+	text-align:center;
+	background: #E2E2E2;
+	border-radius: 10px;
+	padding: 5px 0;
+}
+
+#PostImage p{
+	font-size: 30px ;
+	color: #000144;
+}
+
+#URLImage{
+	width:500px;
+	height:10px;
+    margin:5px 0;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+}
+
+.PicAndCom{
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:10px;
+	width:1000px;
+	text-align:center;
+	background: #E2E2E2;
+	margin-bottom:20px;
+	margin-top:20px;
+	border-radius:5px;
+}
+
+.Pic{
+	padding: 10px 0;
+    max-width: 100%;
+}
+
+.PicAndCom h3{
+	font-size:30px;
+}
+
+.PicAndCom .signal{
+	display: inline-block;
+    height: 30px;
+    text-decoration: none;
+    width: 250px;
+    padding: 5px 0;
+}
+
+.like{
+	display: inline-block;
+    height: 30px;
+    text-decoration: none;
+    padding: 5px 0;
+	min-width:10%;  
+    border-radius:5px;
+    font-size:16px;
+	color:white;
+    background:#000144;
+    border:none;
+}
+
+.like:active{  
+	background: #b2b2c6;
+	color: #FFFFFF;
+}
+
+.like:before{  
+	position: relative;
+	content:"\E842";
+	font: 25px 'fontello';
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.likenb{
+	
+}
+
+.PicAndCom p{
+	/*font-size: 30px;*/
+	/*margin:5px 0;*/
+}
+
+.Content{
+	width:80%;
+	height:75px;
+    margin:5px 0;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+
+}
+
+.ConfirmButton{
+	margin:0 0;
+}
+
+.comment{ 
+	width:200px;
+    height:50px;    
+    border-radius:5px;
+    font-size:18px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+    margin: 10px 0;
+}
+
+.comment:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+.CommentName{
+	width:250px;
+    height:35px;    
+    border-radius:5px;
+    font-size:20px;
+	color:white;
+	text-align:center;
+    background:#000144;
+    border:none;
+	padding-top:5px;
+	margin-left:20px;
+	margin-bottom:5px;
+	margin-top:2px;
+}
+
+.CommentContent{
+	margin:0 10px;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:20px;
+	text-align:justify;
+}
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
@@ -502,7 +656,7 @@ background-color: #FFFFFF;
 }
 
 textarea{
-	width:80%;
+	width:1000px;
 	height:150px;
     margin:5px 0;
     padding:5px;
@@ -521,7 +675,6 @@ textarea{
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
     
 }
 
@@ -551,7 +704,6 @@ textarea{
 	text-align:center;
     background:#000144;
     border:none;
-	font-style:bold;
 	padding-top:5px;
 	margin-left:20px;
 	margin-bottom:5px;
@@ -587,7 +739,6 @@ textarea{
 	color:white;
     background:#B2030A;
     border:none;
-	font-style:bold;
 	margin: 8px 10px;
 }
 
@@ -747,7 +898,6 @@ textarea{
     letter-spacing:2px;
     background: rgba(228, 228, 228, 1);
     border:none;
-	font-style:bold;
   }
   
   
@@ -809,8 +959,13 @@ textarea{
     top: 15px;
     right: 15px;
 }	
+<<<<<<< HEAD
 .bouton::active{
 	background-color: #navy;
+=======
+.bouton:active{
+	background-color: navy;
+>>>>>>> e36eb2ceb46bcdad8ca4077b0740b4bdb1f36052
 }	
   
   
@@ -859,7 +1014,6 @@ textarea{
 	color:white;
     background:#B2030A;
     border:none;
-	font-style:bold;
   }
   
   .BoutonAjoutProduit:active{  
@@ -986,7 +1140,6 @@ textarea{
     letter-spacing:2px;
     background:#B2030A;
     border:none;
-	font-style:bold;
     
   }*/
 
@@ -1056,22 +1209,20 @@ margin-bottom: 100px;
 	color:white;
     letter-spacing:2px;
     background:#B2030A;
-    border:none;
-	font-style:bold;
-    
+    border:none;   
   }
   .loginscrcon:active{  
 	background: #f18186;
 	color: #FFFFFF;
 }
 /*________________________________________________________________________________________________Mentions légales________________________________________________________________________________*/
-#MentionsLegales h3{
+#MentionsLegalesTXT h3{
 	color: #000144;
 	margin-left: 20px;
 	margin-bottom:0;
 }
 
-#MentionsLegales p{
+#MentionsLegalesTXT p{
 	margin-left: 40px;
 	margin-top:2px;
 }
@@ -1124,7 +1275,6 @@ color : #343434;
 
 #contact{
 	display: inline-block;
-	position: right;
 /*float: right;*/
 	text-decoration:none;
 	margin: auto;
@@ -1135,7 +1285,7 @@ text-decoration:none;
 margin: 5px;
 }
 
-#external-link {
+.external-link {
 display: inline-block;
 }
 .extern {
@@ -1198,8 +1348,7 @@ color: #343434;
 }
 
 #FlecheHautDePage{
-	display: scroll;
 	position: fixed;
-	bottom: 50px;
+	bottom: 40px;
 	right: 15px;
 }

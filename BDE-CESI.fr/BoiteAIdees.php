@@ -18,13 +18,13 @@
 			echo '<div class="vote">';
 				echo "<p class='IdeeName'>".$ans[3]." ".$ans[2]."</p>";
 				echo "<p class='IdeeContent'>".$ans[1]."</p>";
-				if(isset($_SESSION['Status'])){ 
+				
 
 					echo("<form method='get' action='scriptVote.php'>");
 					echo("<input type='text' name='idea' value='".$ans[0]."' style='display:none;'/>");
 					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");
 			
-					if($_SESSION['Status']==(2||3)){
+					if(($_SESSION['Status']==2)||($_SESSION['Status']==3)){
 						
 						echo("<form method='get' action='scriptSignalement.php'>");
 						echo("<input type='text' name='type' value='Idea' style='display:none;'/>");
@@ -36,9 +36,10 @@
 					if($_SESSION['Status']==3){
 						
 						echo("<form action='AjoutEvenement.php'>");
+						echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
 						echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
 					} 
-				}
+				
 			echo ('</div>');
 		}
 	echo ('</div>');
@@ -50,7 +51,7 @@
 					<h3 class="BAIh3" >Proposer une activité</h3>
 					<form  method="post" action="scriptProposition.php" autocomplete="on">  
 					<p>
-					<textarea id="Activity" name="Activity" required="required" type="Activity" rows="10" cols=80% placeholder="Décrivez votre activité"></textarea>
+					<textarea id="Activity" name="Activity" required="required" rows="10" cols=1000 placeholder="Décrivez votre activité"></textarea>
 					</p>
 					<p class="Confirm button"> 
 					<button id="propose" type="submit">Soumettre ma proposition</button>

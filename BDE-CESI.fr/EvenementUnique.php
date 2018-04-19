@@ -34,7 +34,7 @@
 		/*echo "<p class='EventDate'>À lieu le : ".$ans[2]."</p>";*/
 		echo "<p class='EventDate'>Date : ".$newDate."</p>";
 		echo "<p class='EventPrice'>Prix : ".$ans[3]."€</p>";
-		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
+		echo '<img class="EventThumbnail" src="'.$ans[4].'" alt="Image evenement"/>';
 		echo "<p class='EventText'>".$ans[5]."</p>";
 		echo "</div>";
 		
@@ -46,24 +46,39 @@
 			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
 			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
-			echo '<form  method="post" action="scriptPostImage.php" autocomplete="on">';  
-			echo'<p>';
-			echo"<textarea id='URLImage' name='URLImage' required='required' type='text' placeholder='URL Image' ></textarea>'";
+			
+			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
+			echo '<form id="PostImage" method="post" action="scriptPostImage.php" autocomplete="on">';  
+			echo'<p>Publier une image<br/>';
+			echo"<input id='URLImage' name='URLImage' required='required' placeholder='URL Image' />";
 			echo "</p>";
 			echo"<p>";
 			echo"<input id='IDEvent' name='IDEvent' required='required' type='text' value='".$Idreq."' readonly>";
 			echo"</p>";
-			echo"<p class='Confirm button'>";
-			echo"<button id='propose' type='submit'>Envoyer l'image</button>";
+			echo"<p class='ConfirmButton'>";
+			echo"<button class='comment' type='submit'>Envoyer l'image</button>";
 			echo"</p>";
 			echo"</form>";
+			}
+			
 			foreach($requete2 as $row){
-				echo '<img class="Pic" src="'.$row[1].'"/>';
+				echo'<div class="PicAndCom">';
+				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
+				
+				//Requête pour récupérer le nombre de likes
+				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM Like WHERE IDPicture = ?");
+				$requete5->bindValue(1, $row[0], PDO::PARAM_INT);
+				$requete5->execute();
+				$ans5 = $requete5->fetch();
+				
+				echo "<p>".$ans5[0]." likes"."</p>";
+				
+				
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
-				echo "<a href='scriptLike.php?id=".$row[0]."'>Like</a>";
-				echo "<p>Commentaires</p>";
+				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";}
+				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
+				echo "<h3>Commentaires</h3>";
 				
 				//requête récupération de commentaires
 				$requete3 = $bdd->prepare("
@@ -82,18 +97,17 @@
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
 				
+				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
-				echo"<textarea id='Content' name='Content' required='required' type='text' placeholder='URL Image' ></textarea>'";
+				echo"<textarea class='Content' name='Content' required='required'  placeholder='Tapez votre commentaire ici' ></textarea>";
 				echo "</p>";
-				echo"<p>";
-				echo"<input id='IDPic' name='IDPic' required='required' type='text' value='".$row[0]."' readonly>";
-				echo"</p>";
-				echo"<p class='Confirm button'>";
-				echo"<button id='propose' type='submit'>Envoyer le commentaire</button>";
+				echo"<input class='IDPic' name='IDPic' required='required' type='text' value='".$row[0]."' readonly>";
+				echo"<p class='ConfirmButton'>";
+				echo"<button class='comment' type='submit'>Envoyer le commentaire</button>";
 				echo"</p>";
 				echo"</form>";
-				
+				}
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
@@ -101,6 +115,8 @@
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 					{echo "<a href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 				}
+				
+				echo"</div>";
 			}
 			echo("<form method='get' action='genererListeDesParticipants.php'>");
 			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");

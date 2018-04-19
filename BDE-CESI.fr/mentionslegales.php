@@ -7,7 +7,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-	<content id="MentionsLegales">
+	<section id="MentionsLegalesTXT">
 		<div id="banniere">	
 			<h2>Mentions Légales</h2>
 		</div>
@@ -40,6 +40,6 @@ Pour plus d’information sur les cookies : https://www.cnil.fr/fr/cookies-les-o
 		
 		
 		
-	</content>
+	</section>
 	
 		<?php include('footer.php'); ?>

@@ -29,7 +29,7 @@ function MeilleuresVentesRequest() {
 				
 				echo('<div class="mySlides fade">
 					<div class="numbertext">'.($i+1).' / 3</div>
-					<img src="'.$ans[1].'" style="height:100%">
+					<img src="'.$ans[1].'" style="height:100%" alt="meilleure vente">
 					<div class="text">'.$ans[0].'</div></div>');
 		}
 		echo '<a class="prev" onclick="plusSlides(-1)"></a>

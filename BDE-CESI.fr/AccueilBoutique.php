@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php include('header.php'); ?>
 <link rel="stylesheet" href="css/caroussel.css"/>
-<script type="text/javascript" src="js/Caroussel.js"></script>		
+<script  src="js/Caroussel.js"></script>		<!-- APPAREMENT INUTILE : type="text/javascript"	-->
 
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
@@ -16,7 +16,7 @@
 			<div class="ABh3">
 				<h3>Meilleures Ventes</h3>
 			</div>
-			<div id="Meilleures Ventes">
+			<div id="MeilleuresVentes">
 
 					<?php
 						include("meilleuresVentes.php");
