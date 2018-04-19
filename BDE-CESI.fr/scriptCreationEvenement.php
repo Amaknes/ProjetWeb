@@ -7,42 +7,42 @@ $price = $_POST['Price'];
 $imageurl = $_POST['ImageURL'];
 $description = $_POST['Description'];
 
-if(isset($_POST['id']) {
+
+$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
+/*
+
+if(isset($_POST['id'])) {
 	
-	$IDIdea = $_POST['id']
-	$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
+	$IDIdea = $_POST['id'];
 	$GetMail = $bdd->prepare("SELECT Email FROM Users INNER JOIN Ideas ON Users.IDUser = Ideas.IDUser WHERE IDIdea = ?");
 	$GetMail->execute(array($IDIdea));
 	$UserMail = $GetMail->fetch();
 	$GetMail->closeCursor();
 	
-	mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
+	//mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
 	
 } else {}
+*/
 
-
-
-
-
-$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-		$requete = $bdd->prepare("INSERT INTO Ideas (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( :Name, :Date, :Price, :UrlImage, :Description, false) ");
+		$CreateEvent = $bdd->prepare("INSERT INTO Events (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( :Name, :Date, :Price, :UrlImage, :Description, 0) ");
 		
-		$requete->bindValue(':Name', $title, PDO::PARAM_STR);
-		$requete->bindValue(':Date', $date, PDO::PARAM_STR);
-		$requete->bindValue(':Price', $price, PDO::PARAM_STR);
-		$requete->bindValue(':UrlImage', $imageurl, PDO::PARAM_STR);
-		$requete->bindValue(':Description', $description, PDO::PARAM_STR);
+		$CreateEvent->bindValue(':Name', $title, PDO::PARAM_STR);
+		$CreateEvent->bindValue(':Date', $date, PDO::PARAM_STR);
+		$CreateEvent->bindValue(':Price', $price, PDO::PARAM_STR);
+		$CreateEvent->bindValue(':UrlImage', $imageurl, PDO::PARAM_STR);
+		$CreateEvent->bindValue(':Description', $description, PDO::PARAM_STR);
 		
-		$requete->execute()
-
-	if(isset($_SESSION['CacheEventTitle']) && $title == $_SESSION['CacheEventTitle']){
-		$requete2 = $bdd->prepare("DELETE FROM Ideas WHERE Activity = ? ");
-		$requete2->bindValue(1,$_SESSION['CacheEventTitle'],PDO::PARAM_STR)
-		unset($_SESSION['CacheEventTitle']);
-		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">'
-	}else{	
-	echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">'
+		$CreateEvent->execute();
+		
+		/*
+		$DeleteProposition = $bdd->prepare("DELETE FROM Ideas WHERE IDIdea = ? ");
+		$DeleteProposition->execute(array($));
+		*/
+		
+		//echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
+	}else{
+	//echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">';
 	}
-	
+	*/
 
 ?>
