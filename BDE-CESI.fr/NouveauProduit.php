@@ -20,10 +20,16 @@
 									<br/>
                                     <input id="Name" name="Name" required="required" type="text" placeholder="Saisissez le nom du produit" />
 						</p>
+
 						<p> 
                                     <label for="Category" class="uname" data-icon="u" >Categorie</label>
 									<br/>
-                                    <input id="Category" name="Category" required="required" type="text" placeholder="Categorie" />
+							<select id="Category" name="Category" required="required" type="text" placeholder="Categorie" size="1">
+								<option>Vêtements</option>
+								<option>Alimentaire</option>
+								<option>Accessoires</option>
+								<option>Voiture</option>
+							</select>
 						</p>
 						<p> 
                                     <label for="Price" class="uname" data-icon="u" >Prix</label>
