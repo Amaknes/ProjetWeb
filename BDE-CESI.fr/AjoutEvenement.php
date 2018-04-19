@@ -14,7 +14,39 @@
 		<h2>Ajouter un événement </h2>
 	</div>
 
-		<form  method="post" action="scriptCreationEvenement.php" autocomplete="on">  
+		<script>
+		function validateForm() {
+		var Title = document.forms["CreateEvent"]["EventTitle"].value;
+		var Date = document.forms["CreateEvent"]["EventDate"].value;
+		var Price = document.forms["CreateEvent"]["Price"].value;
+		var ImageURL = document.forms["CreateEvent"]["ImageURL"].value;
+		var Description = document.forms["CreateEvent"]["Description"].value;
+		
+		if (Title == "") {
+			alert("Veuillez entrer un titre, tout le monde ne lit pas vos pensées");
+			return false;
+			}
+		if (Date == "") {
+			alert("Les étudiants n'ayant pas des disponibilités jusqu'à la mort thermique de l'univers, je suggère que vous donniez une date");
+			return false;
+			}
+		if (Price == "") {
+			alert("Désolé, mais le trésorier a dit qu'il faut trouver plus d'argent");
+			return false;
+			}
+		if (ImageURL == "") {
+			alert("Vous imaginez un tableau exposé avec seulement une étiquette?");
+			return false;
+			}
+		if (Description == "") {
+			alert("Si vous ne mettez qu'un titre, c'est clair que dans votre tête je vous jure");
+			return false;
+			}
+		} 
+		</script>
+		
+		
+		<form name="CreateEvent" method="post" action="scriptCreationEvenement.php" onsubmit="return validateForm()"  autocomplete="on">  
 				<p> 
 					<input id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement"/>
 				</p>
@@ -38,5 +70,8 @@
 				
 		</form>
 </section>
+
+
+
 
 	<?php include('footer.php'); ?>
