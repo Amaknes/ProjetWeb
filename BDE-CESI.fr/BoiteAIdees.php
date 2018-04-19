@@ -15,7 +15,7 @@
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		
-		$requete = $bdd->prepare("SELECT Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
+		$requete = $bdd->prepare("SELECT Activity,LastName,FirstName,IDIdea FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
 		$requete->execute();
 		
 		foreach($requete as $ans){
@@ -23,8 +23,9 @@
 				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 				echo "<p class='IdeeContent'>".$ans[0]."</p>";
 				if(isset($_SESSION['Status'])){ 
-					echo "<a href='scriptVote.php?id=".$ans[0]."'>Voter pour cette idée</a>";
+					echo "<a href='scriptVote.php?id=".$ans[3]."'>Voter pour cette idée</a>";
 					if($_SESSION['Status']==(2||3)) echo "<a href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</a>";
+
 					if($_SESSION['Status']==3) echo "<button class='createevent'>Créer un événement</button>";
 				}
 			echo ('</div>');
