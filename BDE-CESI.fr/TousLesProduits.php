@@ -44,7 +44,7 @@ function LaunchSearch() {
 		foreach($requeteConnexion as $ans){
 			echo("<div class='DisplayedProduct' id='".$ans[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
-			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans[4]."' /></div>");
+			echo("<div class='imgproduit ProductPic'><img alt='Image produit' src='".$ans[4]."' /></div>");
 			echo("<div class='prixbouton'><div class='Price'><p> ".$ans[3]." €</p></div>");
 			echo("<button class='bouton'>Ajouter au panier</button></div></div>");
 
@@ -75,7 +75,7 @@ function LaunchSearch() {
 		</div>
 			<div id="Recherche" class="TLPcategories">
                 <div id="search" class="animate form">
-                    <form method="post" action="" autocomplete="on">
+                    <form method="post"  autocomplete="on"> <!-- INUTILE :  action="" -->
                             <p> 
                                 <label for="PName" class="PName"> Nom du produit : </label>
                                 <input id="PName" name="PName" type="text" placeholder="Nom du produit"/>
