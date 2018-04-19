@@ -27,10 +27,10 @@ $email = $_SESSION['Email'];
 	
 		foreach($RequestPanier as $ans2){
 			
-			echo("<div class'PanierDisplayedProduct' id='".$ans2[0]."'>");
+			echo("<div class='PanierDisplayedProduct' id='".$ans2[0]."'><a class='minus' href='#'></a><a class='multiplication' href='#'></a><a class='plus' href='#'></a>");
 			echo("<div class='PanierProductName'><p> ".$ans2[1]." </p></div>");
-			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div>");
-			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div></div>");
+			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div>");
+			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div></div>");
 		}
 	
 	$RequestPanier->closeCursor();
