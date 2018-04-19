@@ -18,7 +18,7 @@ $C2= 1;
 		$ans = $requeteTakeID->fetch();
 		$requeteTakeID->closeCursor();
 	
-	$RequestPanier = $bdd->prepare("SELECT Products.IDProduct,`Name`, `Price`, `Quantity`, `URLImage`
+	$RequestPanier = $bdd->prepare("SELECT Products.IDProduct,`Name`, `Price`, `Quantity`
 									FROM `Products`
 									INNER JOIN `Contain` ON Products.IDProduct = Contain.IDProduct
 									INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
@@ -28,9 +28,6 @@ $C2= 1;
 	$RequestPanier->execute();
 	
 		foreach($RequestPanier as $ans2){
-			
-			var_dump($ans2);
-			
 			
 		$C1++;
 		echo($C1);
@@ -44,7 +41,6 @@ $C2= 1;
 		echo("2eme test");
 			echo("<div id='".$ans2[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans2[1]." </p></div>");
-			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans2[4]."' /></div>");
 			echo("<div class='Price'><p> ".$ans2[2]." €</p></div>");
 			echo("<div class='Quantity'><p> ".$ans2[3]."</p></div>");
 			
