@@ -3,10 +3,6 @@
 
 	<?php include('header.php'); ?>
 	
-	<head>
-		<link rel="stylesheet" href="css/style.css"/>
-	</head>
-	
 	<?php
 	function ShowActivities() {
 		

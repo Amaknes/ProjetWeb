@@ -295,6 +295,7 @@ background-color: #FFFFFF;
 
 #Evenements h3{
 	font-size:40px;
+	
 }
 
 .monthevent{
@@ -302,6 +303,15 @@ background-color: #FFFFFF;
 	background:#E2E2E2;
 	margin:20px 20%;
 	padding:5px 0;
+}
+
+.monthevent h3{
+	text-align:center;
+	background:#000144;
+	color:white;
+	margin: 20px 30%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .monthevent a{
@@ -313,6 +323,7 @@ background-color: #FFFFFF;
 
 .monthevent p{
 	margin-top:10px;
+	margin-bottom:10px;
 }
 
 .EventThumbnail{
@@ -373,6 +384,10 @@ background-color: #FFFFFF;
 
 /*___________________________________________________________________________________________________Événement Unique_______________________________________________________________________________________________________________*/
 
+#EvenementUnique{
+	
+}
+
 .TheEvent{
 	text-align:center;
 	background:#E2E2E2;
@@ -392,12 +407,12 @@ background-color: #FFFFFF;
 
 .EventDate{
 	display:inline-block;
-	width:30%;
+	min-width:1%;
 	font-size: 35px ;
 	background:#000144;
 	color:white;
 	border-radius:10px;
-	margin:20px 10%;
+	padding:2px 5px;
 }
 
 .EventPrice{
@@ -415,6 +430,63 @@ background-color: #FFFFFF;
 	text-align:justify;
 	line-height:40px;
 }
+
+.participnb{
+	display:inline-block;
+	min-width:1%;
+	font-size: 35px ;
+	background:#000144;
+	color:white;
+	border-radius:10px;
+	padding:2px 5px;
+	margin-left: 30%;
+	margin-right: 5%;
+	margin-top:5px;
+}
+
+.participate{
+	display:inline-block;
+	min-width:2%; 
+    border-radius:10px;
+    font-size:35px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+	padding:2px 5px;
+}
+
+.participate:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+.Pic{ 
+
+	padding: 10px 50px;
+}
+
+.DLCSV{
+	position:absolute;
+	float:right;
+}
+
+.DLCSV:before{
+	position: relative;
+	font: 25px 'fontello';
+	content:"\E81C";
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.DLCSV:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
@@ -507,8 +579,8 @@ textarea{
 	display:inline;
 }
 
-.vote button{
-	width:22%;
+.vote button, .signal, .DLCSV{
+	min-width:20%;
     height:50px;    
     border-radius:5px;
     font-size:16px;
@@ -520,12 +592,8 @@ textarea{
 }
 
 
-}
 
-.vote button:active{  
-	background: #f18186;
-	color: #FFFFFF;
-}
+
 
 .votefor:before{
 	position: relative;
@@ -534,6 +602,11 @@ textarea{
 	text-align: center;
 	padding-right: 10px;
 	color: white;
+}
+
+.votefor:active{  
+	background: #f18186;
+	color: #FFFFFF;
 }
 
 .signal:before{
@@ -545,6 +618,11 @@ textarea{
 	color: white;
 }
 
+.signal:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
 .createevent:before{
 	position: relative;
 	content:"\F271";
@@ -554,7 +632,10 @@ textarea{
 	color: white;
 }
 
-
+.createevent:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
 
 
 
