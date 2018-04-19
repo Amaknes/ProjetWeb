@@ -8,7 +8,7 @@
  #######################################-->
 	
 	
-    <content id="Evenements">
+    <section id="Evenements">
 		<div id="banniere">	
 			<h2>Événements</h2>
 		</div>
@@ -25,7 +25,6 @@
 					echo '<a href ="EvenementUnique.php?id='.$ans[0].'">';
 					echo "<p class='EventTitle'>".$ans[1]."</p>";
 					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
-					/*echo "<p class='EventText'>".$ans[5]."</p>";*/
 					echo "</a>";
 				}
 			?>
@@ -40,6 +39,6 @@
 				<p></p>
 			</a>
 		</div>
-    </content>
+    </section>
 	
 	<?php include('footer.php'); ?>

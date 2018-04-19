@@ -9,7 +9,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-<content id="Accueil">
+<section id="Accueil">
 	<div id="banniere">	
 		<h2>Accueil</h2>
 	</div>
@@ -63,7 +63,7 @@
 			<p>Martine Durand, Jacquie Michel, Flavien Spataro, Judith Felix, Paul Berger</p>
 	</div>	
 	
-</content>
+</section>
 
 
 

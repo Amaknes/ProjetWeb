@@ -9,7 +9,7 @@
 
 	
 	
-	<content id="EvenementUnique">	
+	<section id="EvenementUnique">	
 		<div id="banniere">	
 			<h2>Événement</h2>
 		</div>
@@ -113,6 +113,6 @@
 		}
 	
 		?>
-	</content>
+	</section>
 	
 		<?php include('footer.php'); ?>

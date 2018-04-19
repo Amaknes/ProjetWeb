@@ -6,7 +6,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
  
-		<content id="Inscription">
+		<section id="Inscription">
 			<div id="banniere">	
 				<h2>Inscription</h2>
 			</div>
@@ -63,7 +63,7 @@
                 </form>
             </div>
 						
-		</content>
+		</section>
 
 	
 		<?php include('footer.php'); ?>

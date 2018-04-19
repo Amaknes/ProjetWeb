@@ -7,11 +7,11 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 	
-        <content id="Connexion">
+        <section id="Connexion">
 			<div id="banniere">	
 				<h2>Connexion</h2>
 			</div>
-            <section class="sectionconnexion">
+            <div class="sectionconnexion">
 				
                     <div id="login" class="animateform">
                         <form method="post" action="scriptConnexion.php" autocomplete="on">
@@ -37,9 +37,9 @@
                         </form>
                     </div>                       
                 
-            </section>
+            </div>
 
-        </content>
+        </section>
 
 	
 		<?php include('footer.php'); ?>

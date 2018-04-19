@@ -66,7 +66,7 @@ function LaunchSearch() {
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-	<content id="TousLesProduits">
+	<section id="TousLesProduits">
 	<div id="banniere">	
 		<h2>Tous les produits</h2>
 	</div>
@@ -123,7 +123,7 @@ function LaunchSearch() {
 
 			</div>
 
-	</content>
+	</section>
 	
 			<?php include('footer.php'); ?>
 
