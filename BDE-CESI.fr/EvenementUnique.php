@@ -46,7 +46,17 @@
 			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
 			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
-			
+			echo '<form  method="post" action="scriptPostImage.php" autocomplete="on">';  
+			echo'<p>';
+			echo"<textarea id='URLImage' name='URLImage' required='required' type='text' placeholder='URL Image' ></textarea>'";
+			echo "</p>";
+			echo"<p>";
+			echo"<input id='IDEvent' name='IDEvent' required='required' type='text' value='".$Idreq."' readonly>";
+			echo"</p>";
+			echo"<p class='Confirm button'>";
+			echo"<button id='propose' type='submit'>Envoyer l'image</button>";
+			echo"</p>";
+			echo"</form>";
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
 				
@@ -80,6 +90,9 @@
 					{echo "<a href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 				}
 			}
+			echo("<form method='get' action='genererListeDesParticipants.php'>");
+			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
+			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
 			
 		}else{
 		$requete4 = $bdd->prepare("SELECT COUNT(IDUser) FROM Participate WHERE IDEvent = ?");
@@ -88,15 +101,14 @@
 				$ans4 = $requete4->fetch();
 				
 			//Placeholder pour le nombre de participants à revérifier
-			echo "<p>Déja ".$ans4[0]." participants</p>";
-			echo "<button>participer</button>";
+			echo "<p class='participnb'>Actuellement ".$ans4[0]." participants</p>";
+			echo "<button class='participate'>Participer</button>";
 			
 			echo("<form method='get' action='genererListeDesParticipants.php'>");
 			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
-			echo("<button type='submit'>Télécharger en CSV</button></form>");
+			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
 			
-			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
-			if($_SESSION['Status']==3) echo "<button>CSV</button>";
+			
 			
 		}
 	

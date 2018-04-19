@@ -35,4 +35,6 @@
 				<p class="Confirm button"> 
 					<button id="propose" type="submit">Envoyer l'événement</button>
 				</p>
+				
+				
 			</form>

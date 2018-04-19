@@ -1,8 +1,6 @@
  <?php session_start(); ?>
 		<?php include('header.php'); ?>
-	<head>
-		<link rel="stylesheet" href="css/style.css"/>
-	</head>
+
 <!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
  Date : 2018
@@ -25,8 +23,8 @@
 					echo "<h1>Aucun événement n'a été sélectionné</h1>";
 				}else{  
 					echo '<a href ="EvenementUnique.php?id='.$ans[0].'">';
-					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
 					echo "<p class='EventTitle'>".$ans[1]."</p>";
+					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
 					/*echo "<p class='EventText'>".$ans[5]."</p>";*/
 					echo "</a>";
 				}
