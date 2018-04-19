@@ -27,6 +27,7 @@
 	$result = $CheckCartNotEmpty->fetch();
 	$CheckCartNotEmpty->closeCursor();
 				
+		
 				var_dump($result);
 				
 				
