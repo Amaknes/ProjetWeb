@@ -265,7 +265,6 @@ background-color: #FFFFFF;
 
 #banniere h2{
 	border-width: 0px;
-    left: 0px;
 	margin: 5px 0;
     width: 100%;
     font-weight: 700;
@@ -273,7 +272,7 @@ background-color: #FFFFFF;
     font-size: 50px;
     color: #B2030A;
     text-align: center;
-	padding: 5px;
+	padding: 5px 0;
 }
 /*_________________________________________________________________________________________________________Accueil_________________________________________________________________________________________________________________*/
 .AccueilCategorie{
@@ -296,6 +295,7 @@ background-color: #FFFFFF;
 
 #Evenements h3{
 	font-size:40px;
+	
 }
 
 .monthevent{
@@ -303,6 +303,15 @@ background-color: #FFFFFF;
 	background:#E2E2E2;
 	margin:20px 20%;
 	padding:5px 0;
+}
+
+.monthevent h3{
+	text-align:center;
+	background:#000144;
+	color:white;
+	margin: 20px 30%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .monthevent a{
@@ -314,6 +323,7 @@ background-color: #FFFFFF;
 
 .monthevent p{
 	margin-top:10px;
+	margin-bottom:10px;
 }
 
 .EventThumbnail{
@@ -374,6 +384,10 @@ background-color: #FFFFFF;
 
 /*___________________________________________________________________________________________________Événement Unique_______________________________________________________________________________________________________________*/
 
+#EvenementUnique{
+	
+}
+
 .TheEvent{
 	text-align:center;
 	background:#E2E2E2;
@@ -393,12 +407,12 @@ background-color: #FFFFFF;
 
 .EventDate{
 	display:inline-block;
-	width:30%;
+	min-width:1%;
 	font-size: 35px ;
 	background:#000144;
 	color:white;
 	border-radius:10px;
-	margin:20px 10%;
+	padding:2px 5px;
 }
 
 .EventPrice{
@@ -416,6 +430,63 @@ background-color: #FFFFFF;
 	text-align:justify;
 	line-height:40px;
 }
+
+.participnb{
+	display:inline-block;
+	min-width:1%;
+	font-size: 35px ;
+	background:#000144;
+	color:white;
+	border-radius:10px;
+	padding:2px 5px;
+	margin-left: 30%;
+	margin-right: 5%;
+	margin-top:5px;
+}
+
+.participate{
+	display:inline-block;
+	min-width:2%; 
+    border-radius:10px;
+    font-size:35px;
+	color:white;
+    letter-spacing:2px;
+    background:#B2030A;
+    border:none;
+	font-style:bold;
+	padding:2px 5px;
+}
+
+.participate:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+.Pic{ 
+
+	padding: 10px 50px;
+}
+
+.DLCSV{
+	position:absolute;
+	float:right;
+}
+
+.DLCSV:before{
+	position: relative;
+	font: 25px 'fontello';
+	content:"\E81C";
+	text-align: center;
+	padding-right: 10px;
+	color: white;
+}
+
+.DLCSV:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
+
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
@@ -508,8 +579,8 @@ textarea{
 	display:inline;
 }
 
-.vote button{
-	width:22%;
+.vote button, .signal, .DLCSV{
+	min-width:20%;
     height:50px;    
     border-radius:5px;
     font-size:16px;
@@ -521,12 +592,8 @@ textarea{
 }
 
 
-}
 
-.vote button:active{  
-	background: #f18186;
-	color: #FFFFFF;
-}
+
 
 .votefor:before{
 	position: relative;
@@ -535,6 +602,11 @@ textarea{
 	text-align: center;
 	padding-right: 10px;
 	color: white;
+}
+
+.votefor:active{  
+	background: #f18186;
+	color: #FFFFFF;
 }
 
 .signal:before{
@@ -546,6 +618,11 @@ textarea{
 	color: white;
 }
 
+.signal:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
+
 .createevent:before{
 	position: relative;
 	content:"\F271";
@@ -555,12 +632,40 @@ textarea{
 	color: white;
 }
 
+.createevent:active{  
+	background: #f18186;
+	color: #FFFFFF;
+}
 
+/*_____________________________________________________________________________________________________Ajout événement____________________________________________________________________________________________________________*/
 
+#AjoutEvenement{
+	text-align: center;
+}
 
+#AjoutEvenement input{
+	width:300px;
+	height:30px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+}
 
+#Price:after{
+	position: relative;
+	content:"\E821";
+	font: 1.3em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #B2030A;
+}
 
-/*_____________________________________________________________________________________________________Accueil Boutique_____________________________________________________________________________________________________________*/
+/*_____________________________________________________________________________________________________Accueil Boutique____________________________________________________________________________________________________________*/
 #AccueilBoutique .ABh3 h3{
     font-weight: 400;
     font-size: 36px;
@@ -569,8 +674,8 @@ textarea{
 }
 #BoutiqueAjoutProduit{
 	text-align:center;
-width: 30%;
-height:100px;
+	width: 30%;
+	height:100px;
 }
 .NouveauProduit:after{
 	position: relative;
@@ -758,9 +863,79 @@ height:100px;
 
 /*_______________________________________________________________________________________________________Panier____________________________________________________________________________________________________________________*/
   
-  
-  
-  
+#CommandeEnAttente{
+	position: relative;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.PanierDisplayedProduct{
+	background: #FFF;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    width: 35%;
+    margin: 5px 500px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.PanierProductName {
+	padding: 0 10px;
+	position: relative;
+}
+.PanierPrice {
+	position: relative;
+	padding: 0 10px;
+}
+.PanierQuantity {
+	position: relative;
+	padding: 0 10px;
+}
+
+.minus:before {
+	content:"\E822";
+	position: absolute;
+	top:0;
+	left: 5%;
+	font: 400 1em/40px 'fontello';
+}
+.PanierQuantity:after {
+	content:"";
+	position: absolute;
+	top:10%;
+	right:0;
+	background: black;
+	width: 1px;
+	height: 80%;
+}
+.PanierQuantity:before {
+	content:"";
+	position: absolute;
+	top:10%;
+	left:0;
+	background: black;
+	width: 1px;
+	height: 80%;
+}
+
+ .plus:before {
+	content:"\E821";
+	position: absolute;
+	top:0;
+	left: 8%;
+	font: 400 1em/40px 'fontello';
+ }
+ .multiplication:before {
+	content:"\E820";
+	position: absolute;
+	top:0;
+	left: 11%;
+	font: 400 1em/40px 'fontello';
+ }
   
   
   
@@ -972,7 +1147,7 @@ color: white;
 .extern:after {
 position: relative;
 content:"\E808";
-font: 1.8em/25px 'fontello';
+font: 1.8em/45px 'fontello';
 text-align: center;
 }
 
