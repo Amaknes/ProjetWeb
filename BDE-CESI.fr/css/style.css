@@ -333,7 +333,16 @@ background-color: #FFFFFF;
 }
 
 .EventThumbnail{
-	max-width:90%;
+	width: auto;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+}
+.EventListView {
+	position: relative;
+    width: 100%;
+    height: 500px;
+	text-align: center;
 }
 
 #eventclick{
@@ -431,8 +440,11 @@ background-color: #FFFFFF;
 
 .EventText{
 	font-size:20px;
-	text-align:justify;
+	text-align:center;
 	line-height:40px;
+	padding: 0 5px;
+    margin: 10px 40px;
+	background: #FFF;
 }
 
 .participnb{
@@ -641,6 +653,22 @@ background-color: #FFFFFF;
     font-size:20px;
 	text-align:justify;
 }
+/*___________________________________________________________________________________________________Liste événement________________________________________________________________________________________________________________*/
+.EventListContainer{
+	text-align:center;
+	background:#E2E2E2;
+	margin:20px 20%;
+	padding:5px 0;
+}
+.TitleEvent{
+	width:100%;
+	padding: 15px;
+	font-size: 40px;
+	color:  #000000;
+	text-decoration:none;
+}
+
+
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
