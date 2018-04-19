@@ -50,7 +50,7 @@
 					<h3 class="BAIh3" >Proposer une activité</h3>
 					<form  method="post" action="scriptProposition.php" autocomplete="on">  
 					<p>
-					<textarea id="Activity" name="Activity" required="required" type="Activity" rows="10" cols=80% placeholder="Décrivez votre activité"></textarea>
+					<textarea id="Activity" name="Activity" required="required" rows="10" cols=1000 placeholder="Décrivez votre activité"></textarea>
 					</p>
 					<p class="Confirm button"> 
 					<button id="propose" type="submit">Soumettre ma proposition</button>

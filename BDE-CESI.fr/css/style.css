@@ -9,6 +9,10 @@ body {
     font-family: 'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
 }
 
+section:not(.headfoot){
+	min-height:550;
+}
+
 
 
 
@@ -502,7 +506,7 @@ background-color: #FFFFFF;
 }
 
 textarea{
-	width:80%;
+	width:1000px;
 	height:150px;
     margin:5px 0;
     padding:5px;

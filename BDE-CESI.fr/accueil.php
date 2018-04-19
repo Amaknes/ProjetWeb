@@ -1,8 +1,9 @@
 <?php session_start(); ?>
-<link rel="stylesheet" href="css/caroussel.css"/>
-<?php include('header.php'); ?>
 
-<script type="text/javascript" src="js/Caroussel.js"></script>			
+<?php include('header.php'); ?>
+<link rel="stylesheet" href="css/caroussel.css"/>
+
+<script src="js/Caroussel.js"></script>		<!-- APPAREMENT INUTILE : type="text/javascript"	-->
 	<!--####################################
  Auteur : Groupe 3 (Moyon Matthis, Pasquet Vincent, Chéraud Florentin, Amaury Vincent)
  Date : 2018
@@ -34,7 +35,7 @@
 					echo "<h1>Aucun événement n'a été sélectionné</h1>";
 				}else{  
 					echo '<a href ="EvenementUnique.php?id='.$ans[0].'">';
-					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
+					echo '<img class="EventThumbnail" src="'.$ans[4].'" alt="evenement du mois"/>';
 					echo "<p class='EventTitle'>".$ans[1]."</p>";
 					/*echo "<p class='EventText'>".$ans[5]."</p>";*/
 					echo "</a>";
@@ -58,7 +59,7 @@
 			<h3>Qui sommes-nous?</h3>
 		</div>
 		<div>
-			<img id="bde_img" class="img" src="Ressources/SiteImages/BDE.png">
+			<img id="bde_img" src="Ressources/SiteImages/BDE.png" alt="Equipe BDE">
 		</div>
 			<p>Martine Durand, Jacquie Michel, Flavien Spataro, Judith Felix, Paul Berger</p>
 	</div>	

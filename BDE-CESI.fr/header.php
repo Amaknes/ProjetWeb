@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
     <head>
         <title>BDE CESI EXIA St Nazaire</title>
 		<meta charset="utf-8"/>
@@ -9,9 +9,9 @@
     </head>
 	<body>
 		<header>
-			<section id="top">
+			<div id="top">
 				<div id="LogoBDE">
-					<a href="accueil.php"> <img class="LogoBDE" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
+					<a href="accueil.php"> <img class="LogoBDE" src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="LogoBDE"></a>
 				</div>
 
 				<div id="BDEHeader">
@@ -55,7 +55,7 @@
 					}
 					?>
 				</div>
-			</section>
+			</div>
 
 		</header>
 	

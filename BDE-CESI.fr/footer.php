@@ -1,7 +1,7 @@
     <footer>
-		<section id="bottom">
+		<div id="bottom">
 			<div id="LogoRetourAccueil">
-				<a href="accueil.php"> <img class="RetourAccueil" img src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="RetourAccueil"></a>
+				<a href="accueil.php"> <img class="RetourAccueil" src="Ressources/SiteImages/BDE_CESI_logo_no_text.png" alt="RetourAccueil"></a>
 			</div>
 				<div id="TexteRetourAccueil">
 					<a href="accueil.php"><span>BDE </span><span>CESI </span><span>Saint-Nazaire</span></a>
@@ -33,10 +33,10 @@
 				<div id="MentionsLegales">
 					<a class="Mentionslegales" target="_blank" href="mentionslegales.php" title="MentionsLegales" >Mentions Légales</a> 
 				</div>
-		</section>
+		</div>
 			<div id="FlecheHautDePage">
 				<a href="#" title="Retour haut de page">
-				<img src="Ressources/SiteImages/fleche.png" ></a>
+				<img src="Ressources/SiteImages/fleche.png" alt="haut de page"></a>
 			</div>
 	</footer>
 	</body>
