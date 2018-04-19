@@ -62,6 +62,16 @@
 				echo'<div class="PicAndCom">';
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
+				//Requête pour récupérer le nombre de likes
+				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM Like WHERE IDPicture = ?");
+				$requete5->bindValue(1, $row[0], PDO::PARAM_INT);
+				$requete5->execute();
+				$ans5 = $requete5->fetch();
+				
+				echo "<p>".$ans5[0]." likes"."</p>";
+				
+				
+				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";}
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
