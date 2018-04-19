@@ -291,6 +291,7 @@ background-color: #FFFFFF;
 
 #Evenements{
 	text-align:center;
+	color:#000144;
 }
 
 #Evenements h3{
@@ -302,6 +303,19 @@ background-color: #FFFFFF;
 	display: inline-block;
 	text-align:center;
 	background:#E2E2E2;
+	margin-top:5px
+	margin-top:5px
+}
+
+.monthevent a{
+	font-size: 40px;
+	color:  #000000;
+	text-decoration:none;
+
+}
+
+.monthevent p{
+	margin-top:0px;
 }
 
 .EventThumbnail{
@@ -413,7 +427,7 @@ textarea{
 
 .BAIh3{
 	text-align:center;
-	color: #B2030A;
+	color: #000144;
 	font-size: 40px;
 }
 
@@ -807,8 +821,15 @@ margin-bottom: 100px;
 /*________________________________________________________________________________________________Mentions légales________________________________________________________________________________*/
 #MentionsLegales h3{
 	color: #000144;
+	margin-left: 20px;
+	margin-bottom:0;
 }
-  
+
+#MentionsLegales p{
+	margin-left: 40px;
+	margin-top:2px;
+}
+
 /*___________________________________________________________________________________________________Footer_______________________________________________________________________________________*/
 
 footer {
