@@ -13,12 +13,13 @@
 	$GetUserID->closeCursor();
 	
 	var_dump($IdProduct);
-	var_dump($UserId[0]);
-
-	
-	
+	var_dump($UserId[0]);/*
+	$IdProduct = "5";
+	$UserId[0] = "4";
+	var_dump($IdProduct);
+	var_dump($UserId[0]);*/
 	$CheckCartNotEmpty = $bdd->prepare("
-				SELECT *
+				SELECT Contain.IDOrder
 				FROM Contain
 				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
 				WHERE Contain.IDProduct = :IdProduct AND Orders.IDUser = :UserId AND Orders.Status = 0
@@ -60,6 +61,6 @@
 			
 			
 			
-	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
+	// echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 			
 ?>

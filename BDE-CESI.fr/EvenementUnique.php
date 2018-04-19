@@ -82,6 +82,18 @@
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
 				
+				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
+				echo'<p>';
+				echo"<textarea id='Content' name='Content' required='required' type='text' placeholder='URL Image' ></textarea>'";
+				echo "</p>";
+				echo"<p>";
+				echo"<input id='IDPic' name='IDPic' required='required' type='text' value='".$row[0]."' readonly>";
+				echo"</p>";
+				echo"<p class='Confirm button'>";
+				echo"<button id='propose' type='submit'>Envoyer le commentaire</button>";
+				echo"</p>";
+				echo"</form>";
+				
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
