@@ -1,7 +1,7 @@
 <?php
 	
-	ini_set ("SMTP","smtp.gmail.com");
-	ini_set ("smtp_port","587");
+	//ini_set ("SMTP","smtp.gmail.com");
+	//ini_set ("smtp_port","587");
 	//ini_set("sendmail_from","<email-address>@gmail.com>");
 	
 	//mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');

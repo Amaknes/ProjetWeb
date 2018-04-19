@@ -959,13 +959,8 @@ textarea{
     top: 15px;
     right: 15px;
 }	
-<<<<<<< HEAD
-.bouton::active{
-	background-color: #navy;
-=======
 .bouton:active{
-	background-color: navy;
->>>>>>> e36eb2ceb46bcdad8ca4077b0740b4bdb1f36052
+	background-color: #B2030A;
 }	
   
   
@@ -1232,7 +1227,6 @@ margin-bottom: 100px;
 footer {
 	width: 100%;
 	background-color: white;
-	/*bottom: 0;*/
 	position: absolute;
 	
 }
