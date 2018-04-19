@@ -61,7 +61,8 @@
 		<div>
 			<img id="bde_img" src="Ressources/SiteImages/BDE.png" alt="Equipe BDE">
 		</div>
-			<p>Martine Durand, Jacquie Michel, Flavien Spataro, Judith Felix, Paul Berger</p>
+			<p>Martine Durand, Jacquie Michel, Dimitry Spataro, Judith Felix, Pauline Berger</p>
+			<p>Membres du Bureau Des Étudiants du Campus CESI de Saint-Nazaire</p>
 	</div>	
 	
 </section>
