@@ -48,19 +48,19 @@
 		
 		<form name="CreateEvent" method="post" action="scriptCreationEvenement.php" onsubmit="return validateForm()"  autocomplete="on">  
 				<p> 
-					<input id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement"/>
+					<input id="EventTitle" name="EventTitle" type="text" placeholder="Titre de l'événement"/>
 				</p>
 				<p> 
-					<input id="EventDate" name="EventDate" required="required" type="date"/>
+					<input id="EventDate" name="EventDate" type="date"/>
 				</p>
 				<p> 
-					<input id="Price" name="Price" required="required" type="text" placeholder="Prix de votre activité en euros"/>
+					<input id="Price" name="Price" type="text" placeholder="Prix de votre activité en euros"/>
 				</p>
 				<p> 
-					<input id="ImageURL" name="ImageURL" required="required" type="text" placeholder="Entrez l'URL de votre image"/>
+					<input id="ImageURL" name="ImageURL" type="text" placeholder="Entrez l'URL de votre image"/>
 				</p>
 				<p> 
-					<textarea id="Description" name="Description" required="required" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
+					<textarea id="Description" name="Description" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
 				</p>
 				<input type='text' name='id' value='<?php $IdIdea?>' style='display:none;'/>
 				<p class="Confirm button"> 
