@@ -23,8 +23,12 @@
 				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
 				echo "<p class='IdeeContent'>".$ans[0]."</p>";
 				if(isset($_SESSION['Status'])){ 
-					echo "<a href='scriptVote.php?id=".$ans[3]."'>Voter pour cette idée</a>";
-					if($_SESSION['Status']==(2||3)) echo "<a href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</a>";
+				
+					echo("<form method='get' action='scriptVote.php'>");
+					echo("<input type='text' name='idea' value='".$ans[3]."' style='display:none;'/>");
+					echo("<button type='submit' class='votefor'>Voter pour cette proposition !</button></form>");
+			
+					if($_SESSION['Status']==(2||3)) echo "<button class='signal' href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</button>";
 
 					if($_SESSION['Status']==3) echo "<button class='createevent'>Créer un événement</button>";
 				}

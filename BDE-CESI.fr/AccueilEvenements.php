@@ -22,13 +22,13 @@
 				$requete->execute();
 				$ans = $requete->fetch();
 				if(count($ans) == 1){
-					echo "<h1>PAS OK</h1>";
+					echo "<h1>Aucun événement n'a été sélectionné</h1>";
 				}else{  
-					echo '<div href ="EvenementUnique.php?id='.$ans[0].'">';
+					echo '<a href ="EvenementUnique.php?id='.$ans[0].'">';
 					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
 					echo "<p class='EventTitle'>".$ans[1]."</p>";
 					/*echo "<p class='EventText'>".$ans[5]."</p>";*/
-					echo "</div>";
+					echo "</a>";
 				}
 			?>
 		</div>
