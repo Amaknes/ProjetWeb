@@ -6,8 +6,6 @@
 	function LecturePanier() {
 
 $email = $_SESSION['Email'];
-$C1=0;
-$C2= 1;
 
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 
@@ -29,33 +27,17 @@ $C2= 1;
 	
 		foreach($RequestPanier as $ans2){
 			
-		$C1++;
-		echo($C1);
-		
-		if($C1==1){
-			echo("test test bite");
-		}
-			
-			echo("<div class='Container' id='".$C2."'>");
-		
-		echo("2eme test");
-			echo("<div id='".$ans2[0]."'>");
-			echo("<div class='ProductName'><p> ".$ans2[1]." </p></div>");
-			echo("<div class='Price'><p> ".$ans2[2]." €</p></div>");
-			echo("<div class='Quantity'><p> ".$ans2[3]."</p></div>");
+			echo("<div class'PanierDisplayedProduct' id='".$ans2[0]."'>");
+			echo("<div class='PanierProductName'><p> ".$ans2[1]." </p></div>");
+			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div>");
+			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div></div>");
 			
 			echo("<form method='post' action='gererPanier.php'>");
 			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
 			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
 			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");
 			
-			
-		// if($C1==3){
-			echo("</div>");
-			$C1=0;
-			$C2++;
-			
-			
+
 		}
 	
 	$RequestPanier->closeCursor();
@@ -77,10 +59,15 @@ $C2= 1;
 	</div>
 	
 	
+<<<<<<< HEAD
 	<div>
 		<h3>Mes produits</h3>
 		<?php if(isset($_SESSION['Status'])){LecturePanier();}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
+=======
+	<div id="CommandeEnAttente">
+		<?php LecturePanier();?>
+>>>>>>> 6322d303158968cc64d608f6db1367cf4e3fd0f3
 	
 	</div>
 	
