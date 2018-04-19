@@ -46,7 +46,17 @@
 			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
 			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
-			
+			echo '<form  method="post" action="scriptPostImage.php" autocomplete="on">';  
+			echo'<p>';
+			echo"<textarea id='URLImage' name='URLImage' required='required' type='text' placeholder='URL Image' ></textarea>'";
+			echo "</p>";
+			echo"<p>";
+			echo"<input id='IDEvent' name='IDEvent' required='required' type='text' value='".$Idreq."' readonly>";
+			echo"</p>";
+			echo"<p class='Confirm button'>";
+			echo"<button id='propose' type='submit'>Envoyer l'image</button>";
+			echo"</p>";
+			echo"</form>";
 			foreach($requete2 as $row){
 				echo '<img class="Pic" src="'.$row[1].'"/>';
 				
