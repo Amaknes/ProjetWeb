@@ -1,0 +1,6 @@
+SELECT Ideas.IDIdea,Activity,LastName,FirstName,COUNT(Vote.IDUser)
+FROM Ideas
+INNER JOIN Users ON Users.IDUser = Ideas.IDUser
+INNER JOIN Vote ON Vote.IDIdea = Ideas.IDIdea
+WHERE IdeaFlag=false
+GROUP BY Users.IDUser

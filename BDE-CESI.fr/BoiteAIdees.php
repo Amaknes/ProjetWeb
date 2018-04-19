@@ -11,7 +11,14 @@
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		
-		$requete = $bdd->prepare("SELECT IDIdea,Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
+		$requete = $bdd->prepare("
+			SELECT Ideas.IDIdea,Activity,LastName,FirstName,COUNT(Vote.IDUser)
+			FROM Ideas
+			INNER JOIN Users ON Users.IDUser = Ideas.IDUser
+			INNER JOIN Vote ON Vote.IDIdea = Ideas.IDIdea
+			WHERE IdeaFlag=false
+			GROUP BY Users.IDUser");
+			
 		$requete->execute();
 		
 		foreach($requete as $ans){
@@ -19,7 +26,10 @@
 				echo "<p class='IdeeName'>".$ans[3]." ".$ans[2]."</p>";
 				echo "<p class='IdeeContent'>".$ans[1]."</p>";
 				
-
+					
+					echo "<p class'IdeeVotes'>Déjà ".$ans[4]." personnes ont voté pour cette proposition !</p>";
+					
+					
 					echo("<form method='get' action='scriptVote.php'>");
 					echo("<input type='text' name='idea' value='".$ans[0]."' style='display:none;'/>");
 					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");
