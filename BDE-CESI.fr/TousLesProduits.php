@@ -42,23 +42,12 @@ function LaunchSearch() {
 
 	if ($requeteConnexion != null) {
 		foreach($requeteConnexion as $ans){
-		$C1++;
-		if($C1==1){
-			echo("<div class='Container' id='".$C2."'>");
-		}
 			echo("<div class='DisplayedProduct' id='".$ans[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
 			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans[4]."' /></div>");
-			echo("<div class='Price'><p> ".$ans[3]." €</p></div>");
-			echo("<div class='AjoutPanier'><p id='AjoutPanier'> Ajouter au panier </p></div></div>");
-			
-			
-			
-		if($C1==3){
-			echo("</div>");
-			$C1=0;
-			$C2++;
-		}
+			echo("<div class='prixbouton'><div class='Price'><p> ".$ans[3]." €</p></div>");
+			echo("<button class='bouton'><p id='AjoutPanier' href='#'> Ajouter au panier </p></button></div></div>");
+
 	
 		}
 	}
