@@ -17,7 +17,7 @@
 
 <form  method="post" action="scriptCreationEvenement.php" autocomplete="on">  
 				<p> 
-					<textarea id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement" <?php if(isset($_SESSION['CacheEventTitle']))echo"value ="$_SESSION['CacheEventTitle']"" ?>></textarea>
+					<textarea id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement"></textarea>
 				</p>
 				<p> 
 					<textarea id="EventDate" name="EventDate" required="required" type="date" placeholder="Date de l'événement en AAAA-MM-JJ" value="AAAA-MM-JJ"></textarea>
@@ -30,7 +30,7 @@
 					<textarea id="ImageURL" name="ImageURL" required="required" type="text" placeholder="Entrez l'URL de votre image"></textarea>
 				</p>
 				<p> 
-					<textarea id="Description" name="Description" required="required" type="text" placeholder="Décrivez votre événement"></textarea>
+					<textarea id="Description" name="Description" required="required" type="text" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
 				</p>
 				<p class="Confirm button"> 
 					<button id="propose" type="submit">Envoyer l'événement</button>

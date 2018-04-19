@@ -1,11 +1,12 @@
 
 	<?php session_start(); ?>
+
+	<?php include('header.php'); ?>
+	
 	<head>
 		<link rel="stylesheet" href="css/style.css"/>
-		<script src="js/jQuery.js"></script>
 	</head>
-	<?php include('header.php'); ?>
-
+	
 	<?php
 	function ShowActivities() {
 		
@@ -15,22 +16,33 @@
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		
-		$requete = $bdd->prepare("SELECT Activity,LastName,FirstName,IDIdea FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
+		$requete = $bdd->prepare("SELECT IDIdea,Activity,LastName,FirstName FROM Ideas INNER JOIN Users ON Users.IDUser = Ideas.IDUser WHERE IdeaFlag=false");
 		$requete->execute();
 		
 		foreach($requete as $ans){
 			echo '<div class="vote">';
-				echo "<p class='IdeeName'>".$ans[2]." ".$ans[1]."</p>";
-				echo "<p class='IdeeContent'>".$ans[0]."</p>";
+				echo "<p class='IdeeName'>".$ans[3]." ".$ans[2]."</p>";
+				echo "<p class='IdeeContent'>".$ans[1]."</p>";
 				if(isset($_SESSION['Status'])){ 
 				
 					echo("<form method='get' action='scriptVote.php'>");
-					echo("<input type='text' name='idea' value='".$ans[3]."' style='display:none;'/>");
-					echo("<button type='submit' class='votefor'>Voter pour cette proposition !</button></form>");
+					echo("<input type='text' name='idea' value='".$ans[0]."' style='display:none;'/>");
+					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");
 			
-					if($_SESSION['Status']==(2||3)) echo "<button class='signal' href='scriptSignalement.php?type=Idea&id=".$ans[0]."'>Signaler comme inapproprié</button>";
-
-					if($_SESSION['Status']==3) echo "<button class='createevent'>Créer un événement</button>";
+					if($_SESSION['Status']==(2||3)){
+						
+						echo("<form method='get' action='scriptSignalement.php'>");
+						echo("<input type='text' name='type' value='Idea' style='display:none;'/>");
+						echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
+						echo("<button type='submit' class='signal'>Signaler comme inapproprié</button></form>");
+						
+					}
+					
+					if($_SESSION['Status']==3){
+						
+						echo("<form action='AjoutEvenement.php'>");
+						echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
+					} 
 				}
 			echo ('</div>');
 		}

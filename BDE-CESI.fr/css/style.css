@@ -277,12 +277,11 @@ background-color: #FFFFFF;
 /*_________________________________________________________________________________________________________Accueil_________________________________________________________________________________________________________________*/
 .AccueilCategorie{
 	text-align: center;
-	padding: 40px;
+	padding: 20px;
 }
 
-.Ah3 h3{
-    font-weight: 400;
-    font-size: 36px;
+.Ah3{
+    font-size: 40px;
     color: #B2030A;	
 }
 
@@ -291,6 +290,7 @@ background-color: #FFFFFF;
 
 #Evenements{
 	text-align:center;
+	color:#000144;
 }
 
 #Evenements h3{
@@ -298,10 +298,21 @@ background-color: #FFFFFF;
 }
 
 .monthevent{
-	width: 100%;
-	display: inline-block;
 	text-align:center;
 	background:#E2E2E2;
+	margin:20px 20%;
+	padding:5px 0;
+}
+
+.monthevent a{
+	font-size: 40px;
+	color:  #000000;
+	text-decoration:none;
+	
+}
+
+.monthevent p{
+	margin-top:10px;
 }
 
 .EventThumbnail{
@@ -413,7 +424,7 @@ textarea{
 
 .BAIh3{
 	text-align:center;
-	color: #B2030A;
+	color: #000144;
 	font-size: 40px;
 }
 
@@ -822,8 +833,15 @@ margin-bottom: 100px;
 /*________________________________________________________________________________________________Mentions légales________________________________________________________________________________*/
 #MentionsLegales h3{
 	color: #000144;
+	margin-left: 20px;
+	margin-bottom:0;
 }
-  
+
+#MentionsLegales p{
+	margin-left: 40px;
+	margin-top:2px;
+}
+
 /*___________________________________________________________________________________________________Footer_______________________________________________________________________________________*/
 
 footer {
