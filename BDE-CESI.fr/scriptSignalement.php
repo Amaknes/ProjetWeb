@@ -15,7 +15,7 @@ switch($Typereq){
 	$requete2->execute();
 	$ans = $requete2->fetch();
 	
-	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id="'.$ans[0].'">';
+	echo '<meta http-equiv="refresh" content="0;URL=AccueilEvenements.php">';
 	break;
 	
 	case "Comment" :
@@ -29,7 +29,7 @@ switch($Typereq){
 	$requete2->execute();
 	$ans = $requete2->fetch();
 	
-	echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id="'.$ans[0].'">';
+	echo '<meta http-equiv="refresh" content="0;URL=AccueilEvenements.php">';
 	break;
 	
 	case "Idea" :
