@@ -59,15 +59,11 @@ $email = $_SESSION['Email'];
 	</div>
 	
 	
-<<<<<<< HEAD
-	<div>
-		<h3>Mes produits</h3>
+
+	<div id="CommandeEnAttente">
 		<?php if(isset($_SESSION['Status'])){LecturePanier();}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
-=======
-	<div id="CommandeEnAttente">
-		<?php LecturePanier();?>
->>>>>>> 6322d303158968cc64d608f6db1367cf4e3fd0f3
+
 	
 	</div>
 	

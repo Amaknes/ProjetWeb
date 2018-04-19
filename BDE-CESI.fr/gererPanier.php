@@ -29,8 +29,8 @@
 		$DeleteProductFromCart->closeCursor();
 			
 			$CleanOrders = $bdd->prepare("DELETE FROM Contain WHERE Quantity <= 0");
-			$CleanOrders->execute();
 			$CleanOrders->closeCursor();
+f			$CleanOrders->execute();
 			
 			
 			
