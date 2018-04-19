@@ -612,7 +612,7 @@ height:auto;
 	justify-content: space-between;
 }*/
 
-#ProductName:after{
+.AjoutPanier:after{
 	position: relative;
 	content:"\E821";
 	font: 1.3em/25px 'fontello';
