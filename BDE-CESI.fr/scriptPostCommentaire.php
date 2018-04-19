@@ -22,6 +22,6 @@ $requete3 = $bdd->prepare("SELECT IDEvent FROM Pictures WHERE IDPicture=?");
 		$requete3->bindValue(1, $IDParent, PDO::PARAM_INT);
 		$requete3->execute();
 		$ans2 = $requete->fetch();
-echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id="'.$ans2[0].'">';
+echo '<meta http-equiv="refresh" content="0;URL=EvenementListe.php">';
 
 ?>

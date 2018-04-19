@@ -69,21 +69,21 @@
  #######################################-->
  
 	
-<content id="BoiteAIdees">
+<section id="BoiteAIdees">
 	<div id="banniere">	
 		<h2>Boîte à idées</h2>
 	</div>
 
 	
-	<section id="sectionidees">
+	<div id="sectionidees">
 
 		<?php if(isset($_SESSION['Status'])){
 			ShowForm();
 			ShowActivities();
 		} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>";} ?>
 
-	</section>
-</content>
+	</div>
+</section>
 
 	<?php include('footer.php'); ?>
 	

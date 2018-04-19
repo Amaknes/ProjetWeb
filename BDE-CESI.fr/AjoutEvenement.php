@@ -8,7 +8,7 @@
 	<?php include('header.php'); ?>
 
 	
-<div id="AjoutEvenement">
+<section id="AjoutEvenement">
 	<div id="banniere">	
 		<h2>Ajouter un événement 
 	</div>
@@ -35,6 +35,6 @@
 				
 				
 		</form>
-</div>
+</section>
 
 	<?php include('footer.php'); ?>

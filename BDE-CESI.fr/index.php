@@ -8,13 +8,13 @@
 	
 		<br>
 	
-    <content id="Index">
+    <section id="Index">
 	
         <?php
 	
         ?>
 
-    </content>
+    </section>
 	
 	
 		<?php include('footer.php'); ?>

@@ -6,7 +6,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
  
-		<content id="NouveauProduit">
+		<section id="NouveauProduit">
 			<div id="banniere">	
 				<h2>Ajouter un nouveau produit</h2>
 			</div>
@@ -50,7 +50,7 @@
                 </form>
             </div>
 						
-		</content>
+		</section>
 
 	
 		<?php include('footer.php'); ?>

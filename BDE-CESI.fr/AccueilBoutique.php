@@ -1,5 +1,3 @@
-
-
 <?php session_start(); ?>
 <?php include('header.php'); ?>
 <link rel="stylesheet" href="css/caroussel.css"/>
@@ -11,7 +9,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
 
-	<content id="AccueilBoutique">
+	<section id="AccueilBoutique">
 		<div id="banniere">	
 			<h2>Accueil boutique</h2>
 		</div>
@@ -29,6 +27,6 @@
 				<?php if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a id='NouveauProduit' class='NouveauProduit' href='NouveauProduit.php'>Ajouter un nouveau produit</a>";} ?>
 			</div>
-    </content>
+    </section>
 
 		<?php include('footer.php'); ?>

@@ -55,7 +55,7 @@ $email = $_SESSION['Email'];
 
  
  
-<content id="Panier">
+<section id="Panier">
 	<div id="banniere">	
 		<h2>Mon panier</h2>
 	</div>
@@ -75,6 +75,6 @@ $email = $_SESSION['Email'];
 	
 	
 	
-</content>
+</section>
 
 		<?php include('footer.php'); ?>

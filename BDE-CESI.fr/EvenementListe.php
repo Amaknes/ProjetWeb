@@ -7,7 +7,7 @@
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->	
  
-	<content id="EvenementListe">
+	<section id="EvenementListe">
 		<div id="banniere">	
 			<h2>Liste des événements</h2>
 		</div>
@@ -23,6 +23,6 @@
 				echo "</div>";
 			}
 		?>
-	</content>
+	</section>
 
 		<?php include('footer.php'); ?>
