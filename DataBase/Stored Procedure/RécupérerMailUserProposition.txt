@@ -2,3 +2,4 @@ SELECT Email
 FROM Users
 INNER JOIN Ideas
 ON Users.IDUser = Ideas.IDUser
+WHERE IDIdea = 1
