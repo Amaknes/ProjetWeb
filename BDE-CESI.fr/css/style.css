@@ -638,10 +638,35 @@ textarea{
 	color: #FFFFFF;
 }
 
+/*_____________________________________________________________________________________________________Ajout événement____________________________________________________________________________________________________________*/
 
+#AjoutEvenement{
+	text-align: center;
+}
 
+#AjoutEvenement input{
+	width:300px;
+	height:30px;
+    margin:5px 0;
+    padding:5px;
+    align-self:center;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:15px;
+    letter-spacing:2px;
+}
 
-/*_____________________________________________________________________________________________________Accueil Boutique_____________________________________________________________________________________________________________*/
+#Price:after{
+	position: relative;
+	content:"\E821";
+	font: 1.3em/25px 'fontello';
+	text-align: center;
+	padding-left: 10px;
+	color: #B2030A;
+}
+
+/*_____________________________________________________________________________________________________Accueil Boutique____________________________________________________________________________________________________________*/
 #AccueilBoutique .ABh3 h3{
     font-weight: 400;
     font-size: 36px;
@@ -650,8 +675,8 @@ textarea{
 }
 #BoutiqueAjoutProduit{
 	text-align:center;
-width: 30%;
-height:100px;
+	width: 30%;
+	height:100px;
 }
 .NouveauProduit:after{
 	position: relative;

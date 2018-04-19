@@ -11,23 +11,23 @@
 	<?php include('header.php'); ?>
 
 	
-<content id="AjoutEvenement">
+<div id="AjoutEvenement">
 	<div id="banniere">	
 		<h2>Ajouter un événement 
+	</div>
 
-<form  method="post" action="scriptCreationEvenement.php" autocomplete="on">  
+		<form  method="post" action="scriptCreationEvenement.php" autocomplete="on">  
 				<p> 
-					<textarea id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement"></textarea>
+					<input id="EventTitle" name="EventTitle" required="required" type="text" placeholder="Titre de l'événement"></input>
 				</p>
 				<p> 
-					<textarea id="EventDate" name="EventDate" required="required" type="date" placeholder="Date de l'événement en AAAA-MM-JJ" value="AAAA-MM-JJ"></textarea>
+					<input id="EventDate" name="EventDate" required="required" type="date" placeholder="Date de l'événement en AAAA-MM-JJ" value="AAAA-MM-JJ"></input>
 				</p>
 				<p> 
-					<textarea id="Price" name="Price" required="required" type="text" placeholder="Quel sera le prix de votre activité?"></textarea>
-					€
+					<input id="Price" name="Price" required="required" type="text" placeholder="Prix de votre activité en euros"></input>
 				</p>
 				<p> 
-					<textarea id="ImageURL" name="ImageURL" required="required" type="text" placeholder="Entrez l'URL de votre image"></textarea>
+					<input id="ImageURL" name="ImageURL" required="required" type="text" placeholder="Entrez l'URL de votre image"></input>
 				</p>
 				<p> 
 					<textarea id="Description" name="Description" required="required" type="text" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
@@ -37,4 +37,7 @@
 				</p>
 				
 				
-			</form>
+		</form>
+</div>
+
+	<?php include('footer.php'); ?>
