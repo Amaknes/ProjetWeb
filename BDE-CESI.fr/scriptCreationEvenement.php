@@ -9,20 +9,23 @@ $description = $_POST['Description'];
 
 
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
-/*
 
-if(isset($_POST['id'])) {
+if(isset($_POST['ididea'])) {
 	
-	$IDIdea = $_POST['id'];
+	$IDIdea = $_POST['ididea'];
+	
+	/*
 	$GetMail = $bdd->prepare("SELECT Email FROM Users INNER JOIN Ideas ON Users.IDUser = Ideas.IDUser WHERE IDIdea = ?");
 	$GetMail->execute(array($IDIdea));
 	$UserMail = $GetMail->fetch();
 	$GetMail->closeCursor();
 	
-	//mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
-	
+	mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
+	*/
+
 } else {}
-*/
+
+var_dump($IDIdea);
 
 		$CreateEvent = $bdd->prepare("INSERT INTO Events (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( :Name, :Date, :Price, :UrlImage, :Description, 0) ");
 		
@@ -34,15 +37,13 @@ if(isset($_POST['id'])) {
 		
 		$CreateEvent->execute();
 		
-		/*
+		var_dump($IDIdea);
 		$DeleteProposition = $bdd->prepare("DELETE FROM Ideas WHERE IDIdea = ? ");
-		$DeleteProposition->execute(array($));
-		*/
+		$DeleteProposition->execute(array($IDIdea));
 		
-		//echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
-	}else{
-	//echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">';
-	}
-	*/
+		
+		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
+
+	echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">';
 
 ?>

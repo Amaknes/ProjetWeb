@@ -5,7 +5,7 @@
  #######################################-->
 <?php session_start(); ?>
 <?php include('header.php'); ?>
-<?php $IdIdea = isset($_POST['id']) ? $_POST['id'] : "";?>
+<?php $IdIdea = isset($_POST['ididea']) ? $_POST['ididea'] : "";?>
 
 
 
@@ -60,9 +60,9 @@
 					<input id="ImageURL" name="ImageURL" type="text" placeholder="Entrez l'URL de votre image"/>
 				</p>
 				<p> 
-					<textarea id="Description" name="Description" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
+					<textarea id="Description" name="Description" placeholder="Décrivez votre événement"></textarea>
 				</p>
-				<input type='text' name='id' value='<?php $IdIdea?>' style='display:none;'/>
+					<?php echo("<input type='text' name='ididea' value='".$IdIdea."' style='display:none;'/>"); ?>
 				<p class="Confirm button"> 
 					<button id="propose" type="submit">Envoyer l'événement</button>
 				</p>

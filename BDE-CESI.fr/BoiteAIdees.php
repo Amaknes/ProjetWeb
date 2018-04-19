@@ -35,8 +35,9 @@
 					
 					if($_SESSION['Status']==3){
 						
-						echo("<form action='AjoutEvenement.php'>");
-						echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
+						echo("<form method='post' action='AjoutEvenement.php'>");
+						echo("<input type='text' name='ididea' value='4' style='display:none;'/>");
+						// echo("<input type='text' name='ididea' value='".$ans[0]."' style='display:none;'/>");
 						echo("<button type='submit' class='createevent'>Créer un événement</button></form>");
 					} 
 				
