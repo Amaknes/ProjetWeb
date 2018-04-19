@@ -7,6 +7,23 @@ $price = $_POST['Price'];
 $imageurl = $_POST['ImageURL'];
 $description = $_POST['Description'];
 
+if(isset($_POST['id']) {
+	
+	$IDIdea = $_POST['id']
+	$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
+	$GetMail = $bdd->prepare("SELECT Email FROM Users INNER JOIN Ideas ON Users.IDUser = Ideas.IDUser WHERE IDIdea = ?");
+	$GetMail->execute(array($IDIdea));
+	$UserMail = $GetMail->fetch();
+	$GetMail->closeCursor();
+	
+	mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
+	
+} else {}
+
+
+
+
+
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		$requete = $bdd->prepare("INSERT INTO Ideas (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( :Name, :Date, :Price, :UrlImage, :Description, false) ");
 		
@@ -26,4 +43,6 @@ $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '
 	}else{	
 	echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">'
 	}
+	
+
 ?>
