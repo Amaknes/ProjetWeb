@@ -71,14 +71,19 @@
 				$requete5->execute();
 				$ans5 = $requete5->fetch();
 				
-				echo "<p>".$ans5[0]." likes"."</p>";
+				
 				
 				
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				
+				
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
+				
+				echo "<p class='likesnb'>".$ans5[0]."</p>"; 
+				
 				echo "<h3>Commentaires</h3>";
 
 				
@@ -115,7 +120,7 @@
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-					{echo "<a href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
+					{echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 				}
 				
 				echo"</div>";
