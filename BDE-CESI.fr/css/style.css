@@ -566,7 +566,7 @@ height:100px;
     justify-content: center;
     align-items: center;
 }
-#TousLesProduits .Container .ProductName{
+#TousLesProduits .DisplayedProduct .prixbouton{
     width: 100%;
 	text-align: center;	
 }
@@ -598,43 +598,42 @@ height:100px;
 #TousLesProduits .DisplayedProduct{
     background-color: rgba(228, 228, 228, 1);
     border: 1px navy solid;
-    /* flex-basis: 25%; */
-    /* padding: 15px; */
+	width:28%;
+	justify-content: space-around;
     overflow-y: hidden;
-    /* display: inline; */
     display: flex;
     flex-flow: row wrap;
-    width: calc(33% - 20px);
     margin: 10px;
-	width: auto;
     position: relative;
 }
 
-#TousLesProduits .Container{
-	display: flex;
-	justify-content: space-around;
-	flex: 1;
-	margin-bottom: 20px;
-	flex-direction: line;
 
-}
+/*#TousLesProduits .prixbouton{
+   margin-top:55px;
+}*/
 #TousLesProduits #imgproduit {
     height: 400px;
     width: 100%;
     margin: 0 auto;
 }         
 #TousLesProduits #imgproduit img{
-    width: auto;
+    width: 100%;
     height: 100%;
 }
-#TousLesProduits .Container .Price{
+#TousLesProduits .DisplayedProduct .prixbouton .Price{
 	border: 1px red solid;
 	position: absolute;
 	bottom:0;
 	width:50%;
 	left:0;
 }	
-
+.bouton{
+	border: 1px red solid;
+	position: absolute;
+	bottom:0;
+	width:50%;
+	right:0;
+}	
 /*#TousLesProduits #products{
 	display: flex;
 	weight: 100%;
@@ -642,14 +641,16 @@ height:100px;
 	justify-content: space-between;
 }*/
 
-.AjoutPanier:after{
+.bouton:after{
 	position: relative;
 	content:"\E821";
 	font: 1.3em/25px 'fontello';
 	text-align: center;
 	color: #FFFFFF;
 }	
-
+.bouton:active{
+	background-color: #navy;
+}	
   
   
   

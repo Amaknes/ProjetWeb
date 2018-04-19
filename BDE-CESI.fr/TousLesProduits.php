@@ -42,14 +42,11 @@ function LaunchSearch() {
 
 	if ($requeteConnexion != null) {
 		foreach($requeteConnexion as $ans){
-			echo("<div class='Container'>");
-		
 			echo("<div class='DisplayedProduct' id='".$ans[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
 			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans[4]."' /></div>");
-			echo("<div class='Price'><p> ".$ans[3]." €</p></div>");
-			echo("<div class='AjoutPanier'><p id='AjoutPanier'> Ajouter au panier </p></div></div>");
-			echo("</div>");
+			echo("<div class='prixbouton'><div class='Price'><p> ".$ans[3]." €</p></div>");
+			echo("<button class='bouton'><p id='AjoutPanier' href='#'> Ajouter au panier </p></button></div></div>");
 
 	
 		}
