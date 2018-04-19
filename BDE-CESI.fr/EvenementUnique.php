@@ -77,8 +77,14 @@
 			//Placeholder pour le nombre de participants à revérifier
 			echo "<p>Déja ".$ans4[0]." participants</p>";
 			echo "<button>participer</button>";
-			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>"; //??
-			if($_SESSION['Status']==3) echo "<button>Télécharger en CSV</button><button>Télécharger en PDF</button>";
+			
+			echo("<form method='get' action='genererListeDesParticipants.php'>");
+			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
+			echo("<button type='submit'>Télécharger en CSV</button></form>");
+			
+			if($_SESSION['Status']==(2||3)) echo "<button>Signaler comme inapproprié</button>";
+			if($_SESSION['Status']==3) echo "<button>CSV</button>";
+			
 		}
 	
 		?>
