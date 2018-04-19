@@ -3,11 +3,12 @@
  Date : 2018
  Contexte : Projet WEB Exia CESI Saint-Nazaire
  #######################################-->
- <?php session_start(); ?>
-	
-	<?php include('header.php'); ?>
+<?php session_start(); ?>
+<?php include('header.php'); ?>
+<?php $IdIdea = isset($_POST['id']) ? $_POST['id'] : "";?>
 
-	
+
+
 <section id="AjoutEvenement">
 	<div id="banniere">	
 		<h2>Ajouter un événement </h2>
@@ -29,6 +30,7 @@
 				<p> 
 					<textarea id="Description" name="Description" required="required" placeholder="Décrivez votre événement" <?php if(isset($_SESSION['CacheEventContent'])){echo'value ="'.$_SESSION['CacheEventContent'].'"';} ?>></textarea>
 				</p>
+				<input type='text' name='id' value='<?php $IdIdea?>' style='display:none;'/>
 				<p class="Confirm button"> 
 					<button id="propose" type="submit">Envoyer l'événement</button>
 				</p>
