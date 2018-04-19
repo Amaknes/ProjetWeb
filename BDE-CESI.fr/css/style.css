@@ -449,7 +449,7 @@ textarea{
 	padding:5px 0;
 }
 
-button{
+.vote button{
 	width:22%;
     height:50px;    
     border-radius:5px;
@@ -461,7 +461,10 @@ button{
 	margin: 8px 10px;
 }
 
-button:active{  
+
+}
+
+.vote button:active{  
 	background: #f18186;
 	color: #FFFFFF;
 }
