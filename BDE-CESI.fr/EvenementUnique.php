@@ -46,6 +46,8 @@
 			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
 			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
+			
+			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
 			echo '<form id="PostImage" method="post" action="scriptPostImage.php" autocomplete="on">';  
 			echo'<p>Publier une image<br/>';
 			echo"<input id='URLImage' name='URLImage' required='required' placeholder='URL Image' />";
@@ -57,7 +59,8 @@
 			echo"<button class='comment' type='submit'>Envoyer l'image</button>";
 			echo"</p>";
 			echo"</form>";
-
+			}
+			
 			foreach($requete2 as $row){
 				echo'<div class="PicAndCom">';
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
@@ -65,7 +68,7 @@
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";}
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
-				echo "<p>Commentaires</p>";
+				echo "<h3>Commentaires</h3>";
 				
 				//requête récupération de commentaires
 				$requete3 = $bdd->prepare("
@@ -84,6 +87,7 @@
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
 				
+				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
 				echo"<textarea class='Content' name='Content' required='required'  placeholder='Tapez votre commentaire ici' ></textarea>";
@@ -93,7 +97,7 @@
 				echo"<button class='comment' type='submit'>Envoyer le commentaire</button>";
 				echo"</p>";
 				echo"</form>";
-				
+				}
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
@@ -101,6 +105,7 @@
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 					{echo "<a href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
 				}
+				
 				echo"</div>";
 			}
 			echo("<form method='get' action='genererListeDesParticipants.php'>");

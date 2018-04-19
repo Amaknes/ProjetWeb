@@ -522,9 +522,13 @@ background-color: #FFFFFF;
 .PicAndCom{
 	margin-left:auto;
 	margin-right:auto;
+	padding-bottom:10px;
 	width:1000px;
 	text-align:center;
 	background: #E2E2E2;
+	margin-bottom:20px;
+	margin-top:20px;
+	border-radius:5px;
 }
 
 .Pic{
@@ -532,10 +536,8 @@ background-color: #FFFFFF;
     max-width: 100%;
 }
 
-.PicAndCom{
-	margin-bottom:20px;
-	margin-top:20px;
-	border-radius:5px;
+.PicAndCom h3{
+	font-size:30px;
 }
 
 .PicAndCom .signal{
@@ -578,8 +580,8 @@ background-color: #FFFFFF;
 }
 
 .PicAndCom p{
-	font-size: 30px;
-	margin:5px 0;
+	/*font-size: 30px;*/
+	/*margin:5px 0;*/
 }
 
 .Content{
@@ -613,6 +615,31 @@ background-color: #FFFFFF;
 .comment:active{  
 	background: #f18186;
 	color: #FFFFFF;
+}
+
+.CommentName{
+	width:250px;
+    height:35px;    
+    border-radius:5px;
+    font-size:20px;
+	color:white;
+	text-align:center;
+    background:#000144;
+    border:none;
+	padding-top:5px;
+	margin-left:20px;
+	margin-bottom:5px;
+	margin-top:2px;
+}
+
+.CommentContent{
+	margin:0 10px;
+    padding:5px;
+    background:#FFF;
+    border:1px solid #000000;
+    border-radius:5px;
+    font-size:20px;
+	text-align:justify;
 }
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
