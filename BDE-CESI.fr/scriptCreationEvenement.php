@@ -7,8 +7,10 @@ $price = $_POST['Price'];
 $imageurl = $_POST['ImageURL'];
 $description = $_POST['Description'];
 
+
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 /*
+
 if(isset($_POST['id'])) {
 	
 	$IDIdea = $_POST['id'];
