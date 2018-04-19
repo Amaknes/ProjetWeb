@@ -1061,13 +1061,13 @@ margin-bottom: 100px;
 	color: #FFFFFF;
 }
 /*________________________________________________________________________________________________Mentions légales________________________________________________________________________________*/
-#MentionsLegales h3{
+#MentionsLegalesTXT h3{
 	color: #000144;
 	margin-left: 20px;
 	margin-bottom:0;
 }
 
-#MentionsLegales p{
+#MentionsLegalesTXT p{
 	margin-left: 40px;
 	margin-top:2px;
 }

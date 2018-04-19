@@ -34,7 +34,7 @@
 		/*echo "<p class='EventDate'>À lieu le : ".$ans[2]."</p>";*/
 		echo "<p class='EventDate'>Date : ".$newDate."</p>";
 		echo "<p class='EventPrice'>Prix : ".$ans[3]."€</p>";
-		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
+		echo '<img class="EventThumbnail" src="'.$ans[4].'" alt="Image evenement"/>';
 		echo "<p class='EventText'>".$ans[5]."</p>";
 		echo "</div>";
 		
@@ -48,17 +48,17 @@
 			$requete2->execute();
 			echo '<form  method="post" action="scriptPostImage.php" autocomplete="on">';  
 			echo'<p>';
-			echo"<textarea id='URLImage' name='URLImage' required='required' type='text' placeholder='URL Image' ></textarea>'";
+			echo"<textarea id='URLImage' name='URLImage' required='required' placeholder='URL Image' ></textarea>'";
 			echo "</p>";
 			echo"<p>";
 			echo"<input id='IDEvent' name='IDEvent' required='required' type='text' value='".$Idreq."' readonly>";
 			echo"</p>";
 			echo"<p class='Confirm button'>";
-			echo"<button id='propose' type='submit'>Envoyer l'image</button>";
+			echo"<button class='comment' type='submit'>Envoyer l'image</button>";
 			echo"</p>";
 			echo"</form>";
 			foreach($requete2 as $row){
-				echo '<img class="Pic" src="'.$row[1].'"/>';
+				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'>Signaler comme inapproprié</a>";}
@@ -84,13 +84,13 @@
 				
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
-				echo"<textarea id='Content' name='Content' required='required' type='text' placeholder='URL Image' ></textarea>'";
+				echo"<textarea class='Content' name='Content' required='required'  placeholder='URL Image' ></textarea>'";
 				echo "</p>";
 				echo"<p>";
-				echo"<input id='IDPic' name='IDPic' required='required' type='text' value='".$row[0]."' readonly>";
+				echo"<input class='IDPic' name='IDPic' required='required' type='text' value='".$row[0]."' readonly>";
 				echo"</p>";
 				echo"<p class='Confirm button'>";
-				echo"<button id='propose' type='submit'>Envoyer le commentaire</button>";
+				echo"<button class='comment' type='submit'>Envoyer le commentaire</button>";
 				echo"</p>";
 				echo"</form>";
 				
