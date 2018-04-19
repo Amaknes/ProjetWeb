@@ -719,9 +719,12 @@ textarea{
     justify-content: center;
     align-items: center;
 }
+.ProductName {
+	margin:5px 15px 0px;
+}
 #TousLesProduits .DisplayedProduct .prixbouton{
-    width: 100%;
-	text-align: center;	
+    width:100%;
+	text-align: center;
 }
 
 #Recherche{
@@ -749,43 +752,46 @@ textarea{
   
   
 #TousLesProduits .DisplayedProduct{
-    background-color: rgba(228, 228, 228, 1);
     border: 1px navy solid;
-	width:28%;
-	justify-content: space-around;
-    overflow-y: hidden;
+    width: calc(25% - 40px);
+    justify-content: center;
     display: flex;
     flex-flow: row wrap;
-    margin: 10px;
+    margin: 0 10px 20px;
     position: relative;
+    background: #FFF;
 }
 
 
-/*#TousLesProduits .prixbouton{
-   margin-top:55px;
-}*/
+#TousLesProduits .prixbouton{
+   width:100%;
+   text-align: center;
+   position: relative;
+   vertical-align: top;
+   border: 1px solid black;
+}
 #TousLesProduits #imgproduit {
     height: 400px;
     width: 100%;
-    margin: 0 auto;
+    padding:10px;
+	position: relative;
 }         
 #TousLesProduits #imgproduit img{
     width: 100%;
     height: 100%;
+	display: block;
+	margin:0 auto;
 }
 #TousLesProduits .DisplayedProduct .prixbouton .Price{
-	border: 1px red solid;
-	position: absolute;
-	bottom:0;
-	width:50%;
-	left:0;
+	width: 48%
 }	
 .bouton{
 	border: 1px red solid;
-	position: absolute;
-	bottom:0;
-	width:50%;
-	right:0;
+    position: absolute;
+    bottom: 0;
+    width: 48%;
+    right: 0;
+    height: 100%;
 }	
 /*#TousLesProduits #products{
 	display: flex;
@@ -795,13 +801,15 @@ textarea{
 }*/
 
 .bouton:after{
-	position: relative;
-	content:"\E821";
-	font: 1.3em/25px 'fontello';
-	text-align: center;
-	color: #FFFFFF;
+	position: absolute;
+    content: "\E821";
+    font: 1.3em/25px 'fontello';
+    text-align: center;
+    color: #FFFFFF;
+    top: 15px;
+    right: 15px;
 }	
-.bouton:active{
+.bouton::active{
 	background-color: #navy;
 }	
   
