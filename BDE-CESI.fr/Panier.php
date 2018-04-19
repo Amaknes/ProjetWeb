@@ -5,34 +5,33 @@
 <?php
 	function LecturePanier() {
 
-$nom = $_SESSION['Nom'];
-$prenom = $_SESSION['Prenom'];
 $email = $_SESSION['Email'];
 $C1=0;
 $C2= 1;
 
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
-	
-	/*$Name = isset($_POST['PName']) ? $_POST['PName'] : "";
-	$Category = isset($_POST['Category']) ? $_POST['Category'] : "Tous les produits";
-	$MinPrice = isset($_POST['MinPrice']) ? $_POST['MinPrice'] : 0;
-	$MaxPrice = isset($_POST['MaxPrice']) ? $_POST['MaxPrice'] : 99999999999;*/
 
-	$requeteTakeID = $bdd->prepare("SELECT IDUser FROM Users WHERE LastName = ? AND FirstName = ? AND Email = ?");
-		$requeteTakeID->bindValue(1, $nom, PDO::PARAM_STR);
-		$requeteTakeID->bindValue(2, $prenom, PDO::PARAM_STR);
-		$requeteTakeID->bindValue(3, $email, PDO::PARAM_STR);
+	$requeteTakeID = $bdd->prepare("SELECT IDUser FROM Users WHERE Email = ?");
+
+		$requeteTakeID->bindValue(1, $email, PDO::PARAM_STR);
 		$requeteTakeID->execute();
 		$ans = $requeteTakeID->fetch();
 		$requeteTakeID->closeCursor();
 	
-	$RequestPanier = $bdd->prepare("SELECT * FROM orders WHERE IDUser=? AND Status=0");
-	/*$Param = array($Name,$Category,$MinPrice,$MaxPrice);*/
+	$RequestPanier = $bdd->prepare("SELECT Products.IDProduct,`Name`, `Price`, `Quantity`
+									FROM `Products`
+									INNER JOIN `Contain` ON Products.IDProduct = Contain.IDProduct
+									INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
+									WHERE IDUser = ? AND Status = 0");
+									
 	$RequestPanier->bindValue(1, $ans[0], PDO::PARAM_INT);
 	$RequestPanier->execute();
+	
 		foreach($RequestPanier as $ans2){
+			
 		$C1++;
 		echo($C1);
+		
 		if($C1==1){
 			echo("test test bite");
 		}
@@ -42,20 +41,17 @@ $C2= 1;
 		echo("2eme test");
 			echo("<div id='".$ans2[0]."'>");
 			echo("<div class='ProductName'><p> ".$ans2[1]." </p></div>");
-			echo("<div id='imgproduit' class='ProductPic'><img src='".$ans2[4]."' /></div>");
-			echo("<div class='Price'><p> ".$ans2[3]." €</p></div>");
-			echo("<div class='AjoutPanier'><p id='AjoutPanier'> Ajouter au panier </p></div></div>");
+			echo("<div class='Price'><p> ".$ans2[2]." €</p></div>");
+			echo("<div class='Quantity'><p> ".$ans2[3]."</p></div>");
 			
 			
-			
-		if($C1==3){
+		// if($C1==3){
 			echo("</div>");
 			$C1=0;
 			$C2++;
+			
+			
 		}
-	
-		
-	}
 	
 	$RequestPanier->closeCursor();
 	}
