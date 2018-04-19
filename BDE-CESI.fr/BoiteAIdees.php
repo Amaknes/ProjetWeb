@@ -19,7 +19,7 @@
 				echo "<p class='IdeeName'>".$ans[3]." ".$ans[2]."</p>";
 				echo "<p class='IdeeContent'>".$ans[1]."</p>";
 				if(isset($_SESSION['Status'])){ 
-				
+
 					echo("<form method='get' action='scriptVote.php'>");
 					echo("<input type='text' name='idea' value='".$ans[0]."' style='display:none;'/>");
 					echo("<button type='submit' class='votefor'>Voter pour cette proposition</button></form>");

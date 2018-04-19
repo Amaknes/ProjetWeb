@@ -47,7 +47,7 @@
 					<?php
 						if(isset($_SESSION['Nom'])){
 							$sessionfinale= ($_SESSION['Prenom']." ".$_SESSION['Nom']);
-							echo "<p>$sessionfinale</p>";
+							echo "<p id='sessionfinale'>$sessionfinale</p>";
 							echo "<a class='sessionsignout' href='deconnexion.php'>Déconnexion</a>";
 					}else{
 							echo "<a class='sessionsignup' href='inscription.php'>Inscription</a>";
