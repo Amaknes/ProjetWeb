@@ -35,7 +35,10 @@ $email = $_SESSION['Email'];
 
 			
 
-			
+			/*echo("<form method='post' action='gererPanier.php'>");
+			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
+			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
+			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");*/
 
 		}
 	
@@ -62,8 +65,6 @@ $email = $_SESSION['Email'];
 	<div id="CommandeEnAttente">
 		<?php if(isset($_SESSION['Status'])){LecturePanier();}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
-
-	
 	</div>
 	
 	
