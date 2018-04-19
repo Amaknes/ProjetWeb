@@ -10,6 +10,9 @@
 	
 	
 	<content id="EvenementUnique">	
+		<div id="banniere">	
+			<h2>Événement</h2>
+		</div>
 		<?php
 		
 		$Idreq = $_GET['id'];
@@ -19,11 +22,21 @@
 		$requete->execute();
 		$ans = $requete->fetch();
 		
+		/*$annee = $bdd->prepare('SELECT DATE_FORMAT("2017-06-15", "%Y"');
+		$annee->execute();
+		$year = $annee->fetch();*/
+		
+		$originalDate = $ans[2];
+		$newDate = date("d/m/Y", strtotime($originalDate));
+		
+		echo "<div class=TheEvent>";
 		echo "<p class='EventTitle'>".$ans[1]."</p>";
+		/*echo "<p class='EventDate'>À lieu le : ".$ans[2]."</p>";*/
+		echo "<p class='EventDate'>Date : ".$newDate."</p>";
+		echo "<p class='EventPrice'>Prix : ".$ans[3]."€</p>";
 		echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';
-		echo "<p class='EventDate'>A lieu le : ".$ans[2]."</p>";
-		echo "<p class='EventPrice'>Prix : ".$ans[3]."</p>";
 		echo "<p class='EventText'>".$ans[5]."</p>";
+		echo "</div>";
 		
 		$eventtime = str_replace('-','',$ans[2]);
 		$eventtime = strtotime($eventtime);

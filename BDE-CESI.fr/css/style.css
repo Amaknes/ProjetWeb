@@ -87,6 +87,7 @@ width: 15%;
 }
 
 
+
 #BDEHeader{
 border-width: 0px;
 margin-top: 50px;
@@ -277,12 +278,11 @@ background-color: #FFFFFF;
 /*_________________________________________________________________________________________________________Accueil_________________________________________________________________________________________________________________*/
 .AccueilCategorie{
 	text-align: center;
-	padding: 40px;
+	padding: 20px;
 }
 
-.Ah3 h3{
-    font-weight: 400;
-    font-size: 36px;
+.Ah3{
+    font-size: 40px;
     color: #B2030A;	
 }
 
@@ -299,21 +299,21 @@ background-color: #FFFFFF;
 }
 
 .monthevent{
-	display: inline-block;
 	text-align:center;
 	background:#E2E2E2;
-	margin:10px 20%;
+	margin:20px 20%;
+	padding:5px 0;
 }
 
 .monthevent a{
 	font-size: 40px;
 	color:  #000000;
 	text-decoration:none;
-
+	
 }
 
 .monthevent p{
-	margin-top:0px;
+	margin-top:10px;
 }
 
 .EventThumbnail{
@@ -372,8 +372,50 @@ background-color: #FFFFFF;
 }
 
 
+/*___________________________________________________________________________________________________Événement Unique_______________________________________________________________________________________________________________*/
 
+.TheEvent{
+	text-align:center;
+	background:#E2E2E2;
+	margin:20px 20%;
+	padding:5px 50px;
+}
 
+.EventTitle{
+	font-size:40px;
+	color:#000144;
+	font-weight:bold;
+}
+
+.EventThumbnail{
+	
+}
+
+.EventDate{
+	display:inline-block;
+	width:30%;
+	font-size: 35px ;
+	background:#000144;
+	color:white;
+	border-radius:10px;
+	margin:20px 10%;
+}
+
+.EventPrice{
+	display:inline-block;
+	width:20%;
+	font-size: 40px ;
+	background:#B2030A;
+	color:white;
+	border-radius:10px;
+	margin:20px 10%;
+}
+
+.EventText{
+	font-size:20px;
+	text-align:justify;
+	line-height:40px;
+}
 
 /*_____________________________________________________________________________________________________Boite à idées________________________________________________________________________________________________________________*/
 
@@ -457,8 +499,13 @@ textarea{
 .vote{
 	text-align:center;
 	background:white;
-	margin: 20px 20%;
+	margin: 20px;
 	padding:5px 0;
+	border-radius: 10px;
+}
+
+.vote form{
+	display:inline;
 }
 
 .vote button{
@@ -560,8 +607,16 @@ height:100px;
 	border-right: 0;
 }
 .TLPcategories{
-	text-align: center;
-	padding: 40px
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+#TousLesProduits .DisplayedProduct .prixbouton{
+    width: 100%;
+	text-align: center;	
 }
 
 #Recherche{
@@ -589,37 +644,44 @@ height:100px;
   
   
 #TousLesProduits .DisplayedProduct{
-background-color: rgba(228, 228, 228, 1);
-	border: 1px navy solid;
-	flex-basis: 25%;
-	padding: 15px;
-	overflow-y: hidden;
-	display: inline;
-}
-
-#TousLesProduits .Container{
-	display: flex;
+    background-color: rgba(228, 228, 228, 1);
+    border: 1px navy solid;
+	width:28%;
 	justify-content: space-around;
-	flex: 1;
-	margin-bottom: 20px;
-	flex-direction: line;
-
+    overflow-y: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+    position: relative;
 }
+
+
+/*#TousLesProduits .prixbouton{
+   margin-top:55px;
+}*/
 #TousLesProduits #imgproduit {
-	display: flex-start;
-height:70%;
-width:auto;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
 }         
 #TousLesProduits #imgproduit img{
-width:100%;	
-height:auto;
+    width: 100%;
+    height: 100%;
 }
-#TousLesProduits .Container .Price{
+#TousLesProduits .DisplayedProduct .prixbouton .Price{
 	border: 1px red solid;
-	position: relative;
+	position: absolute;
 	bottom:0;
+	width:50%;
+	left:0;
 }	
-
+.bouton{
+	border: 1px red solid;
+	position: absolute;
+	bottom:0;
+	width:50%;
+	right:0;
+}	
 /*#TousLesProduits #products{
 	display: flex;
 	weight: 100%;
@@ -627,15 +689,16 @@ height:auto;
 	justify-content: space-between;
 }*/
 
-.AjoutPanier:after{
+.bouton:after{
 	position: relative;
 	content:"\E821";
 	font: 1.3em/25px 'fontello';
 	text-align: center;
-	padding-left: 10px;
 	color: #FFFFFF;
 }	
-
+.bouton:active{
+	background-color: #navy;
+}	
   
   
   
