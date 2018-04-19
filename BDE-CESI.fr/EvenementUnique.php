@@ -63,8 +63,8 @@
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";}
-				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
+				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
 				echo "<p>Commentaires</p>";
 				
 				//requête récupération de commentaires
