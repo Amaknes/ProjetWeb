@@ -12,19 +12,34 @@
 				<h2>Connexion</h2>
 			</div>
             <div class="sectionconnexion">
+			<script>
+			function validateForm() {
+			var Email = document.forms["login"]["Email"].value;
+			var Password = document.forms["login"]["Password"].value;
+
+			if (Email == "") {
+				alert("Une adresse email est nécessaire pour vérifier qui vous êtes");
+				return false;
+				}
+			if (Password == "") {
+				alert("нет, vous ne passerez pas sans mot de passe");
+				return false;
+				}
+			} 
+		</script>
 				
                     <div id="login" class="animateform">
-                        <form method="post" action="scriptConnexion.php" autocomplete="on">
+                        <form name="login" method="post" action="scriptConnexion.php" onsubmit="return validateForm()" autocomplete="on">
                            
                                 <p> 
                                     <label for="Email" class="uname"> Email</label>
 									<br/>
-                                    <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr"/>
+                                    <input id="Email" name="Email"  type="text" placeholder="exemple@viacesi.fr"/>
                                 </p>
                                 <p> 
                                     <label for="Password" class="youpasswd"> Mot de passe</label>
 									<br/>
-                                    <input id="Password" name="Password" required="required" type="password" placeholder="Saisissez votre mot de passe" /> 
+                                    <input id="Password" name="Password"  type="password" placeholder="Saisissez votre mot de passe" /> 
                                 </p>
                             
                                 <p> 
