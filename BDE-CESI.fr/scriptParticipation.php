@@ -1,7 +1,7 @@
 <?php
 
 	session_start();
-	$IDIdea = $_GET['idea'];
+	$IDEvent = $_GET['IDEvent'];
 	$email = $_SESSION['Email'];
 
 	//Requête récupération de l'utilisateur courant / User's identification
@@ -13,10 +13,10 @@
 		$requete->execute();
 		$ans = $requete->fetch();
 	
-	//Requête insertion du vote	/ vote insertion
-	$requete2 = $bdd->prepare("INSERT INTO Vote (IDUser, IDIdea) VALUES( :IDUser, :IDIdea) ");
+	//Requête insertion de la participation / Participation insertion	
+	$requete2 = $bdd->prepare("INSERT INTO Participate (IDUser, IDEvent) VALUES( :IDUser, :IDEvent) ");
 		$requete2->bindValue(':IDUser', $ans[0], PDO::PARAM_STR);
-		$requete2->bindValue(':IDIdea', $IDIdea, PDO::PARAM_STR);
+		$requete2->bindValue(':IDEvent', $IDEvent, PDO::PARAM_STR);
 		$requete2->execute();
 
 		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">'; 		

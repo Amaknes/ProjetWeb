@@ -20,6 +20,9 @@
 				echo "<a class='TitleEvent' href='EvenementUnique.php?id=".$ans[0]."'>";
 				echo "<div class='EventListContainer'>";
 					echo "<h3>".$ans[1]."</h3>";
+						$originalDate = $ans[2];
+						$newDate = date("d/m/Y", strtotime($originalDate)); /* change the date format*/	
+					echo "<p class='EventDate'>".$newDate."</p>";
 					
 					echo "<div class='EventListView'>";
 					echo '<img class="EventThumbnail" src="'.$ans[4].'"/>';

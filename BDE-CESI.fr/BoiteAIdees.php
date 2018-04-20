@@ -29,7 +29,7 @@
 				echo "<p class='IdeeContent'>".$ans[1]."</p>";
 				
 					
-					echo "<p class'IdeeVotes'>Déjà ".$ans[4]." personnes ont voté pour cette proposition !</p>";
+					echo "<p class='IdeeVotes'>Déjà ".$ans[4]." personnes ont voté pour cette proposition !</p>";
 					
 					
 					echo("<form method='get' action='scriptVote.php'>");
@@ -93,7 +93,7 @@
 		<?php if(isset($_SESSION['Status'])){
 			ShowForm();
 			ShowActivities();
-		} else{echo "<p>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>";} ?>
+		} else{echo "<p class='disconnected'>Vous devez être connecté pour pouvoir participer ou proposer une idée</p>";} ?>
 
 	</div>
 </section>
