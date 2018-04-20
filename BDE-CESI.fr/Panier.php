@@ -27,9 +27,12 @@ $email = $_SESSION['Email'];
 	
 		foreach($RequestPanier as $ans2){
 			
-			echo("<div class='PanierDisplayedProduct' id='".$ans2[0]."'><a class='minus' href='#'></a><a class='multiplication' href='#'></a><a class='plus' href='#'></a>");
+			var_dump($ans[0]);
+			echo('<div class="PanierDisplayedProduct" id="'.$ans2[0].'">');
+			echo('<a class="minus" href="gererPanier.php?type=removingOnefrompanier&idproduct='.$ans2[0].'"></a>');
+			echo('<a class="multiplication" href="gererPanier.php?type=removingProductfrompanier&idproduct='.$ans2[0].'"></a>');
+			echo('<a class="plus" href="gererPanier.php?type=addingOnetoPanier&idproduct="'.$ans2[0].'"></a>');
 			echo("<div class='PanierProductName'><p> ".$ans2[1]." </p></div>");
-
 			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div>");
 			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div></div>");
 

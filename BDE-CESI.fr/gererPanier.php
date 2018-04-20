@@ -3,8 +3,8 @@
 	session_start();
 	$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
-	$RequestType = $_POST['type'];
-	$IdProduct = $_POST['idproduct'];
+	$RequestType = $_GET['type'];
+	$IdProduct = $_GET['idproduct'];
 	$Email = ($_SESSION['Email']);
 
 	$GetUserID = $bdd->prepare("SELECT IDUser FROM Users WHERE Email = ?");
@@ -35,7 +35,7 @@
 		
 		case "addingProducttopanier" :
 		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckProduct->execute(array($OrderID[0],$IdProduct[0]));
 		$CheckAns = $CheckProduct->fetch();
 		
 		if(isset($CheckAns[1])){
@@ -45,40 +45,40 @@
 		$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);
 		}else{ 
 		$AddProduct = $bdd->prepare("INSERT INTO Contain VALUES(1,?,?)");
-		$AddProduct->execute($OrderID,$IDProduct);
+		$AddProduct->execute(array($OrderID[0],$IdProduct));
 		}
 		
 		break;
 		case "addingOnetoPanier" :
 		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckProduct->execute(array($OrderID[0],$IdProduct));
 		$CheckAns = $CheckProduct->fetch();
 		
 		$newQuantity = $CheckAns[0]+1;
 		
 		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
-		$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);
+		$ChangeQuantity->execute(array($newQuantity,$OrderID[0],$IdProduct));
 		
 		break;
 		case "removingOnefrompanier" :
 		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckProduct->execute(array($OrderID[0],$IdProduct));
 		$CheckAns = $CheckProduct->fetch();
 		
 		$newQuantity = $CheckAns[0]-1;
 		
 		if($newQuantity <= 0){
 			$DeleteProductFromOrder = $bdd->prepare("DELETE FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-			$DeleteProductFromOrder->execute($OrderID,$IdProduct));
+			$DeleteProductFromOrder->execute($OrderID[0],$IdProduct);
 		}else{
 			$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
-			$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);	
+			$ChangeQuantity->execute($newQuantity,$OrderID[0],$IdProduct);	
 		}
 		
 		break;
 		case "removingProductfrompanier" :
 		$DeleteProductFromOrder = $bdd->prepare("DELETE FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-		$DeleteProductFromOrder->execute($OrderID,$IdProduct));
+		$DeleteProductFromOrder->execute(array($OrderID[0],$IdProduct));
 		break;
 	}
 	
