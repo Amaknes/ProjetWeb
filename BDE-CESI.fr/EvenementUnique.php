@@ -15,6 +15,7 @@
 		</div>
 		<?php
 		
+			
 		//Récupération de l'event sélectionné / Collecting of the selected event
 		$Idreq = $_GET['id'];
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
@@ -44,6 +45,13 @@
 		//Comparaison entre la date actuelle et la date de l'événement / check if the event is coming or it is passed
 		$eventtime = str_replace('-','',$ans[2]);
 		$eventtime = strtotime($eventtime);
+		
+		
+		//Téléchargement CSV de la liste des participants / Download the list of the participants
+			echo("<form method='get' action='genererListeDesParticipants.php'>");
+			echo("<input type='text' name='id' value='".$Idreq."' style='display:none;'/>");
+			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
+
 			
 		if(time() >= $eventtime){
 			
@@ -89,7 +97,7 @@
 				
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
 				
-				echo "<p class='likesnb'>Déjà ".$ans5[0]." personnes ont voté pour cette proposition !</p>"; 
+				echo "<p class='likesnb'>".$ans5[0]." personnes aiment cette image !</p>"; 
 				
 				echo "<h3>Commentaires</h3>";
 
@@ -137,10 +145,7 @@
 				
 				echo"</div>";
 			}
-			//Téléchargement CSV de la liste des participants / Download the list of the participants
-			echo("<form method='get' action='genererListeDesParticipants.php'>");
-			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
-			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
+
 			
 		}else{
 			//Si l'événement ne s'est pas encore déroulé / if the event didn't happened
@@ -158,12 +163,6 @@
 				
 				
 			}
-			//Téléchargement CSV de la liste des participants / Download the list of the participants
-			echo("<form method='get' action='genererListeDesParticipants.php'>");
-			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
-			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
-			
-			
 			
 		}
 	
