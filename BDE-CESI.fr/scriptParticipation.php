@@ -1,7 +1,8 @@
 <?php
 
 	session_start();
-	$IDEvent = $_GET['IDEvent'];
+	$IDEvent = $_GET['id'];
+	$retour = $IDEvent;
 	$email = $_SESSION['Email'];
 
 	//Requête récupération de l'utilisateur courant / User's identification
@@ -19,5 +20,5 @@
 		$requete2->bindValue(':IDEvent', $IDEvent, PDO::PARAM_STR);
 		$requete2->execute();
 
-		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">'; 		
+		echo '<meta http-equiv="refresh" content="0;URL=EvenementUnique.php?id='.$retour.'">'; 	
 ?>
