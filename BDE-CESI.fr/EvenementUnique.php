@@ -71,8 +71,13 @@
 				echo'<div class="PicAndCom">';
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
+<<<<<<< HEAD
 				//Requête pour récupérer le nombre de likes / number of likes of the picture
 				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM Like WHERE IDPicture = ?");
+=======
+				//Requête pour récupérer le nombre de likes
+				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM `Like` WHERE IDPicture = ?");
+>>>>>>> 2987f62c62ba4b0ebf8fc06304912076338d9955
 				$requete5->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete5->execute();
 				$ans5 = $requete5->fetch();
@@ -85,10 +90,9 @@
 
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
 				
-				
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
 				
-				echo "<p class='likesnb'>".$ans5[0]."</p>"; 
+				echo "<p class='likesnb'>Déjà ".$ans5[0]." personnes ont voté pour cette proposition !</p>"; 
 				
 				echo "<h3>Commentaires</h3>";
 
@@ -109,7 +113,12 @@
 					
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
+<<<<<<< HEAD
 				//Formulaire commentaire / comment form
+=======
+				
+				//Formulaire commentaire
+>>>>>>> 2987f62c62ba4b0ebf8fc06304912076338d9955
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
@@ -124,9 +133,15 @@
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
+<<<<<<< HEAD
 					//affichage du commentaire / comment display
+=======
+					
+					//affichage du commentaire
+>>>>>>> 2987f62c62ba4b0ebf8fc06304912076338d9955
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-					{echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
+					{
+						echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row2[0]."'>Signaler comme inapproprié</a>";}
 				}
 				
 				echo"</div>";
