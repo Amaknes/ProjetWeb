@@ -146,7 +146,8 @@
 				
 			//Affichage du nombre de participants
 			echo "<p class='participnb'>Actuellement ".$ans4[0]." participants</p>";
-			echo "<button class='participate'>Participer</button>";
+			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3||1)){
+			echo "<button class='participate'>Participer</button>";}
 			//Téléchargement CSV de la liste des participants
 			echo("<form method='get' action='genererListeDesParticipants.php'>");
 			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");

@@ -1,6 +1,6 @@
 <?php
 $Typereq = $_GET['type'];
-$Idreq = $_GET['id'];
+$Idreq = $_GET['ididea'];
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 //Vérification du type d'élément passé en GET
@@ -49,6 +49,7 @@ switch($Typereq){
 		$requete = $bdd->prepare("UPDATE Ideas SET IdeaFlag = 1 WHERE IDIdea = ?");
 		$requete->bindValue(1, $Idreq, PDO::PARAM_INT);
 		$requete->execute();
+		
 		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
 		
 	break;

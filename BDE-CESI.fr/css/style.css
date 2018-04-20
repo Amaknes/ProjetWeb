@@ -306,6 +306,10 @@ background-color: #FFFFFF;
 	
 }
 
+#EvenementListe h3{
+	margin-bottom:2px;
+}
+
 .monthevent{
 	text-align:center;
 	background:#E2E2E2;
@@ -704,6 +708,10 @@ background-color: #FFFFFF;
 	padding:5px 0;
 }
 
+#sectionidees .disconnected{
+	text-align:center;
+}
+
 textarea{
 	width:1000px;
 	height:150px;
@@ -766,6 +774,21 @@ textarea{
     border:1px solid #000000;
     border-radius:5px;
     font-size:20px;
+}
+
+.IdeeVotes{
+	width:475px;
+    height:25px;    
+    border-radius:5px;
+    font-size:20px;
+	color:white;
+	text-align:center;
+    background:#000144;
+    border:none;
+	padding-top:5px;
+	margin-left:40px;
+	margin-bottom:5px;
+	margin-top:2px;
 }
 
 .vote{
