@@ -116,7 +116,7 @@ INSERT INTO `Events` (`Name`, `EventDate`, `Price`, `UrlImage`, `Description`, `
 
 CREATE TABLE `Pictures`(
         IDPicture int (11) Auto_increment  NOT NULL ,
-        UrlImage  Varchar (200) NOT NULL UNIQUE,
+        UrlImage  Varchar (200) NOT NULL,
         PicFlag   Bool NOT NULL DEFAULT 0,
         IDEvent   Int NOT NULL ,
         IDUser    Int NOT NULL ,
