@@ -50,14 +50,9 @@
 		
 		break;
 		case "addingOnetoPanier" :
-		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-		$CheckProduct->execute(array($OrderID[0],$IdProduct));
-		$CheckAns = $CheckProduct->fetch();
 		
-		$newQuantity = $CheckAns[0]+1;
-		
-		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
-		$ChangeQuantity->execute(array($newQuantity,$OrderID[0],$IdProduct));
+		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = Quantity+1 WHERE IDOrder = ? AND IDProduct = ?");
+		$ChangeQuantity->execute(array($OrderID[0],$IdProduct));
 		
 		break;
 		case "removingOnefrompanier" :
@@ -69,10 +64,10 @@
 		
 		if($newQuantity <= 0){
 			$DeleteProductFromOrder = $bdd->prepare("DELETE FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
-			$DeleteProductFromOrder->execute($OrderID[0],$IdProduct);
+			$DeleteProductFromOrder->execute(array($OrderID[0],$IdProduct));
 		}else{
 			$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
-			$ChangeQuantity->execute($newQuantity,$OrderID[0],$IdProduct);	
+			$ChangeQuantity->execute(array($newQuantity,$OrderID[0],$IdProduct));	
 		}
 		
 		break;
@@ -82,6 +77,6 @@
 		break;
 	}
 	
-	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
+	//echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 			
 ?>
