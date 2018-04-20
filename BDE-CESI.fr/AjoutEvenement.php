@@ -5,7 +5,7 @@
  #######################################-->
 <?php session_start(); ?>
 <?php include('header.php'); ?>
-<?php $IdIdea = isset($_POST['ididea']) ? $_POST['ididea'] : "";?>
+<?php $IdIdea = isset($_POST['id']) ? $_POST['id'] : "";?>
 
 
 
@@ -62,7 +62,7 @@
 				<p> 
 					<textarea id="Description" name="Description" placeholder="Décrivez votre événement"></textarea>
 				</p>
-					<?php echo("<input type='text' name='ididea' value='".$IdIdea."' style='display:none;'/>"); ?>
+					<?php echo("<input type='text' name='id' value='".$IdIdea."' style='display:none;'/>"); ?>
 				<p class="Confirm button"> 
 					<button id="propose" type="submit">Envoyer l'événement</button>
 				</p>

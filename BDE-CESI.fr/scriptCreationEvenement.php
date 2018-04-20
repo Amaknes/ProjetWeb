@@ -10,9 +10,9 @@ $description = $_POST['Description'];
 
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
-if(isset($_POST['ididea'])) {
+if(isset($_POST['id'])) {
 	
-	$IDIdea = $_POST['ididea'];
+	$IDIdea = $_POST['id'];
 	
 	/*
 	$GetMail = $bdd->prepare("SELECT Email FROM Users INNER JOIN Ideas ON Users.IDUser = Ideas.IDUser WHERE IDIdea = ?");
@@ -27,23 +27,21 @@ if(isset($_POST['ididea'])) {
 
 var_dump($IDIdea);
 
-		$CreateEvent = $bdd->prepare("INSERT INTO Events (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( :Name, :Date, :Price, :UrlImage, :Description, 0) ");
-		
+		$CreateEvent = $bdd->prepare("INSERT INTO Events (Name, EventDate, Price, UrlImage, Description, Selected) VALUES( ? , ? , ? , ? , ? , 0) ");
+		/*
 		$CreateEvent->bindValue(':Name', $title, PDO::PARAM_STR);
 		$CreateEvent->bindValue(':Date', $date, PDO::PARAM_STR);
 		$CreateEvent->bindValue(':Price', $price, PDO::PARAM_STR);
 		$CreateEvent->bindValue(':UrlImage', $imageurl, PDO::PARAM_STR);
 		$CreateEvent->bindValue(':Description', $description, PDO::PARAM_STR);
-		
-		$CreateEvent->execute();
+		*/
+		$CreateEvent->execute(array($title,$date,$price,$imageurl,$description));
 		
 		var_dump($IDIdea);
-		$DeleteProposition = $bdd->prepare("DELETE FROM Ideas WHERE IDIdea = ? ");
-		$DeleteProposition->execute(array($IDIdea));
 		
+		$HideProposition = $bdd->prepare("UPDATE Ideas SET IdeaFlag = 1 WHERE IDIdea = ?");
+		$HideProposition->execute(array($IDIdea));
 		
-		echo '<meta http-equiv="refresh" content="0;URL=BoiteAIdees.php">';
-
-	echo '<meta http-equiv="refresh" content="0;URL=AjoutEvenement.php">';
+		echo '<meta http-equiv="refresh" content="0;URL=EvenementListe.php">';
 
 ?>

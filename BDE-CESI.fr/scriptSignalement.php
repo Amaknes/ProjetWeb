@@ -1,6 +1,6 @@
 <?php
 $Typereq = $_GET['type'];
-$Idreq = $_GET['ididea'];
+$Idreq = $_GET['id'];
 $bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 //Vérification du type d'élément passé en GET
@@ -19,10 +19,10 @@ switch($Typereq){
 		$requete2->execute();
 		$ans = $requete2->fetch();
 		//Redirection vers l'événement précédent
-		echo ("<meta http-equiv='refresh' content='0;URL=EvenementUnique.php?id=");
+		/*echo ("<meta http-equiv='refresh' content='0;URL=EvenementUnique.php?id=");
 		echo ($ans[0]);
 		echo ("'>");
-	
+		*/
 	break;
 	//Si c'est un commentaire
 	case "Comment" :
