@@ -85,7 +85,6 @@
 
 				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
 				
-				
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
 				
 				echo "<p class='likesnb'>".$ans5[0]."</p>"; 
@@ -126,7 +125,8 @@
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
 					//affichage du commentaire
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-					{echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
+					{
+						echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row2[0]."'>Signaler comme inapproprié</a>";}
 				}
 				
 				echo"</div>";
