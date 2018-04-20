@@ -12,11 +12,12 @@
 			<h2>Liste des événements</h2>
 		</div>
 		<?php
+			//récupération de la liste des événements
 			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 			$requete = $bdd->prepare("SELECT * FROM Events");
 			$requete->execute();
 			foreach($requete as $ans){
-				
+				//Affichage des différents éléments de l'événement
 				echo "<a class='TitleEvent' href='EvenementUnique.php?id=".$ans[0]."'>";
 				echo "<div class='EventListContainer'>";
 					echo "<h3>".$ans[1]."</h3>";
