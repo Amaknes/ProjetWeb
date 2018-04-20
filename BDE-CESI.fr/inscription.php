@@ -10,31 +10,67 @@
 			<div id="banniere">	
 				<h2>Inscription</h2>
 			</div>
-		
+			
+			<script>
+			function validateForm() {
+			var Prenom = document.forms["signup"]["Prenom"].value;
+			var Nom = document.forms["signup"]["Nom"].value;
+			var Email = document.forms["signup"]["Email"].value;
+			var EmailConfirm = document.forms["signup"]["EmailConfirm"].value;
+			var Password = document.forms["signup"]["Password"].value;
+			var PasswordConfirm = document.forms["signup"]["PasswordConfirm"].value;
+			
+			if (Prenom == "") {
+				alert("Phillipe, je sais ou tu te caches! Pas besoin de cacher ton prénom");
+				return false;
+				}
+			if (Nom == "") {
+				alert("Non vous n'êtes pas Dieu, comment on le sait? Vous n'auriez pas eu besoin du formulaire si vous l'étiez");
+				return false;
+				}
+			if (Email == "") {
+				alert("Comment on gagne de l'argent en vous inscrivant à des liste de spam si vous ne renseignez pas d'adresse mail?");
+				return false;
+				}
+			if (EmailConfirm == "") {
+				alert("Il faut recopier l'adresse mail écrite juste au-dessus, Je suis sûr que vous en êtes capables");
+				return false;
+				}
+			if (Password == "") {
+				alert("Rentrez un mot de passe");
+				return false;
+				}
+			if (PasswordConfirm == "") {
+				alert("Recopiez votre mot de passe s'il vous plait");
+				return false;
+				}
+			} 
+			</script>
+			
 			<div id="register" class="animate form">
-                <form  method="post" action="scriptInscription.php" autocomplete="on">  
+                <form name="signup" method="post" action="scriptInscription.php"  onsubmit="return validateForm()"autocomplete="on">  
 						<p> 
 
                                     <label for="firstnamesignup" class="uname" data-icon="u" >Prénom</label>
 									<br/>
-                                    <input id="Prenom" name="Prenom" required="required" type="text" placeholder="Saisissez votre prénom" />
+                                    <input id="Prenom" name="Prenom" type="text" placeholder="Saisissez votre prénom" />
 						</p>
 						<p> 
                                     <label for="lastnamesignup" class="uname" data-icon="u" >Nom</label>
 									<br/>
-                                    <input id="Nom" name="Nom" required="required" type="text" placeholder="Saisissez votre nom" />
+                                    <input id="Nom" name="Nom" type="text" placeholder="Saisissez votre nom" />
 						</p>
 						<p> 
                                     <label for="usernamesignup" class="uname" data-icon="u" >Email</label>
 									<br/>
 
-                                    <input id="Email" name="Email" required="required" type="text" placeholder="exemple@viacesi.fr" />
+                                    <input id="Email" name="Email" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
 						<p> 
                                     <label for="usernamesignupConfirm" class="uname" data-icon="u" >Confirmation de l'Email</label>
 									<br/>
 
-                                    <input id="EmailConfirm" name="EmailConfirm" required="required" type="text" placeholder="exemple@viacesi.fr" />
+                                    <input id="EmailConfirm" name="EmailConfirm" type="text" placeholder="exemple@viacesi.fr" />
 						</p>
                         
 						<p> 
@@ -42,7 +78,7 @@
                                     <label for="passwordsignup" class="youpasswd" data-icon="p" >Mot de passe</label>
 									<br/>
 
-                                    <input id="Password" name="Password" required="required" type="password" placeholder="Saisissez votre mot de passe"/>
+                                    <input id="Password" name="Password" type="password" placeholder="Saisissez votre mot de passe"/>
 						</p>
 						
 						<p> 
@@ -50,7 +86,7 @@
                                     <label for="passwordsignupConfirm" class="youpasswd" data-icon="p" >Confirmation du mot de passe</label>
 									<br/>
 
-                                    <input id="PasswordConfirm" name="PasswordConfirm" required="required" type="password" placeholder="Confirmer votre mot de passe"/>
+                                    <input id="PasswordConfirm" name="PasswordConfirm" type="password" placeholder="Confirmer votre mot de passe"/>
 						</p>
                                 
 						<p> 
