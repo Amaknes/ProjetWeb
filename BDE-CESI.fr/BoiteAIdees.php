@@ -11,17 +11,19 @@
 		
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		
-		$requete = $bdd->prepare("
-			SELECT Ideas.IDIdea,Activity,LastName,FirstName,COUNT(Vote.IDUser)
+		$ActivitesList = $bdd->prepare("
+			SELECT Ideas.IDIdea,Activity,LastName,FirstName,COUNT(vote.IDUser)
 			FROM Ideas
 			INNER JOIN Users ON Users.IDUser = Ideas.IDUser
-			INNER JOIN Vote ON Vote.IDIdea = Ideas.IDIdea
+			INNER JOIN Vote ON Ideas.IDIdea = vote.IDIdea
 			WHERE IdeaFlag=false
-			GROUP BY Users.IDUser");
+			GROUP BY vote.IDIdea
+			");
 			
-		$requete->execute();
+		$ActivitesList->execute();
 		
-		foreach($requete as $ans){
+		
+		foreach($ActivitesList as $ans){
 			echo '<div class="vote">';
 				echo "<p class='IdeeName'>".$ans[3]." ".$ans[2]."</p>";
 				echo "<p class='IdeeContent'>".$ans[1]."</p>";
