@@ -15,7 +15,8 @@
 		</div>
 		<?php
 		
-		//Récupération de l'event sélectionné
+			
+		//Récupération de l'event sélectionné / Collecting of the selected event
 		$Idreq = $_GET['id'];
 		$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 		$requete = $bdd->prepare("SELECT * FROM Events WHERE IDEvent = ?");
@@ -27,11 +28,11 @@
 		$annee->execute();
 		$year = $annee->fetch();*/
 		
-		//Conversion de la date SQL en date PHP
+		//Conversion de la date SQL en date PHP / Change the date format
 		$originalDate = $ans[2];
 		$newDate = date("d/m/Y", strtotime($originalDate));
 		
-		//Echo des informations générales concernant l'événement
+		//Echo des informations générales concernant l'événement / Display the event 
 		echo "<div class=TheEvent>";
 		echo "<p class='EventTitle'>".$ans[1]."</p>";
 		/*echo "<p class='EventDate'>À lieu le : ".$ans[2]."</p>";*/
@@ -41,19 +42,26 @@
 		echo "<p class='EventText'>".$ans[5]."</p>";
 		echo "</div>";
 		
-		//Comparaison entre la date actuelle et la date de l'événement
+		//Comparaison entre la date actuelle et la date de l'événement / check if the event is coming or it is passed
 		$eventtime = str_replace('-','',$ans[2]);
 		$eventtime = strtotime($eventtime);
+		
+		if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1)) {
+		//Téléchargement CSV de la liste des participants / Download the list of the participants
+			echo("<form method='get' action='genererListeDesParticipants.php'>");
+			echo("<input type='text' name='id' value='".$Idreq."' style='display:none;'/>");
+			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
+		}
 			
 		if(time() >= $eventtime){
 			
-			//Requête pour récupérer les images
+			//Requête pour récupérer les images / collect the image from the database
 			$requete2 = $bdd->prepare("SELECT * FROM Pictures WHERE PicFlag=false AND IDEvent = ?");
 			$requete2->bindValue(1, $Idreq, PDO::PARAM_INT);
 			$requete2->execute();
 			
-			//Formulaire pour poster une image
-			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
+			//Formulaire pour poster une image / post a picture
+			if(isset($_SESSION['Status'])){
 			echo '<form id="PostImage" method="post" action="scriptPostImage.php" autocomplete="on">';  
 			echo'<p>Publier une image<br/>';
 			echo"<input id='URLImage' name='URLImage' required='required' placeholder='URL Image' />";
@@ -66,13 +74,15 @@
 			echo"</p>";
 			echo"</form>";
 			}
-			//Pour chaque image on l'affichera
+			//Pour chaque image on l'affichera / display all images one by one
 			foreach($requete2 as $row){
 				echo'<div class="PicAndCom">';
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
-				//Requête pour récupérer le nombre de likes
-				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM Like WHERE IDPicture = ?");
+
+				//Requête pour récupérer le nombre de likes / number of likes of the picture
+				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM `Like` WHERE IDPicture = ?");
+
 				$requete5->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete5->execute();
 				$ans5 = $requete5->fetch();
@@ -80,20 +90,20 @@
 				
 				
 				
-				//Affichage des boutons
-				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-
-				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				//Affichage des boutons / displaying of the buttons
+				if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1)) {
+					
+				echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				}
 				
+				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
 				
-				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
-				
-				echo "<p class='likesnb'>".$ans5[0]."</p>"; 
+				echo "<p class='likesnb'>".$ans5[0]." personnes aiment cette image !</p>"; 
 				
 				echo "<h3>Commentaires</h3>";
 
 				
-				//requête récupération de commentaires
+				//requête récupération de commentaires / take comment from DB
 				$requete3 = $bdd->prepare("
 					SELECT IDComment, LastName, FirstName, Content
 					FROM Users
@@ -109,8 +119,10 @@
 					
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
-				//Formulaire commentaire
-				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
+
+				//Formulaire commentaire / comment form
+
+				if(isset($_SESSION['Status'])){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
 				echo"<textarea class='Content' name='Content' required='required'  placeholder='Tapez votre commentaire ici' ></textarea>";
@@ -124,36 +136,34 @@
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
-					//affichage du commentaire
-					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-					{echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row[0]."'>Signaler comme inapproprié</a>";}
+
+					//affichage du commentaire / comment display
+
+					if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1))
+					{
+						echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row2[0]."'>Signaler comme inapproprié</a>";}
 				}
 				
 				echo"</div>";
 			}
-			//Téléchargement CSV de la liste des participants
-			echo("<form method='get' action='genererListeDesParticipants.php'>");
-			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
-			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
+
 			
 		}else{
-			//Si l'événement ne s'est pas encore déroulé
-			//Requête du nombre de participants
+			//Si l'événement ne s'est pas encore déroulé / if the event didn't happened
+			//Requête du nombre de participants / Number of participants
 		$requete4 = $bdd->prepare("SELECT COUNT(IDUser) FROM Participate WHERE IDEvent = ?");
 				$requete4->bindValue(1, $Idreq, PDO::PARAM_INT);
 				$requete4->execute();
 				$ans4 = $requete4->fetch();
 				
-			//Affichage du nombre de participants
+			//Affichage du nombre de participants / display of the number
 			echo "<p class='participnb'>Actuellement ".$ans4[0]." participants</p>";
-			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3||1)){
-			echo "<button class='participate'>Participer</button>";}
-			//Téléchargement CSV de la liste des participants
-			echo("<form method='get' action='genererListeDesParticipants.php'>");
-			echo("<input type='text' name='id' value='".$ans[0]."' style='display:none;'/>");
-			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
-			
-			
+			if(isset($_SESSION['Status'])){
+				
+				echo "<a class='participate' href='scriptParticipation.php?id=".$Idreq."'>Participer</a>";
+				
+				
+			}
 			
 		}
 	

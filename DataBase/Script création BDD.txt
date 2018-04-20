@@ -33,7 +33,7 @@ INSERT INTO `Users` (`LastName`, `FirstName`, `Email`, `Password`, `Status`) VAL
 		('Schwarzy', 'Arnold', 'iwillbeback@cesi.fr', 'SARAHCONNOR1984', 1),
 		('Potter', 'Harry', 'harry.potter@cesi.fr', 'AVADAKEDAVRA666', 1),
 		('Etudiant', 'CESI', 'etudiant@cesi.fr', 'Etudiant123456', 1),
-		('Salarie', 'CESI', 'cesi@cesi.fr', 'Salarie123456', 2),
+		('Salarie', 'CESI', 'cesi@cesi.fr', 'Cesi123456', 2),
 		('BDE', 'CESI', 'bde@cesi.fr', 'Bde123456', 3);
 
 
@@ -116,7 +116,7 @@ INSERT INTO `Events` (`Name`, `EventDate`, `Price`, `UrlImage`, `Description`, `
 
 CREATE TABLE `Pictures`(
         IDPicture int (11) Auto_increment  NOT NULL ,
-        UrlImage  Varchar (200) NOT NULL UNIQUE,
+        UrlImage  Varchar (200) NOT NULL,
         PicFlag   Bool NOT NULL DEFAULT 0,
         IDEvent   Int NOT NULL ,
         IDUser    Int NOT NULL ,
