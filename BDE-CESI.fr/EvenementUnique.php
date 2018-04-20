@@ -46,12 +46,12 @@
 		$eventtime = str_replace('-','',$ans[2]);
 		$eventtime = strtotime($eventtime);
 		
-		
+		if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1)) {
 		//Téléchargement CSV de la liste des participants / Download the list of the participants
 			echo("<form method='get' action='genererListeDesParticipants.php'>");
 			echo("<input type='text' name='id' value='".$Idreq."' style='display:none;'/>");
 			echo("<button class='DLCSV' type='submit'>Télécharger la liste des participants</button></form>");
-
+		}
 			
 		if(time() >= $eventtime){
 			
@@ -61,7 +61,7 @@
 			$requete2->execute();
 			
 			//Formulaire pour poster une image / post a picture
-			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
+			if(isset($_SESSION['Status'])){
 			echo '<form id="PostImage" method="post" action="scriptPostImage.php" autocomplete="on">';  
 			echo'<p>Publier une image<br/>';
 			echo"<input id='URLImage' name='URLImage' required='required' placeholder='URL Image' />";
@@ -91,11 +91,12 @@
 				
 				
 				//Affichage des boutons / displaying of the buttons
-				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-
-				{echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1)) {
+					
+				echo "<a href='scriptSignalement.php?type=Pic&id=".$row[0]."'><div class='signal'>Signaler comme inapproprié</div></a>";
+				}
 				
-				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
+				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";
 				
 				echo "<p class='likesnb'>".$ans5[0]." personnes aiment cette image !</p>"; 
 				
@@ -121,7 +122,7 @@
 
 				//Formulaire commentaire / comment form
 
-				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
+				if(isset($_SESSION['Status'])){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
 				echo'<p>';
 				echo"<textarea class='Content' name='Content' required='required'  placeholder='Tapez votre commentaire ici' ></textarea>";
@@ -138,7 +139,7 @@
 
 					//affichage du commentaire / comment display
 
-					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
+					if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1))
 					{
 						echo "<a class='signal' href='scriptSignalement.php?type=Comment&id=".$row2[0]."'>Signaler comme inapproprié</a>";}
 				}
@@ -157,7 +158,7 @@
 				
 			//Affichage du nombre de participants / display of the number
 			echo "<p class='participnb'>Actuellement ".$ans4[0]." participants</p>";
-			if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3||1)){
+			if(isset($_SESSION['Status'])){
 				
 				echo "<a class='participate' href='scriptParticipation.php?id=".$Idreq."'>Participer</a>";
 				
