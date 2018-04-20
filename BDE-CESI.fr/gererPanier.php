@@ -12,77 +12,76 @@
 	$UserId = $GetUserID->fetch();
 	$GetUserID->closeCursor();
 	
-	var_dump($IdProduct);
-	var_dump($UserId[0]);
+	$GetOrderID = $bdd->prepare("SELECT * FROM Orders WHERE IDUser = ? AND Status = 0");
+	$GetOrderID->execute(array($UserId[0]));
+	$OrderID = $GetOrderID->fetch();
+	$GetOrderID->closeCursor();
 	
-	/*
-	if($RequestType == 'addingfromlist'){
+	if(isset($OrderID[1])){
 	
-		if($CheckIsOrder != false) {
-			
-			
-			if($CheckIsProduct != false) {
-				
-				
-				addProduct()
-				
-			} else {}
-			
-			
-		} else {
-			
-			newOrder()
-			
+	}else{
+		$getdate = $bdd->prepare("SELECT DATE( NOW())");
+		$getdate->execute();
+		$datenow = $getdate->fetch();
+		
+		$CreateOrder = $bdd->prepare("INSERT INTO Orders VALUES (?, 0, ?)");
+		$CreateOrder->execute(array($datenow[0],$UserId[0]));
+		$OrderID = $CreateOrder->fetch();
+		$CreateOrder->closeCursor();
 		}
-
-		
-		$CheckCartNotEmpty = $bdd->prepare("
-				SELECT Contain.IDOrder
-				FROM Contain
-				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
-				WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
-				");
 	
-		$IdProduct = "12";
 	
-		$CheckCartNotEmpty->execute(array($IdProduct,$UserId[0]));
-		$CheckValue = $CheckCartNotEmpty->fetch();
-		$CheckCartNotEmpty->closeCursor();
-				
+	switch($RequestType){
 		
-			
-			
-		var_dump($CheckValue);
-				
-				if($CheckValue != false) {
-				
-				$SQLReq = ("UPDATE Contain
-				INNER JOIN `Orders` ON Contain.IDOrder = Orders.IDOrder
-				INNER JOIN `Products` ON Products.IDProduct = Contain.IDProduct
-				SET Quantity = (Quantity + 1)
-				WHERE Contain.IDProduct = ? AND Orders.IDUser = ? AND Orders.Status = 0
-				");
-				
-				} else {
-					
-					$SQLReq = ("INSERT INTO"
-					
-					
-				}
+		case "addingProducttopanier" :
+		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
+		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckAns = $CheckProduct->fetch();
 		
-			$CartOpe = $bdd->prepare($SQLReq);
+		if(isset($CheckAns[1])){
+		$newQuantity = $CheckAns[0]+1;
 		
-			$CartOpe->execute(array($IdProduct, $UserId[0]));
-			$CartOpe->closeCursor();
-			
-			$CleanOrders = $bdd->prepare("DELETE FROM Contain WHERE Quantity <= 0");
-			$CleanOrders->closeCursor();
-			$CleanOrders->execute();
-			
-			
-			
+		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
+		$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);
+		}else{ 
+		$AddProduct = $bdd->prepare("INSERT INTO Contain VALUES(1,?,?)");
+		$AddProduct->execute($OrderID,$IDProduct);
+		}
+		
+		break;
+		case "addingOnetoPanier" :
+		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
+		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckAns = $CheckProduct->fetch();
+		
+		$newQuantity = $CheckAns[0]+1;
+		
+		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
+		$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);
+		
+		break;
+		case "removingOnefrompanier" :
+		$CheckProduct = $bdd->prepare("SELECT * FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
+		$CheckProduct->execute($OrderID,$IdProduct));
+		$CheckAns = $CheckProduct->fetch();
+		
+		$newQuantity = $CheckAns[0]-1;
+		
+		if($newQuantity <= 0){
+			$DeleteProductFromOrder = $bdd->prepare("DELETE FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
+			$DeleteProductFromOrder->execute($OrderID,$IdProduct));
+		}else{
+			$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
+			$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);	
+		}
+		
+		break;
+		case "removingProductfrompanier" :
+		$DeleteProductFromOrder = $bdd->prepare("DELETE FROM Contain WHERE IDOrder = ? AND IDProduct = ?");
+		$DeleteProductFromOrder->execute($OrderID,$IdProduct));
+		break;
 	}
-			*/
+	
 	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 			
 ?>
