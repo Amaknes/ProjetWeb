@@ -2,7 +2,7 @@
 session_start();
 
 	//Récupération des paramètres
-	$IDParent= $_POST['IDEvent']; //A faire, utiliser un attribut readonly dans le form
+	$IDParent= $_POST['IDEvent'];
 	$URL = $_POST['URLImage'];
 	$email = $_SESSION['Email'];
 
@@ -13,14 +13,26 @@ session_start();
 		$requete->execute();
 		$ans = $requete->fetch();
 		
-	//requête d'insertion d'image	
+	//Requête d'insertion d'image	
 	$requete2 = $bdd->prepare("INSERT INTO Pictures (URLImage, PicFlag, IDEvent, IDUser) VALUES (:Url, 0, :Event, :User)");
 		$requete2->bindValue(':Url', $URL , PDO::PARAM_STR);
 		$requete2->bindValue(':Event', $IDParent, PDO::PARAM_INT);
 		$requete2->bindValue(':User', $ans[0], PDO::PARAM_INT);
 		$requete2->execute();
-//redirection
 
-//echo '<meta http-equiv="refresh" content="0;URL=EvenementListe.php">'
+	//Récupération de l'ID de l'image
+	$GetProposalId = $bdd->prepare("SELECT IDPicture FROM Pictures WHERE URLImage = ?");
+		$GetProposalId->execute(array($URL));
+		$ans2 = $GetProposalId->fetch();
+		
+	//Ajout du like de l'utilisateur
+		$InsertVote = $bdd->prepare("INSERT INTO `Like` (IDUser, IDPicture) VALUES(? , ?) ");
+		$InsertVote->execute(array($ans[0],$ans2[0]));
+		
+	//Redirection vers l'évènement
+	echo ("<meta http-equiv='refresh' content='0;URL=EvenementUnique.php?id=");
+	echo ($IDParent);
+	echo ("'>");
+
 
 ?>

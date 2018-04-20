@@ -72,7 +72,7 @@
 				echo '<img class="Pic" src="'.$row[1].'" alt="Image commentaire"/>';
 				
 				//Requête pour récupérer le nombre de likes
-				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM Like WHERE IDPicture = ?");
+				$requete5 = $bdd->prepare("SELECT COUNT(IDUser) FROM `Like` WHERE IDPicture = ?");
 				$requete5->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete5->execute();
 				$ans5 = $requete5->fetch();
@@ -87,7 +87,7 @@
 				
 				echo "<a href='scriptLike.php?id=".$row[0]."'><div class='like'>Like</div></a>";}
 				
-				echo "<p class='likesnb'>".$ans5[0]."</p>"; 
+				echo "<p class='likesnb'>Déjà ".$ans5[0]." personnes ont voté pour cette proposition !</p>"; 
 				
 				echo "<h3>Commentaires</h3>";
 
@@ -108,6 +108,7 @@
 					
 				$requete3->bindValue(1, $row[0], PDO::PARAM_INT);
 				$requete3->execute();
+				
 				//Formulaire commentaire
 				if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3)){
 				echo '<form  method="post" action="scriptPostCommentaire.php" autocomplete="on">';  
@@ -123,6 +124,7 @@
 				foreach($requete3 as $row2){
 					echo "<p class='CommentName'>".$row2[2]." ".$row2[1]."</p>";
 					echo "<p class='CommentContent'>".$row2[3]."</p>";
+					
 					//affichage du commentaire
 					if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
 					{
