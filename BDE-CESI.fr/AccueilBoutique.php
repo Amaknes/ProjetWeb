@@ -24,8 +24,8 @@
             </div>
 			
 			<div id="BoutiqueAjoutProduit">
-				<?php if(isset($_SESSION['Status']) && $_SESSION['Status'] == (2||3))
-				{echo "<a id='NouveauProduit' class='NouveauProduit' href='NouveauProduit.php'>Ajouter un nouveau produit</a>";} ?>
+				<?php if(isset($_SESSION['Status']) && ($_SESSION['Status'] != 1))
+					{echo "<a id='NouveauProduit' class='NouveauProduit' href='NouveauProduit.php'>Ajouter un nouveau produit</a>";} ?>
 			</div>
     </section>
 
