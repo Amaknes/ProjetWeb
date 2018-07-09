@@ -3,8 +3,11 @@
 
 
 <?php
-	function LecturePanier() {
 
+	
+
+	function LecturePanier() {
+$TotalPanier=0;
 $email = $_SESSION['Email'];
 
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
@@ -33,19 +36,29 @@ $email = $_SESSION['Email'];
 			echo('<a class="plus" href="gererPanier.php?type=addingOnetoPanier&idproduct='.$ans2[0].'"></a>');
 			echo("<div class='PanierProductName'><p> ".$ans2[1]." </p></div>");
 			echo("<div class='PanierQuantity'><p> ".$ans2[3]."</p></div>");
-			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div></div>");
-
+			echo("<div class='PanierPrice'><p> ".$ans2[2]." €</p></div>");
+			$subtotal=$ans2[2]*$ans2[3];
+			echo("<div class='PanierSubtotal'><p> ".$subtotal." €</p></div></div>");
+	
+	$TotalPanier=$TotalPanier+$subtotal;
 			
 
 			echo("<form method='post' action='gererPanier.php'>");
 			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
 			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
-			echo("<button type='submit' class='deleteproduct'>Delete</button></form>");
+			
 
 		}
 	
+	
+	
 	$RequestPanier->closeCursor();
+	
+	return $TotalPanier;
+	
 	}
+	
+
 
 ?>
 
@@ -65,7 +78,14 @@ $email = $_SESSION['Email'];
 	
 
 	<div id="CommandeEnAttente">
-		<?php if(isset($_SESSION['Status'])){LecturePanier();}
+		<?php if(isset($_SESSION['Status'])){
+			$Total=0;
+			echo("<div class=ListePanier>");
+				$Total=LecturePanier();
+			echo("</div>");
+			echo("<div class=TotalPanier>".$Total." €</div>");
+			echo("<a href='scriptCommande.php'><div class=ValidationCommande>Valider la commande</div></a>");
+		}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
 	</div>
 	

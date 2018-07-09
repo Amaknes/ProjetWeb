@@ -46,7 +46,7 @@ function LaunchSearch() {
 			echo("<div class='ProductName'><p> ".$ans[1]." </p></div>");
 			echo("<div class='imgproduit ProductPic'><img alt='Image produit' src='".$ans[4]."' /></div>");
 			echo("<div class='prixbouton'><div class='Price'><p> ".$ans[3]." €</p></div>");
-			echo("<button class='bouton'>Ajouter au panier</button></div></div>");
+			echo("<a  href='gererPanier.php?type=addingProducttopanier&idproduct=".$ans[0]."' ><button class='bouton'> Ajouter au panier</button></a></div></div>");
 
 	
 		}

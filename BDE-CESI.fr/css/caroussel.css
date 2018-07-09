@@ -1,4 +1,6 @@
-* {box-sizing:border-box}
+.slideshow-container {
+	box-sizing:border-box
+}
 
 /* slideshow container */
 .slideshow-container {

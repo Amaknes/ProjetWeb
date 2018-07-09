@@ -39,10 +39,15 @@
 		$CheckAns = $CheckProduct->fetch();
 		
 		if(isset($CheckAns[1])){
-		$newQuantity = $CheckAns[0]+1;
+			
+			$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = Quantity+1 WHERE IDOrder = ? AND IDProduct = ?");
+			$ChangeQuantity->execute(array($OrderID[0],$IdProduct));
+			
+		/*$newQuantity = $CheckAns[0]+1;
 		
-		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = ? WHERE IDOrder = ? AND IDProduct = ?");
-		$ChangeQuantity->execute($newQuantity,$OrderID,$IDProduct);
+		$ChangeQuantity = $bdd->prepare("UPDATE Contain SET Quantity = Quantity+1 WHERE IDOrder = ? AND IDProduct = ?");
+		$ChangeQuantity->execute(array($OrderID[0],$IDProduct));*/
+		
 		}else{ 
 		$AddProduct = $bdd->prepare("INSERT INTO Contain VALUES(1,?,?)");
 		$AddProduct->execute(array($OrderID[0],$IdProduct));
@@ -77,6 +82,6 @@
 		break;
 	}
 	
-	//echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
+	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 			
 ?>

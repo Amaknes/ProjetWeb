@@ -1093,12 +1093,16 @@ textarea{
 
 /*_______________________________________________________________________________________________________Panier____________________________________________________________________________________________________________________*/
   
+#Panier{
+	min-height: 65%;
+}
+  
 #CommandeEnAttente{
 	position: relative;
     text-align: center;
     padding: 40px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 }
@@ -1125,6 +1129,10 @@ textarea{
 	position: relative;
 	padding: 0 10px;
 }
+.PanierSubtotal {
+	position: relative;
+	padding: 0 10px;
+}
 
 .minus:before {
 	content:"\E822";
@@ -1143,6 +1151,16 @@ textarea{
 	height: 80%;
 }
 .PanierQuantity:before {
+	content:"";
+	position: absolute;
+	top:10%;
+	left:0;
+	background: black;
+	width: 1px;
+	height: 80%;
+}
+
+.PanierSubtotal:before {
 	content:"";
 	position: absolute;
 	top:10%;
@@ -1300,8 +1318,8 @@ margin-bottom: 100px;
 footer {
 	width: 100%;
 	background-color: white;
-	position: absolute;
-	
+	position: realtive;
+	bottom: 0;
 }
 
 #bottom{
