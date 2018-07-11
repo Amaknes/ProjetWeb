@@ -83,8 +83,10 @@ $email = $_SESSION['Email'];
 			echo("<div class=ListePanier>");
 				$Total=LecturePanier();
 			echo("</div>");
-			echo("<div class=TotalPanier>".$Total." €</div>");
-			echo("<a href='scriptCommande.php'><div class=ValidationCommande>Valider la commande</div></a>");
+			echo("<div class=TotalPanier>Montant total du panier : ".$Total." €</div>");
+			
+				echo("<a href='scriptCommande.php'><div class=ValidationCommande>Valider la commande</div></a>");
+			
 		}
 		else {echo("Vous devez vous connecter pour accéder à votre panier");}?>
 	</div>

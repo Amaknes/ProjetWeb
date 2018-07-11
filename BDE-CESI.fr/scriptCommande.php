@@ -13,7 +13,7 @@
 	$ans3 = $requete3->fetch();	
 	
 		//$requete = $bdd->prepare("SELECT IDUser FROM Users WHERE Email = ?");
-		$requete = $bdd->prepare("UPDATE orders,users SET orders.Status = '1' WHERE orders.IDUser = users.IDUser AND users.Email = ? AND orders.sta");
+		$requete = $bdd->prepare("UPDATE orders,users SET orders.Status = '1' WHERE orders.IDUser = users.IDUser AND users.Email = ? AND orders.status=0");
 		$requete->execute(array($client));
 		$idclient = $requete->fetch();
 	
@@ -21,7 +21,7 @@
 		/*$requete2 = $bdd->prepare("UPDATE orders SET orders.Status = '1' WHERE orders.IDUser = users.IDUser AND users.Email = ?");
 		$requete2->execute(array($idclient));*/
 		
-	
+	if($ans3[8]>=1){
 		
 		$f_contact_email = "florentin.cheraud@viacesi.fr";
 		$subject = "Commande ".$ans3[0]."";
@@ -67,7 +67,8 @@
 		$m_true = mail($f_contact_email, $subject, $body, $headers);
 		echo $m_true;
 		
-		
+	}
+	
 	echo '<meta http-equiv="refresh" content="0;URL=Panier.php">';
 		
 

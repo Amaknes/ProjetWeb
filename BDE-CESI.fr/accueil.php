@@ -2,6 +2,7 @@
 
 <?php include('header.php'); ?>
 <link rel="stylesheet" href="css/caroussel.css"/>
+<meta name="description" content="Site du BDE du Capus CESI de Saint-Nazaire" />
 
 <script src="js/Caroussel.js"></script>		<!-- APPAREMENT INUTILE : type="text/javascript"	-->
 	<!--####################################

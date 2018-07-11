@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/fonts.css"/>
 		<link rel="icon" type="image/png" href="Ressources/SiteImages/Site_Favicon5.png" />
+		<meta name="description" content="Site du BDE du Capus CESI de Saint-Nazaire" />
     </head>
 	<body>
 		<header>
