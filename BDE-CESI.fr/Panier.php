@@ -45,7 +45,7 @@ $email = $_SESSION['Email'];
 
 			echo("<form method='post' action='gererPanier.php'>");
 			echo("<input type='text' name='type' value='deletion' style='display:none;'/>");
-			echo("<input type='text' name='idproduct' value='".$ans2[0]."'style='display:none;'/>");
+			echo("<input type='text' name='idproduct' value='".$ans2[0]."' style='display:none;'/>");
 			
 
 		}
@@ -90,10 +90,7 @@ $email = $_SESSION['Email'];
 	</div>
 	
 	
-	<div>
-		<h3></h3>
 	
-	</div>
 	
 	
 	

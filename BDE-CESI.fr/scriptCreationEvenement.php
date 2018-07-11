@@ -14,14 +14,14 @@ if(isset($_POST['id'])) {
 	
 	$IDIdea = $_POST['id'];
 	
-	/*
+	
 	$GetMail = $bdd->prepare("SELECT Email FROM Users INNER JOIN Ideas ON Users.IDUser = Ideas.IDUser WHERE IDIdea = ?");
 	$GetMail->execute(array($IDIdea));
 	$UserMail = $GetMail->fetch();
 	$GetMail->closeCursor();
 	
-	mail('matthis.moyon@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
-	*/
+	mail('florentin.cheraud@viacesi.fr', 'Votre proposition a été sélectionnée !', 'Félicitation ! Votre proposition a été sélectionnée par un membre du BDE qui a créé un événement à partir de celle-ci. Venez vite voir le résultat sur le site du BDE CESI Saint-Nazaire !');
+	
 
 } else {}
 
