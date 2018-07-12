@@ -1,5 +1,5 @@
 <?php
-include 'scriptNouveauProduit.php';
+
 
 function Create_APIUser($Username,$Password){
 	$PasswordCrypted = openssl_encrypt($Password,'aes128','R75CxT0wcYb+oNSuml9nMcocrJUpqAkLEPwN8OJrwE4=');
@@ -35,12 +35,16 @@ function LoginToAPI($Username,$Password){
 			break;
 			
 			case "CreateProduct":
-				LoginToAPI($JSON_DATA["Username"],$JSON_DATA["Password"]);
-				if(isset($JSON_DATA["ProductName"]) && isset($JSON_DATA["Category"]) && isset($JSON_DATA["Price"]) && isset($JSON_DATA["URLImage"]))
-				CreateNewproduct($JSON_DATA["ProductName"],$JSON_DATA["Category"],$JSON_DATA["Price"],$JSON_DATA["URLImage"])
-				header("HTTP/1.0 200 Produit Cree");
+				if (LoginToAPI($JSON_DATA["Username"],$JSON_DATA["Password"])){
+						if(isset($JSON_DATA["ProductName"]) && isset($JSON_DATA["Category"]) && isset($JSON_DATA["Price"]) && isset($JSON_DATA["URLImage"])){
+							require_once('scriptNouveauProduit.php');
+							CreateNewproduct($JSON_DATA["ProductName"],$JSON_DATA["Category"],$JSON_DATA["Price"],$JSON_DATA["URLImage"]);
+							header("HTTP/1.0 200 Produit Cree");
+						}else{
+							header("HTTP/1.0 422 Requete invalide");	
+						}
 				}else{
-				header("HTTP/1.0 422 Requete invalide");	
+						header("HTTP/1.0 401 Mauvais Identifiant ou Mot de Passe");	
 				}
 			break;
 		

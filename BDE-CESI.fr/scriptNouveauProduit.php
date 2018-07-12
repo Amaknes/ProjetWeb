@@ -1,5 +1,6 @@
 ﻿<?php
 			function CreateNewproduct($NameF,$CategoryF,$PriceF,$UrlImageF){
+			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 			$requeteName = $bdd->prepare("SELECT * FROM products WHERE Name = ?");
 			$requeteName->execute(array($NameF));
 			$test = $requeteName->fetch();
@@ -26,7 +27,6 @@
 			}
 			
 			session_start();
-			$bdd = new PDO('mysql:host=localhost; dbname=projetweb; charset=utf8', 'root', '');
 
 			$Name = $_POST['Name'];
 			$Category = $_POST['Category'];
