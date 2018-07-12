@@ -3,6 +3,7 @@
 	$bdd = new PDO('mysql:host=localhost;dbname=projetweb;charset=utf8','root','');
 	$Email = $_POST['Email'];
 	$Password = $_POST['Password'];
+	$Password = openssl_encrypt($Password,'aes128','R75CxT0wcYb+oNSuml9nMcocrJUpqAkLEPwN8OJrwE4=');
 	$requeteConnexion = $bdd->prepare("SELECT * FROM users WHERE Email=? AND Password=?");
 	$requeteConnexion->execute(array($Email,$Password));
 				

@@ -37,7 +37,8 @@
 								{  
 									echo 'Cet email est correct.';
 
-			
+									$Password = openssl_encrypt($Password,'aes128','R75CxT0wcYb+oNSuml9nMcocrJUpqAkLEPwN8OJrwE4=');
+									
 									$requete = $bdd->prepare("INSERT INTO users (LastName, FirstName, Email, Password) VALUES( :Nom, :Prenom, :Email,:Password)");
 									$requete->bindValue(':Nom', $LastName, PDO::PARAM_STR);
 									$requete->bindValue(':Prenom', $FirstName, PDO::PARAM_STR);
